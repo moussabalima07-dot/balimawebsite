@@ -7,7 +7,7 @@
   <meta name="author" content="Moussa Balima">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Création de Sites Web Professionnels | Balima Web Developer Burkina Faso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#080C14;
@@ -19,6 +19,8 @@
       --gold2:#F7DEAB;
       --line:rgba(255,255,255,.08);
       --card:#111e33;
+      --gray:#1a1a1a;
+      --gray-mid:#2e2e2e;
     }
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
@@ -159,6 +161,132 @@
     .faq-item.active .faq-answer{max-height:220px;padding:0 20px 18px 20px;opacity:1;}
     .faq-item.active .faq-question span{transform:rotate(45deg);color:var(--blue2);}
     #topBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;z-index:999;background:#0057FF;color:white;box-shadow:0 10px 30px rgba(0,87,255,.3);}
+
+    /* NOUVEAUX STYLES POUR CARTES EBOOKS (Académie + Bibliothèque) */
+    .ebook-section {
+      padding: 28px 0;
+    }
+    .ebook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .ebook-card {
+      background: var(--gray);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+    .ebook-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.2);
+    }
+    .card-cover {
+      width: 100%;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      background: var(--gray-mid);
+    }
+    .card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+      filter: brightness(0.9);
+    }
+    .ebook-card:hover .card-cover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+    .badge-promo {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--gold);
+      color: #000;
+      font-family: 'Syne', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      z-index: 2;
+    }
+    .ebook-card .card-body {
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+      min-height: 34px;
+    }
+    .card-desc {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .card-pricing {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .price-new {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--gold-light, var(--gold2));
+    }
+    .price-old {
+      font-size: 11px;
+      color: #555;
+      text-decoration: line-through;
+    }
+    .ebook-card .card-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Syne', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 9px 0;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+    .ebook-card .card-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+      margin: 20px auto 40px;
+      opacity: 0.3;
+    }
     @media(max-width:900px){
       .grid-3,.services-grid{grid-template-columns:1fr;}
       .nav-search{display:none;}
@@ -166,6 +294,14 @@
       .hero{padding-top:56px;}
       .search-area{flex-direction:column;}
       .menu{display:none;}
+      .ebook-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width:500px){
+      .ebook-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -234,7 +370,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="why">
   <div class="wrap">
     <div class="label" data-i18n="why.label">Pourquoi moi ?</div>
     <div class="title" data-i18n="why.title">Un site web n'est pas une dépense. C'est un investissement.</div>
@@ -251,24 +387,148 @@
   </div>
 </section>
 
-<section class="section tight" id="academie-web">
+<!-- SECTION ACADÉMIE WEB (nouveau design) -->
+<section class="ebook-section" id="academie-web">
   <div class="wrap">
     <div class="label" data-i18n="academy.label">Formation Développement Web</div>
     <div class="title" data-i18n="academy.title">Académie Web BALIMA</div>
-    <div class="grid-3" id="academyCards">
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="html-image.jpg" alt="HTML" class="ebook-img"><div class="card-body"><h3>HTML DE ZÉRO À EXPERT</h3><p>Apprends à créer la structure complète d'un site web professionnel.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="CSS-image.jpg" alt="CSS" class="ebook-img"><div class="card-body"><h3>MAÎTRISER CSS MODERNE</h3><p>Responsive Design, Flexbox, Grid et animations modernes.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="Java_script.jpg" alt="JavaScript" class="ebook-img"><div class="card-body"><h3>JAVASCRIPT SANS CONFUSION</h3><p>Comprends JavaScript étape par étape avec projets réels.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="10000" data-price-eur="15" data-price-usd="16"><img src="Front-end.jpg" alt="Frontend" class="ebook-img"><div class="card-body"><h3>FRONTEND COMPLET</h3><p>HTML, CSS et JavaScript réunis pour devenir développeur Frontend.</p><div class="old">25 000 XOF</div><div class="new price-display">10 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="10000" data-price-eur="15" data-price-usd="16"><img src="Back-end.jpg" alt="Backend" class="ebook-img"><div class="card-body"><h3>BACKEND POUR DÉBUTANTS</h3><p>Serveurs, bases de données, API et logique web.</p><div class="old">25 000 XOF</div><div class="new price-display">10 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="15000" data-price-eur="23" data-price-usd="25"><img src="creer-site.jpg" alt="Site Web" class="ebook-img"><div class="card-body"><h3>CRÉER UN SITE WEB DE A À Z</h3><p>Conception, développement, hébergement et mise en ligne.</p><div class="old">30 000 XOF</div><div class="new price-display">15 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="10000" data-price-eur="15" data-price-usd="16"><img src="Word-press.jpg" alt="WordPress" class="ebook-img"><div class="card-body"><h3>WORDPRESS & WOOCOMMERCE</h3><p>Créer blogs, sites et boutiques en ligne facilement.</p><div class="old">25 000 XOF</div><div class="new price-display">10 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="Vivre-du-dev.jpg" alt="Freelance" class="ebook-img"><div class="card-body"><h3>DEVENIR FREELANCE WEB</h3><p>Trouver des clients et générer des revenus avec le web.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div></article>
+    <div class="ebook-grid" id="academyGrid">
+      <!-- Carte 1 -->
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/html-image.jpg" alt="HTML">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">HTML DE ZÉRO À EXPERT</div>
+          <div class="card-desc">Structure complète d'un site professionnel.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">5 000 XOF</span>
+            <span class="price-old">15 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 2 -->
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/CSS-image.jpg" alt="CSS">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">MAÎTRISER CSS MODERNE</div>
+          <div class="card-desc">Flexbox, Grid et animations modernes.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">5 000 XOF</span>
+            <span class="price-old">15 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 3 -->
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/Java_script.jpg" alt="JavaScript">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">JAVASCRIPT SANS CONFUSION</div>
+          <div class="card-desc">Étape par étape avec projets réels.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">5 000 XOF</span>
+            <span class="price-old">15 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 4 -->
+      <div class="ebook-card card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/Front-end.jpg" alt="Frontend">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">FRONTEND COMPLET</div>
+          <div class="card-desc">HTML, CSS & JS pour devenir développeur.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">10 000 XOF</span>
+            <span class="price-old">25 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 5 -->
+      <div class="ebook-card card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/Back-end.jpg" alt="Backend">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">BACKEND POUR DÉBUTANTS</div>
+          <div class="card-desc">Serveurs, bases de données et API.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">10 000 XOF</span>
+            <span class="price-old">25 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 6 -->
+      <div class="ebook-card card" data-price-xof="15000" data-price-eur="23" data-price-usd="25">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/creer-site.jpg" alt="Créer un site">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">CRÉER UN SITE WEB DE A À Z</div>
+          <div class="card-desc">Conception, développement et mise en ligne.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">15 000 XOF</span>
+            <span class="price-old">30 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 7 -->
+      <div class="ebook-card card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/Word-press.jpg" alt="WordPress">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">WORDPRESS & WOOCOMMERCE</div>
+          <div class="card-desc">Blogs, sites et boutiques en ligne.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">10 000 XOF</span>
+            <span class="price-old">25 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter →</button>
+        </div>
+      </div>
+      <!-- Carte 8 -->
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover">
+          <img src="https://moussabalima07-dot.github.io/balimawebsite/Vivre-du-dev.jpg" alt="Freelance">
+          <span class="badge-promo">Promo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">DEVENIR FREELANCE WEB</div>
+          <div class="card-desc">Trouver des clients et générer des revenus.</div>
+          <div class="card-pricing">
+            <span class="price-new price-display">5 000 XOF</span>
+            <span class="price-old">15 000</span>
+          </div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter →</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section tight" id="bibliotheque">
+<div class="divider"></div>
+
+<!-- SECTION BIBLIOTHÈQUE (nouveau design) -->
+<section class="ebook-section" id="bibliotheque">
   <div class="wrap">
     <div class="label" data-i18n="library.label">Ressources & Savoirs</div>
     <div class="title" data-i18n="library.title">La Bibliothèque du Succès</div>
@@ -276,16 +536,89 @@
       <input type="search" id="siteSearch" data-i18n-placeholder="search.placeholder" placeholder="Rechercher un ebook, un service...">
       <button type="button" onclick="filterAllCards()" data-i18n="search.button">Rechercher</button>
     </div>
-    <div class="grid-3" id="libraryCards">
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="mindset-de.jpg" alt="Mindset" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.1.title">Mindset de Réussite Africaine</h3><p data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="maitriser-ses.jpg" alt="Emotions" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.2.title">Maîtriser ses Émotions</h3><p data-i18n="ebooks.2.desc">L'art de garder le contrôle.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="vendre-en-ligne.jpg" alt="Vente" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</h3><p data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="sortir-de la-procras.jpg" alt="Procrastination" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.4.title">Sortir de la Procrastination</h3><p data-i18n="ebooks.4.desc">Passer à l'action et reprendre le contrôle.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="reprendre-le-controle.jpg" alt="Controle" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.5.title">Reprendre le Contrôle de sa Vie</h3><p data-i18n="ebooks.5.desc">Guide pour l'équilibre et la discipline.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="creer-des-revenus.jpg" alt="Revenus" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</h3><p data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="sante-nutrition.jpg" alt="Santé" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.7.title">Santé, Nutrition et Beauté Naturelle</h3><p data-i18n="ebooks.7.desc">Approche naturelle pour rayonner.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="les-traits-de.jpg" alt="Masculinité" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.8.title">Les 5 Traits de la Masculinité</h3><p data-i18n="ebooks.8.desc">Comprendre les archéotypes masculins.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
-      <article class="card" data-price-xof="5000" data-price-eur="8" data-price-usd="9"><img src="les-pauvres-obeissent.jpg" alt="Riches" class="ebook-img"><div class="card-body"><h3 data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</h3><p data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</p><div class="old">15 000 XOF</div><div class="new price-display">5 000 XOF</div><button class="ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter</button><div class="buy-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div></article>
+    <div class="ebook-grid" id="libraryGrid">
+      <!-- 9 cartes de la bibliothèque -->
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/mindset-de.jpg" alt="Mindset"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Mindset de Réussite Africaine</div>
+          <div class="card-desc">Penser grand, agir juste, réussir sans limites.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/maitriser-ses.jpg" alt="Emotions"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Maîtriser ses Émotions</div>
+          <div class="card-desc">L'art de garder le contrôle.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/vendre-en-ligne.jpg" alt="Vente"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Vendre en Ligne de A à Z</div>
+          <div class="card-desc">Le guide complet pour lancer ton business.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/sortir-de la-procras.jpg" alt="Procrastination"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Sortir de la Procrastination</div>
+          <div class="card-desc">Passer à l'action et reprendre le contrôle.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/reprendre-le-controle.jpg" alt="Controle"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Reprendre le Contrôle de sa Vie</div>
+          <div class="card-desc">Guide pour l'équilibre et la discipline.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/creer-des-revenus.jpg" alt="Revenus"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Créer des Revenus avec son Téléphone</div>
+          <div class="card-desc">Générer des revenus avec ton téléphone.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/sante-nutrition.jpg" alt="Santé"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Santé, Nutrition et Beauté Naturelle</div>
+          <div class="card-desc">Approche naturelle pour rayonner.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/les-traits-de.jpg" alt="Masculinité"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Les 5 Traits de la Masculinité</div>
+          <div class="card-desc">Comprendre les archétypes masculins.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter →</button>
+        </div>
+      </div>
+      <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/les-pauvres-obeissent.jpg" alt="Riches"><span class="badge-promo">Promo</span></div>
+        <div class="card-body">
+          <div class="card-title">Les Pauvres Obéissent, Les Riches Négocient</div>
+          <div class="card-desc">État d'esprit et négociation financière.</div>
+          <div class="card-pricing"><span class="price-new price-display">5 000 XOF</span><span class="price-old">15 000</span></div>
+          <button class="card-btn ebook-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter →</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -460,10 +793,8 @@
     const message = btn.getAttribute('data-message');
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if(isMobile) {
-      // Sur mobile : composer le code USSD
       window.location.href = `tel:${code.replace(/#/g, '%23')}`;
     } else {
-      // Sur ordinateur : envoyer un message WhatsApp personnalisé (sans le code)
       const waMessage = message ? encodeURIComponent(message) : "Bonjour, je souhaite acheter un ebook";
       window.open(`https://wa.me/22607190217?text=${waMessage}`, '_blank');
     }
@@ -504,5 +835,4 @@
   setLanguage('fr');
   setCurrency('xof');
 </script>
-</body>
-        </html>
+</html>
