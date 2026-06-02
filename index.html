@@ -162,7 +162,7 @@
     .faq-item.active .faq-question span{transform:rotate(45deg);color:var(--blue2);}
     #topBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;z-index:999;background:#0057FF;color:white;box-shadow:0 10px 30px rgba(0,87,255,.3);}
 
-    /* NOUVEAUX STYLES POUR CARTES EBOOKS (Académie + Bibliothèque) */
+    /* STYLES POUR CARTES EBOOKS (Académie + Bibliothèque) */
     .ebook-section {
       padding: 28px 0;
     }
@@ -172,7 +172,6 @@
       gap: 24px;
     }
     .ebook-card {
-      background: var(--gray);
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       border: 1px solid var(--line);
       border-radius: 6px;
@@ -187,7 +186,7 @@
     }
     .card-cover {
       width: 100%;
-      height: 160px;
+      aspect-ratio: 3 / 4;
       position: relative;
       overflow: hidden;
       background: var(--gray-mid);
@@ -218,6 +217,10 @@
       padding: 3px 8px;
       border-radius: 2px;
       z-index: 2;
+    }
+    .badge-bestseller {
+      background: #e67e22;
+      color: white;
     }
     .ebook-card .card-body {
       padding: 14px 14px 16px;
@@ -250,7 +253,7 @@
       font-family: 'Syne', sans-serif;
       font-size: 16px;
       font-weight: 800;
-      color: var(--gold-light, var(--gold2));
+      color: var(--blue2);
     }
     .price-old {
       font-size: 11px;
@@ -393,11 +396,11 @@
     <div class="label" data-i18n="academy.label">Formation Développement Web</div>
     <div class="title" data-i18n="academy.title">Académie Web BALIMA</div>
     <div class="ebook-grid" id="academyGrid">
-      <!-- Carte 1 -->
+      <!-- Carte 1 : HTML DE ZÉRO À EXPERT -> Best seller -->
       <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="card-cover">
           <img src="https://moussabalima07-dot.github.io/balimawebsite/html-image.jpg" alt="HTML">
-          <span class="badge-promo">Promo</span>
+          <span class="badge-promo badge-bestseller">Best seller</span>
         </div>
         <div class="card-body">
           <div class="card-title">HTML DE ZÉRO À EXPERT</div>
@@ -537,7 +540,7 @@
       <button type="button" onclick="filterAllCards()" data-i18n="search.button">Rechercher</button>
     </div>
     <div class="ebook-grid" id="libraryGrid">
-      <!-- 9 cartes de la bibliothèque -->
+      <!-- 9 cartes de la bibliothèque (toutes avec Promo, mais on peut en mettre Best seller si voulu) -->
       <div class="ebook-card card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="card-cover"><img src="https://moussabalima07-dot.github.io/balimawebsite/mindset-de.jpg" alt="Mindset"><span class="badge-promo">Promo</span></div>
         <div class="card-body">
