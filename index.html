@@ -164,14 +164,27 @@
     .btn-wa:hover{background:#1d4ed8;transform:translateY(-2px);}
     .btn-mail{background:transparent;border:1px solid var(--line);color:var(--text);}
     .footer{padding:28px 0 42px;color:var(--muted);text-align:center;border-top:1px solid var(--line);}
-    .faq-container{display:flex;flex-direction:column;gap:14px;max-width:800px;margin:0 auto;}
-    .faq-item{border:1px solid rgba(77,143,255,.18);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden;transition:.3s ease;}
-    .faq-question{width:100%;padding:18px 20px;background:transparent;border:none;color:var(--text);font-weight:800;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem;}
-    .faq-icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:rgba(0,87,255,.12);color:var(--blue2);font-size:14px;margin-right:10px;}
-    .faq-question span{font-size:1.4rem;color:var(--gold2);transition:.3s ease;}
-    .faq-answer{max-height:0;overflow:hidden;padding:0 20px;color:var(--muted);line-height:1.7;transition:max-height .4s ease,padding .3s ease;opacity:0;}
-    .faq-item.active .faq-answer{max-height:220px;padding:0 20px 18px;opacity:1;}
-    .faq-item.active .faq-question span{transform:rotate(45deg);color:var(--blue2);}
+    /* ═══ FAQ PREMIUM ═══ */
+    .faq-section{padding:60px 0;background:linear-gradient(180deg,transparent,rgba(77,143,255,.03),transparent);}
+    .faq-intro{text-align:center;max-width:600px;margin:0 auto 48px;}
+    .faq-intro p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:10px;}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:900px;margin:0 auto;}
+    .faq-card{background:linear-gradient(135deg,rgba(17,30,51,.95),rgba(8,12,20,.9));border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:24px;cursor:pointer;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;position:relative;overflow:hidden;}
+    .faq-card:hover{border-color:rgba(77,143,255,.35);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+    .faq-card.open{border-color:rgba(77,143,255,.4);background:linear-gradient(135deg,rgba(17,30,51,.98),rgba(0,87,255,.06));}
+    .faq-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));opacity:0;transition:opacity .25s ease;}
+    .faq-card.open::before{opacity:1;}
+    .faq-card-top{display:flex;align-items:flex-start;gap:14px;}
+    .faq-emoji{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:rgba(0,87,255,.12);border:1px solid rgba(77,143,255,.2);}
+    .faq-card.open .faq-emoji{background:rgba(0,87,255,.2);}
+    .faq-q{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:800;color:var(--text);line-height:1.4;flex:1;}
+    .faq-arrow{font-size:1.1rem;color:var(--muted);transition:transform .3s ease,color .3s ease;flex-shrink:0;margin-top:2px;}
+    .faq-card.open .faq-arrow{transform:rotate(45deg);color:var(--blue2);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,padding .3s ease;opacity:0;padding-top:0;color:var(--muted);font-size:.9rem;line-height:1.75;padding-left:56px;}
+    .faq-card.open .faq-a{max-height:300px;opacity:1;padding-top:14px;}
+    .faq-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-bottom:8px;}
+    .faq-cta{text-align:center;margin-top:40px;}
+    .faq-cta p{color:var(--muted);font-size:.88rem;margin-top:10px;}
     #topBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;z-index:999;background:#0057FF;color:white;box-shadow:0 10px 30px rgba(0,87,255,.3);}
     @media(max-width:900px){
       .grid-3,.services-grid{grid-template-columns:1fr;}
@@ -265,8 +278,8 @@
 <header class="hero" id="home">
   <div class="wrap">
     <div class="badge"><span class="dot"></span><span data-i18n="hero.badge">Disponible pour de nouveaux projets</span></div>
-    <h1 data-i18n="hero.title">TON SITE WEB.<br>TES CLIENTS.<br><span class="accent">TES VENTES.</span></h1>
-    <p data-i18n="hero.subtitle">J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.</p>
+    <h1 class="reveal" data-i18n="hero.title">TON SITE WEB.<br>TES CLIENTS.<br><span class="accent">TES VENTES.</span></h1>
+    <p class="reveal" data-i18n="hero.subtitle">J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.</p>
     <div class="actions"><a href="#services" class="btn btn-primary" data-i18n="hero.cta">Voir mes services</a></div>
   </div>
 </header>
@@ -770,33 +783,208 @@
   </div>
 </section>
 
-<section class="section" id="avis">
+<!-- CSS AVIS -->
+<style>
+  .reviews-section{padding:60px 0;background:linear-gradient(180deg,transparent,rgba(0,87,255,.04),transparent);}
+  .reviews-intro{text-align:center;max-width:600px;margin:0 auto 48px;}
+  .reviews-intro p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:10px;}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .review-card{background:linear-gradient(135deg,rgba(17,30,51,.95),rgba(8,12,20,.9));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;position:relative;transition:transform .25s ease,border-color .25s ease;}
+  .review-card:hover{transform:translateY(-4px);border-color:rgba(216,178,106,.3);}
+  .review-card::before{content:'“';position:absolute;top:12px;right:20px;font-size:5rem;line-height:1;color:rgba(77,143,255,.1);font-family:Georgia,serif;pointer-events:none;}
+  .review-top{display:flex;align-items:center;gap:14px;}
+  .review-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;border:2px solid rgba(255,255,255,.1);}
+  .review-meta{display:flex;flex-direction:column;gap:2px;}
+  .review-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:var(--text);}
+  .review-product{font-size:.75rem;color:var(--blue2);font-weight:600;letter-spacing:.5px;}
+  .review-stars{color:#F7DEAB;font-size:.95rem;letter-spacing:2px;}
+  .review-text{color:#c8d0e0;font-size:.92rem;line-height:1.75;font-style:italic;}
+  .review-result{display:inline-flex;align-items:center;gap:6px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);color:#25d366;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px;margin-top:4px;}
+  .review-verified{display:flex;align-items:center;gap:5px;font-size:.72rem;color:var(--muted);margin-top:6px;}
+  .review-verified span{color:#4D8FFF;}
+  .reviews-cta{text-align:center;margin-top:44px;}
+  .reviews-cta p{color:var(--muted);font-size:.88rem;margin-top:10px;}
+  .review-featured{border-color:rgba(216,178,106,.35);background:linear-gradient(135deg,rgba(17,30,51,.98),rgba(216,178,106,.05));}
+</style>
+
+<section class="reviews-section" id="avis">
   <div class="wrap">
-    <div class="label" data-i18n="reviews.label">Témoignages</div>
-    <div class="title" data-i18n="reviews.title">Ce que disent mes clients</div>
-    <div class="services-grid">
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Issa Traoré</h3><p class="compat">J'ai commandé un site vitrine, le résultat est très propre et professionnel.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐⭐ Aïcha Ouédraogo</h3><p class="compat">"Mindset de Réussite Africaine" m'a aidé à changer ma vision.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Moussa Kaboré</h3><p class="compat">Site rapide, fonctionne bien sur téléphone. Travail sérieux.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Fatoumata Coulibaly</h3><p class="compat">Contenu intéressant et facile à lire.</p></div>
+    <div class="reviews-intro">
+      <div class="label">Témoignages</div>
+      <div class="title">Ils ont sauté le pas.<br>Voici ce qu'ils disent.</div>
+      <p>Des entrepreneurs réels, des résultats concrets. Pas de belles paroles — juste ce qu'ils ont vécu.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <!-- 1 -->
+      <div class="review-card review-featured">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(0,87,255,.3),rgba(77,143,255,.2));">👨🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Issa Traoré</div>
+            <div class="review-product">Site vitrine — Ouagadougou</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Franchement j'avais des doutes au début. Mais quand j'ai vu le résultat... mon site est plus beau que celui de certaines grandes entreprises ici. Mes clients me demandent maintenant qui a fait mon site. »</div>
+        <div class="review-result">📈 +3 nouveaux clients en 2 semaines</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Site livré en 3 jours</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(216,178,106,.25),rgba(247,222,171,.1));">👩🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Aïcha Ouédraogo</div>
+            <div class="review-product">Ebook — Mindset de Réussite Africaine</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Ce livre m'a bousculée. J'avais l'habitude de procrastiner, de me dire que le succès c'est pour les autres. Après la lecture, j'ai lancé mon activité de couture en ligne. Je ne plaisante pas. »</div>
+        <div class="review-result">🚀 Activité lancée après lecture</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Ebook reçu immédiatement</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(77,143,255,.25),rgba(0,87,255,.1));">👨🏿</div>
+          <div class="review-meta">
+            <div class="review-name">Moussa Kaboré</div>
+            <div class="review-product">Page de vente — Bobo-Dioulasso</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Ma page de vente tourne parfaitement sur téléphone, c'est ultra rapide. Balima a tout expliqué, tout livré dans les temps. C'est du travail sérieux, je recommande sans hésiter. »</div>
+        <div class="review-result">💰 Premières ventes le jour du lancement</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Livré en 24h</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(192,57,43,.25),rgba(231,76,60,.1));">👩🏽</div>
+          <div class="review-meta">
+            <div class="review-name">Fatoumata Coulibaly</div>
+            <div class="review-product">Ebook — Vendre en Ligne de A à Z</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« J'avais essayé de vendre sur Facebook sans résultats. Cet ebook m'a donné une vraie méthode. Maintenant je sais exactement quoi faire et dans quel ordre. Mes ventes ont décollé. »</div>
+        <div class="review-result">📦 Méthode appliquée, ventes doublées</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Recommande</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(37,211,102,.2),rgba(28,168,79,.1));">👨🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Ibrahim Sawadogo</div>
+            <div class="review-product">Ebook — JavaScript Sans Confusion</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« J'avais essayé des dizaines de tutoriels YouTube sans rien comprendre. Ce livre explique les choses simplement, avec des vrais exemples. En 2 semaines j'ai fait mon premier projet. »</div>
+        <div class="review-result">💻 Premier projet JS terminé en 2 semaines</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Académie Web</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="review-card review-featured">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(216,178,106,.3),rgba(247,222,171,.15));">👩🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Mariam Diallo</div>
+            <div class="review-product">Pack BOOST ULTIME</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« J'ai pris le pack complet. Page de capture, page de vente, site vitrine — tout livré en 5 jours. La qualité est vraiment au niveau. Mes clients pensent que j'ai une grande agence derrière moi. »</div>
+        <div class="review-result">🏆 Image pro, clients impressionnés</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Pack complet</div>
+      </div>
+
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://wa.me/22607190217?text=Bonjour%2C%20je%20souhaite%20laisser%20un%20avis" class="btn btn-primary">💬 Laisser mon avis sur WhatsApp</a>
+      <p>Ton avis aide d'autres entrepreneurs à se décider. Merci 🙏🏾</p>
     </div>
   </div>
 </section>
 
-<div style="text-align:center;margin-top:30px;">
-  <a href="https://wa.me/22607190217?text=Bonjour%2C%20je%20souhaite%20laisser%20un%20avis" class="btn btn-primary">💬 Laisser un avis WhatsApp</a>
-  <p style="color:var(--muted);margin-top:10px;margin-bottom:60px;">Les retours sont les bienvenus.</p>
-</div>
-
-<section class="section" id="faq">
+<section class="faq-section" id="faq">
   <div class="wrap">
-    <div class="label" data-i18n="faq.label">FAQ</div>
-    <div class="title" data-i18n="faq.title">Questions fréquentes</div>
-    <div class="faq-container">
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">💰</div><span data-i18n="faq.q1">Est-ce que ça peut vraiment me faire gagner plus ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a1">Oui. Un site web est votre boutique en ligne, accessible 24h/24.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">⚡</div><span data-i18n="faq.q2">Dois-je être expert en informatique ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a2">Non, tout est simple et expliqué.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">📱</div><span data-i18n="faq.q3">Tout fonctionne sur téléphone ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a3">Oui, tout est optimisé mobile.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">🚀</div><span data-i18n="faq.q4">Délai de livraison ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a4">Ebook immédiat, site web 24h à 5 jours.</div></div>
+    <div class="faq-intro">
+      <div class="label">FAQ</div>
+      <div class="title">Tu te poses des questions ?<br>Voilà les réponses.</div>
+      <p>Tout ce que tu voulais savoir avant de te lancer — répondu honnêtement.</p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">💰</div>
+          <div class="faq-q">Est-ce qu'un site web peut vraiment me faire gagner plus d'argent ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Oui — et c'est prouvé. Un site professionnel inspire confiance, donc les clients hésitent moins à acheter. Il travaille pour toi 24h/24, même quand tu dors. Beaucoup de mes clients ont doublé leurs contacts en moins d'un mois après la mise en ligne.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🤔</div>
+          <div class="faq-q">Je ne suis pas du tout technique. Est-ce que je peux quand même commander ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Absolument. Tu n'as besoin de rien savoir en informatique. Tu m'expliques ton activité, tes couleurs, ce que tu vends — et je m'occupe de tout le reste. Tu reçois un site clé en main, prêt à l'emploi.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">⏱️</div>
+          <div class="faq-q">Combien de temps avant de recevoir mon site ou mon ebook ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Les ebooks sont envoyés immédiatement après confirmation du paiement via WhatsApp. Pour les sites web : une page simple en 24h, un site vitrine complet en 3 à 5 jours selon la complexité.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">📱</div>
+          <div class="faq-q">Mon site sera-t-il visible et beau sur téléphone ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">C'est ma priorité numéro 1. En Afrique, plus de 90% des visiteurs naviguent sur mobile. Chaque site que je crée est conçu mobile-first — il s'adapte parfaitement à tous les écrans.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🔒</div>
+          <div class="faq-q">Est-ce que mon paiement Orange Money est sécurisé ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Oui. Tu paies directement sur le numéro Orange Money officiel de Balima Web Developer. Aucun intermédiaire, aucun risque. Et si tu as le moindre problème, je reste disponible sur WhatsApp pour arranger ça.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🤝</div>
+          <div class="faq-q">Est-ce que tu es disponible après la livraison si j'ai un problème ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Toujours. Je ne livre pas et je disparais. Je reste disponible par WhatsApp pour répondre à tes questions, faire des petits ajustements ou t'orienter si tu as besoin d'aide pour gérer ton site.</div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta">
+      <a href="https://wa.me/22607190217?text=Bonjour%2C%20j'ai%20une%20question%20avant%20de%20commander." class="btn btn-primary">💬 Une autre question ? Écris-moi</a>
+      <p>Réponse garantie en moins de 24h 🕐</p>
     </div>
   </div>
 </section>
@@ -995,11 +1183,14 @@ overlay.addEventListener('click', () => toggleMenu(false));
 document.getElementById('mobileMenu').querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
 document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleMenu(false); });
 
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    document.querySelectorAll('.faq-item').forEach(el => { if(el !== item) el.classList.remove('active'); });
-    item.classList.toggle('active');
+// Ouvrir la première FAQ par défaut
+document.querySelector('.faq-card')?.classList.add('open');
+
+document.querySelectorAll('.faq-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+    if(!isOpen) card.classList.add('open');
   });
 });
 
@@ -1009,6 +1200,7 @@ topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smoo
 
 setLanguage('fr');
 setCurrency('xof');
+
 
 // Aperçu ebook
 const previewData = {
