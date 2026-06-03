@@ -7,321 +7,889 @@
   <title>Création de Sites Web Professionnels | Balima Web Developer Burkina Faso</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#080C14;--text:#F4F7FF;--muted:#8A94A8;--blue:#0057FF;--blue2:#4D8FFF;--gold:#D8B26A;--gold2:#F7DEAB;--line:rgba(255,255,255,.08);--card:#111e33;}
+    :root{
+      --bg:#080C14;
+      --text:#F4F7FF;
+      --muted:#8A94A8;
+      --blue:#0057FF;
+      --blue2:#4D8FFF;
+      --gold:#D8B26A;
+      --gold2:#F7DEAB;
+      --line:rgba(255,255,255,.08);
+      --card:#111e33;
+    }
+
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
-    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 20% 20%, rgba(0,87,255,.25), transparent 40%),radial-gradient(circle at 80% 30%, rgba(216,178,106,.15), transparent 45%),radial-gradient(circle at 50% 80%, rgba(77,143,255,.18), transparent 40%);filter:blur(60px);animation:moveGradient 14s ease-in-out infinite alternate;}
-    body::after{content:"";position:fixed;inset:0;z-index:-3;background:linear-gradient(120deg,#080C14,#0b1220,#070a12);}
-    @keyframes moveGradient{0%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,30px) scale(1.1);}100%{transform:translate(40px,-30px) scale(1.05);}}
+    body{
+      font-family:'DM Sans',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0,87,255,.25), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(216,178,106,.15), transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(77,143,255,.18), transparent 40%);
+      filter:blur(60px);
+      animation:moveGradient 14s ease-in-out infinite alternate;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background:linear-gradient(120deg,#080C14,#0b1220,#070a12);
+    }
+
+    @keyframes moveGradient{
+      0%{transform:translate(0,0) scale(1);}
+      50%{transform:translate(-40px,30px) scale(1.1);}
+      100%{transform:translate(40px,-30px) scale(1.05);}
+    }
+
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;display:block;}
+
     .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
-    .nav{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);background:rgba(8,12,20,.78);border-bottom:1px solid var(--line);}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;}
-    .brand{display:flex;align-items:center;gap:16px;font-weight:700;flex-shrink:0;}
-    .brand img{width:52px;height:52px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#111e33;}
-    .brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;line-height:1;}
-    .nav-right{display:flex;align-items:center;gap:12px;flex:1;justify-content:flex-end;}
-    .nav-search{display:flex;align-items:center;gap:10px;max-width:420px;width:100%;}
-    .nav-search input{flex:1;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);outline:none;font-size:.95rem;}
-    .nav-search input::placeholder{color:var(--muted);}
-    .nav-search button{padding:10px 16px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;font-weight:700;cursor:pointer;}
-    .lang-switcher{display:flex;gap:6px;align-items:center;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);flex-shrink:0;}
-    .lang-btn{border:none;background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer;transition:.2s ease;min-width:48px;}
-    .lang-btn.active{background:rgba(77,143,255,.18);color:var(--gold2);}
-    .menu{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
-    .menu a{color:var(--muted);font-size:.92rem;}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(14px);
+      background:rgba(8,12,20,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-height:84px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      font-weight:700;
+      flex-shrink:0;
+    }
+
+    .brand img{
+      width:52px;
+      height:52px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#111e33;
+    }
+
+    .brand span{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:1.4rem;
+      letter-spacing:2px;
+      line-height:1;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex:1;
+      justify-content:flex-end;
+    }
+
+    .nav-search{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      max-width:420px;
+      width:100%;
+    }
+
+    .nav-search input,
+    .search-area input{
+      flex:1;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      outline:none;
+      font-size:.95rem;
+    }
+
+    .nav-search input::placeholder,
+    .search-area input::placeholder{color:var(--muted);}
+
+    .nav-search button,
+    .search-area button{
+      padding:10px 16px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .lang-switcher{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      padding:4px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      flex-shrink:0;
+    }
+
+    .lang-btn{
+      border:none;
+      background:transparent;
+      color:var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+      min-width:48px;
+    }
+
+    .lang-btn.active{
+      background:rgba(77,143,255,.18);
+      color:var(--gold2);
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .menu a{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
     .menu a:hover{color:var(--text);}
-    .menu .cta{background:linear-gradient(135deg,rgba(0,87,255,.95),rgba(77,143,255,.92));color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;}
-    .hamburger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;z-index:1101;}
-    .hamburger span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:.25s ease;}
-    .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.25s ease;z-index:1098;}
-    .mobile-menu{position:fixed;top:96px;right:24px;width:min(320px,calc(100% - 48px));padding:18px;border-radius:20px;background:rgba(13,20,34,.96);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);transform:translateY(-12px) scale(.98);opacity:0;pointer-events:none;transition:.25s ease;z-index:1100;display:flex;flex-direction:column;gap:10px;}
-    .mobile-menu a{padding:14px 16px;border-radius:14px;color:var(--text);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);font-weight:700;}
-    .menu-open .mobile-menu{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);}
-    .menu-open .menu-overlay{opacity:1;pointer-events:auto;}
+
+    .menu .cta{
+      background:linear-gradient(135deg,rgba(0,87,255,.95),rgba(77,143,255,.92));
+      color:#fff;
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:700;
+    }
+
+    .hamburger{
+      display:none;
+      width:46px;
+      height:46px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+      z-index:1101;
+    }
+
+    .hamburger span{
+      width:20px;
+      height:2px;
+      background:var(--text);
+      border-radius:2px;
+      transition:.25s ease;
+    }
+
+    .menu-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.45);
+      opacity:0;
+      pointer-events:none;
+      transition:.25s ease;
+      z-index:1098;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      top:96px;
+      right:24px;
+      width:min(320px,calc(100% - 48px));
+      padding:18px;
+      border-radius:20px;
+      background:rgba(13,20,34,.96);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+      transform:translateY(-12px) scale(.98);
+      opacity:0;
+      pointer-events:none;
+      transition:.25s ease;
+      z-index:1100;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .mobile-menu a{
+      padding:14px 16px;
+      border-radius:14px;
+      color:var(--text);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.05);
+      font-weight:700;
+    }
+
+    .menu-open .mobile-menu{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0) scale(1);
+    }
+
+    .menu-open .menu-overlay{
+      opacity:1;
+      pointer-events:auto;
+    }
+
     .menu-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
     .menu-open .hamburger span:nth-child(2){opacity:0;}
     .menu-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-    .hero{padding:78px 0 42px;text-align:center;}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,87,255,.12);border:1px solid rgba(77,143,255,.25);color:var(--blue2);padding:8px 14px;border-radius:999px;font-size:.84rem;margin-bottom:22px;}
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--blue2);animation:pulse 2s infinite;}
-    @keyframes pulse{50%{transform:scale(.75);opacity:.55;}}
-    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6.8rem);line-height:.92;letter-spacing:1px;margin-bottom:18px;}
-    .accent{-webkit-text-stroke:2px var(--blue2);color:transparent;}
-    .hero p{max-width:680px;color:var(--muted);line-height:1.8;font-size:1.02rem;margin:0 auto;}
-    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:28px;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.25s ease;cursor:pointer;}
-    .btn-primary{background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;box-shadow:0 14px 32px rgba(0,87,255,.22);}
-    .btn-secondary{background:rgba(255,255,255,.03);border-color:var(--line);color:var(--text);}
+
+    .hero{
+      padding:78px 0 42px;
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(0,87,255,.12);
+      border:1px solid rgba(77,143,255,.25);
+      color:var(--blue2);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:.84rem;
+      margin-bottom:22px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--blue2);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      50%{transform:scale(.75);opacity:.55;}
+    }
+
+    h1{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(3rem,8vw,6.8rem);
+      line-height:.92;
+      letter-spacing:1px;
+      margin-bottom:18px;
+    }
+
+    .accent{
+      -webkit-text-stroke:2px var(--blue2);
+      color:transparent;
+    }
+
+    .hero p{
+      max-width:680px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1.02rem;
+      margin:0 auto;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));
+      color:#fff;
+      box-shadow:0 14px 32px rgba(0,87,255,.22);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.03);
+      border-color:var(--line);
+      color:var(--text);
+    }
+
     .section{padding:28px 0;}
-    .label{font-size:.76rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue2);margin-bottom:14px;font-weight:700;}
-    .title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.5vw,3.6rem);line-height:1;margin-bottom:26px;letter-spacing:1px;}
-    .search-area{display:flex;gap:12px;max-width:720px;width:100%;margin:0 0 28px;}
-    .search-area input{flex:1;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);outline:none;font-size:1rem;}
-    .search-area button{padding:14px 20px;border:none;border-radius:14px;background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;font-weight:700;cursor:pointer;}
+    .label{
+      font-size:.76rem;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:var(--blue2);
+      margin-bottom:14px;
+      font-weight:700;
+    }
 
-    /* ═══════════════════════════════════
-       EBOOK CARDS — PREMIUM GRID
-    ═══════════════════════════════════ */
+    .title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(2rem,4.5vw,3.6rem);
+      line-height:1;
+      margin-bottom:26px;
+      letter-spacing:1px;
+    }
+
+    .search-area{
+      display:flex;
+      gap:12px;
+      max-width:720px;
+      width:100%;
+      margin:0 0 28px;
+    }
+
     .ebook-grid.premium-ebooks{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-  gap:18px;
-  align-items:stretch;
-}
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+      gap:18px;
+      align-items:stretch;
+    }
 
-.ebook-card{
-  background:rgba(17,30,51,0.92);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  overflow:hidden;
-  cursor:pointer;
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
-}
+    .ebook-card{
+      background:rgba(17,30,51,0.92);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      overflow:hidden;
+      cursor:pointer;
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
 
-.ebook-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(216,178,106,.55);
-  box-shadow:0 22px 45px rgba(0,0,0,.45),0 0 0 1px rgba(216,178,106,.10);
-}
+    .ebook-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(216,178,106,.55);
+      box-shadow:0 22px 45px rgba(0,0,0,.45),0 0 0 1px rgba(216,178,106,.10);
+    }
 
-.ebook-card-cover{
-  width:100%;
-  aspect-ratio:4/5;
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(180deg,#0d1520,#101a2a);
-}
+    .ebook-card-cover{
+      width:100%;
+      aspect-ratio:4/5;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(180deg,#0d1520,#101a2a);
+    }
 
-.ebook-card-cover img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-  display:block;
-  transition:transform .35s ease,filter .35s ease;
-  filter:saturate(1.03) contrast(1.02);
-}
+    .ebook-card-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+      display:block;
+      transition:transform .35s ease,filter .35s ease;
+      filter:saturate(1.03) contrast(1.02);
+    }
 
-.ebook-card:hover .ebook-card-cover img{
-  transform:scale(1.06);
-}
+    .ebook-card:hover .ebook-card-cover img{
+      transform:scale(1.06);
+    }
 
-.ebook-card-cover::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,.16) 100%);
-  pointer-events:none;
-}
+    .ebook-card-cover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,.16) 100%);
+      pointer-events:none;
+    }
 
-.ebook-badge{
-  position:absolute;
-  top:12px;
-  left:12px;
-  z-index:2;
-  background:rgba(0,0,0,.76);
-  color:#fff;
-  font-family:'Syne',sans-serif;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:7px 11px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.16);
-  backdrop-filter:blur(10px);
-}
+    .ebook-badge{
+      position:absolute;
+      top:12px;
+      left:12px;
+      z-index:2;
+      background:rgba(0,0,0,.76);
+      color:#fff;
+      font-family:'Syne',sans-serif;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(10px);
+    }
 
-.ebook-badge.best-seller{
-  background:linear-gradient(135deg,#c0392b,#e74c3c);
-  border-color:rgba(255,255,255,.08);
-}
+    .ebook-badge.best-seller{
+      background:linear-gradient(135deg,#c0392b,#e74c3c);
+      border-color:rgba(255,255,255,.08);
+    }
 
-.ebook-card-body{
-  padding:14px 14px 16px;
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-  flex:1;
-}
+    .ebook-card-body{
+      padding:14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      flex:1;
+    }
 
-.ebook-card-title{
-  font-family:'Syne',sans-serif;
-  font-size:13px;
-  font-weight:700;
-  line-height:1.32;
-  color:var(--text);
-}
+    .ebook-card-title{
+      font-family:'Syne',sans-serif;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.32;
+      color:var(--text);
+    }
 
-.ebook-card-desc{
-  font-size:11px;
-  color:var(--muted);
-  line-height:1.5;
-  font-style:italic;
-  min-height:34px;
-}
+    .ebook-card-desc{
+      font-size:11px;
+      color:var(--muted);
+      line-height:1.5;
+      font-style:italic;
+      min-height:34px;
+    }
 
-.ebook-card-pricing{
-  display:flex;
-  align-items:baseline;
-  gap:6px;
-  margin-top:auto;
-  padding-top:6px;
-  flex-wrap:nowrap;
-  overflow:hidden;
-}
+    .ebook-card-pricing{
+      display:flex;
+      align-items:baseline;
+      gap:6px;
+      margin-top:auto;
+      padding-top:6px;
+      flex-wrap:nowrap;
+      overflow:hidden;
+    }
 
-.ebook-price-new{
-  font-family:'Syne',sans-serif;
-  font-size:13px;
-  font-weight:800;
-  color:var(--gold2);
-  white-space:nowrap;
-  flex-shrink:0;
-}
+    .ebook-price-new{
+      font-family:'Syne',sans-serif;
+      font-size:13px;
+      font-weight:800;
+      color:var(--gold2);
+      white-space:nowrap;
+      flex-shrink:0;
+    }
 
-.ebook-price-old{
-  font-size:10px;
-  color:#6f7890;
-  text-decoration:line-through;
-  white-space:nowrap;
-  flex-shrink:0;
-}
+    .ebook-price-old{
+      font-size:10px;
+      color:#6f7890;
+      text-decoration:line-through;
+      white-space:nowrap;
+      flex-shrink:0;
+    }
 
-.ebook-card-btn{
-  display:block;
-  width:100%;
-  text-align:center;
-  background:transparent;
-  border:1px solid rgba(216,178,106,.5);
-  color:var(--gold2);
-  font-family:'Syne',sans-serif;
-  font-size:9.5px;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  padding:10px 0;
-  border-radius:10px;
-  cursor:pointer;
-  transition:background .2s,color .2s;
-  margin-top:4px;
-}
+    .ebook-card-btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      background:transparent;
+      border:1px solid rgba(216,178,106,.5);
+      color:var(--gold2);
+      font-family:'Syne',sans-serif;
+      font-size:9.5px;
+      font-weight:700;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      padding:10px 0;
+      border-radius:10px;
+      cursor:pointer;
+      transition:background .2s,color .2s;
+      margin-top:4px;
+    }
 
-.ebook-card-btn:hover{
-  background:var(--gold);
-  color:#000;
-  border-color:var(--gold);
-}
+    .ebook-card-btn:hover{
+      background:var(--gold);
+      color:#000;
+      border-color:var(--gold);
+    }
 
-.ebook-note{
-  font-size:10px;
-  color:var(--muted);
-  margin-top:4px;
-}
+    .ebook-note{
+      font-size:10px;
+      color:var(--muted);
+      margin-top:4px;
+    }
 
-@media(max-width:900px){
-  .ebook-grid.premium-ebooks{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px;
-  }
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
 
-  .ebook-card-cover{
-    aspect-ratio:3/4;
-  }
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+    }
 
-  .ebook-card-body{
-    padding:12px 11px 14px;
-  }
+    .card-body{
+      padding:20px;
+      text-align:center;
+    }
 
-  .ebook-card-title{
-    font-size:12px;
-  }
+    .card h3{
+      font-size:1.08rem;
+      margin-bottom:10px;
+    }
 
-  .ebook-card-desc{
-    font-size:10.5px;
-    min-height:30px;
-  }
+    .card p{
+      font-size:.86rem;
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:14px;
+    }
 
-  .ebook-card-btn{
-    font-size:9.5px;
-    padding:9px 0;
-  }
-}
-    /* ═══════════════════════════════════
-       PORTFOLIO — MAQUETTES VISUELLES
-    ═══════════════════════════════════ */
-    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-    .project-card{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:rgba(17,30,51,.85);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;cursor:pointer;}
-    .project-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 28px 60px rgba(0,0,0,.5);}
-    .project-mockup{width:100%;height:240px;position:relative;overflow:hidden;flex-shrink:0;}
-    .project-info{padding:16px 18px 20px;}
-    .project-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
-    .project-info h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text);}
-    .project-info p{font-size:12px;color:var(--muted);line-height:1.5;}
-    .project-tech{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
-    .tech-pill{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--muted);}
-    @media(max-width:900px){.portfolio-grid{grid-template-columns:1fr;}}
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:22px;
+    }
 
-    /* ─── Reste du CSS inchangé ─── */
-    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
-    .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-    .ebook-img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#111e33;}
-    .card-body{padding:20px;text-align:center;}
-    .card h3{font-size:1.08rem;margin-bottom:10px;}
-    .card p{font-size:.86rem;color:var(--muted);line-height:1.7;margin-bottom:14px;}
-    .services-price-switch{margin-bottom:20px;}
-    .currency-label{color:var(--muted);font-size:.9rem;font-weight:700;margin-bottom:10px;display:block;}
-    .currency-switch{display:flex;gap:10px;flex-wrap:wrap;}
-    .currency-btn{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:700;}
-    .currency-btn.active,.currency-btn:hover{background:rgba(216,178,106,.14);color:var(--gold2);border-color:rgba(216,178,106,.35);}
-    .services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;}
-    .services-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:28px;transition:.25s ease;}
-    .services-card:hover{transform:translateY(-6px);border-color:rgba(77,143,255,.28);}
-    .services-featured{border-color:rgba(216,178,106,.42);background:linear-gradient(180deg,rgba(216,178,106,.08),rgba(255,255,255,.03));}
-    .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
-    .icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:1.1rem;}
-    .services-card h3{font-size:1.2rem;margin-bottom:10px;}
-    .compat{color:var(--muted);font-size:.88rem;margin-bottom:16px;}
-    .price{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
-    .price span{display:none;width:fit-content;padding:8px 12px;border-radius:12px;font-weight:800;}
-    .price .xof{background:rgba(0,87,255,.12);color:var(--blue2);display:inline-flex;}
-    .price .eur{background:rgba(255,255,255,.05);color:var(--text);}
-    .price .usd{background:rgba(216,178,106,.14);color:var(--gold2);}
-    .services-card ul{list-style:none;display:grid;gap:10px;margin-bottom:22px;}
-    .services-card li{padding-left:20px;color:#D9E1F2;font-size:.88rem;position:relative;}
-    .services-card li::before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:800;}
-    .premium-btn{display:flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:#111827;font-weight:900;cursor:pointer;}
-    .payment{background:linear-gradient(180deg,rgba(255,121,0,.05),rgba(0,87,255,.05));border-top:1px solid rgba(255,121,0,.10);border-bottom:1px solid rgba(0,87,255,.10);padding:28px 0;}
-    .payment-box{max-width:820px;margin:0 auto;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:28px;text-align:center;}
-    .pay-top{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
-    .pay-logo{width:46px;height:46px;object-fit:contain;border-radius:12px;background:#fff;padding:4px;}
-    .pay-row{margin:12px 0;color:var(--muted);line-height:1.8;}
-    .pay-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
-    .whats{background:linear-gradient(135deg,rgba(37,211,102,.95),rgba(28,168,79,.92));color:#fff;}
-    .cta-section-wrap{padding:82px 0;}
-    .cta-box{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:52px 32px;max-width:540px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;}
-    .cta-box h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);}
-    .btn-wa,.btn-mail{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:340px;padding:16px 32px;border-radius:12px;font-weight:700;transition:all .2s ease;}
-    .btn-wa{background:#2563eb;color:#fff;}
-    .btn-wa:hover{background:#1d4ed8;transform:translateY(-2px);}
-    .btn-mail{background:transparent;border:1px solid var(--line);color:var(--text);}
-    .footer{padding:28px 0 42px;color:var(--muted);text-align:center;border-top:1px solid var(--line);}
-    .faq-container{display:flex;flex-direction:column;gap:14px;max-width:800px;margin:0 auto;}
-    .faq-item{border:1px solid rgba(77,143,255,.18);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden;transition:.3s ease;}
-    .faq-question{width:100%;padding:18px 20px;background:transparent;border:none;color:var(--text);font-weight:800;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1rem;}
-    .faq-icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:rgba(0,87,255,.12);color:var(--blue2);font-size:14px;margin-right:10px;}
-    .faq-question span{font-size:1.4rem;color:var(--gold2);transition:.3s ease;}
-    .faq-answer{max-height:0;overflow:hidden;padding:0 20px;color:var(--muted);line-height:1.7;transition:max-height .4s ease,padding .3s ease;opacity:0;}
-    .faq-item.active .faq-answer{max-height:220px;padding:0 20px 18px;opacity:1;}
-    .faq-item.active .faq-question span{transform:rotate(45deg);color:var(--blue2);}
-    #topBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;z-index:999;background:#0057FF;color:white;box-shadow:0 10px 30px rgba(0,87,255,.3);}
+    .services-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+      transition:.25s ease;
+    }
+
+    .services-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(77,143,255,.28);
+    }
+
+    .services-featured{
+      border-color:rgba(216,178,106,.42);
+      background:linear-gradient(180deg,rgba(216,178,106,.08),rgba(255,255,255,.03));
+    }
+
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:18px;
+    }
+
+    .icon{
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.07);
+      font-size:1.1rem;
+    }
+
+    .services-card h3{
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .compat{
+      color:var(--muted);
+      font-size:.88rem;
+      margin-bottom:16px;
+    }
+
+    .price{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+      margin-bottom:18px;
+    }
+
+    .price span{
+      display:none;
+      width:fit-content;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:800;
+    }
+
+    .price .xof{
+      background:rgba(0,87,255,.12);
+      color:var(--blue2);
+      display:inline-flex;
+    }
+
+    .price .eur{
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+    }
+
+    .price .usd{
+      background:rgba(216,178,106,.14);
+      color:var(--gold2);
+    }
+
+    .services-card ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .services-card li{
+      padding-left:20px;
+      color:#D9E1F2;
+      font-size:.88rem;
+      position:relative;
+    }
+
+    .services-card li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--blue2);
+      font-weight:800;
+    }
+
+    .premium-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 18px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      border:none;
+      color:#111827;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .payment{
+      background:linear-gradient(180deg,rgba(255,121,0,.05),rgba(0,87,255,.05));
+      border-top:1px solid rgba(255,121,0,.10);
+      border-bottom:1px solid rgba(0,87,255,.10);
+      padding:28px 0;
+    }
+
+    .payment-box{
+      max-width:820px;
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:22px;
+      padding:28px;
+      text-align:center;
+    }
+
+    .pay-top{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .pay-logo{
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      border-radius:12px;
+      background:#fff;
+      padding:4px;
+    }
+
+    .pay-row{
+      margin:12px 0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .pay-actions{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+
+    .whats{
+      background:linear-gradient(135deg,rgba(37,211,102,.95),rgba(28,168,79,.92));
+      color:#fff;
+    }
+
+    .cta-section-wrap{
+      padding:82px 0;
+    }
+
+    .cta-box{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:22px;
+      padding:52px 32px;
+      max-width:540px;
+      margin:0 auto;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:22px;
+    }
+
+    .cta-box h2{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(1.8rem,4vw,2.6rem);
+    }
+
+    .btn-wa,.btn-mail{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      max-width:340px;
+      padding:16px 32px;
+      border-radius:12px;
+      font-weight:700;
+      transition:all .2s ease;
+    }
+
+    .btn-wa{
+      background:#2563eb;
+      color:#fff;
+    }
+
+    .btn-wa:hover{
+      background:#1d4ed8;
+      transform:translateY(-2px);
+    }
+
+    .btn-mail{
+      background:transparent;
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+
+    .footer{
+      padding:28px 0 42px;
+      color:var(--muted);
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
+
+    .faq-container{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      max-width:800px;
+      margin:0 auto;
+    }
+
+    .faq-item{
+      border:1px solid rgba(77,143,255,.18);
+      border-radius:16px;
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      overflow:hidden;
+      transition:.3s ease;
+    }
+
+    .faq-question{
+      width:100%;
+      padding:18px 20px;
+      background:transparent;
+      border:none;
+      color:var(--text);
+      font-weight:800;
+      text-align:left;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:1rem;
+    }
+
+    .faq-icon{
+      width:28px;
+      height:28px;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      background:rgba(0,87,255,.12);
+      color:var(--blue2);
+      font-size:14px;
+      margin-right:10px;
+    }
+
+    .faq-question span{
+      font-size:1.4rem;
+      color:var(--gold2);
+      transition:.3s ease;
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      padding:0 20px;
+      color:var(--muted);
+      line-height:1.7;
+      transition:max-height .4s ease,padding .3s ease;
+      opacity:0;
+    }
+
+    .faq-item.active .faq-answer{
+      max-height:220px;
+      padding:0 20px 18px;
+      opacity:1;
+    }
+
+    .faq-item.active .faq-question span{
+      transform:rotate(45deg);
+      color:var(--blue2);
+    }
+
+    #topBtn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:50px;
+      height:50px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      font-size:20px;
+      display:none;
+      z-index:999;
+      background:#0057FF;
+      color:white;
+      box-shadow:0 10px 30px rgba(0,87,255,.3);
+    }
+
     @media(max-width:900px){
       .grid-3,.services-grid{grid-template-columns:1fr;}
       .nav-search{display:none;}
@@ -329,8 +897,12 @@
       .hero{padding-top:56px;}
       .search-area{flex-direction:column;}
       .menu{display:none;}
-      .ebook-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-      .ebook-card-cover{height:200px;}
+      .ebook-grid.premium-ebooks{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+      .ebook-card-cover{aspect-ratio:3/4;}
+      .ebook-card-body{padding:12px 11px 14px;}
+      .ebook-card-title{font-size:12px;}
+      .ebook-card-desc{font-size:10.5px;min-height:30px;}
+      .ebook-card-btn{font-size:9.5px;padding:9px 0;}
     }
   </style>
 </head>
@@ -361,7 +933,9 @@
     </div>
   </div>
 </div>
+
 <div class="menu-overlay" id="menuOverlay"></div>
+
 <nav class="mobile-menu" id="mobileMenu">
   <a href="#services">Mes Services</a>
   <a href="#portfolio">Portfolio</a>
@@ -375,7 +949,9 @@
     <div class="badge"><span class="dot"></span><span data-i18n="hero.badge">Disponible pour de nouveaux projets</span></div>
     <h1 data-i18n="hero.title">TON SITE WEB.<br>TES CLIENTS.<br><span class="accent">TES VENTES.</span></h1>
     <p data-i18n="hero.subtitle">J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.</p>
-    <div class="actions"><a href="#services" class="btn btn-primary" data-i18n="hero.cta">Voir mes services</a></div>
+    <div class="actions">
+      <a href="#services" class="btn btn-primary" data-i18n="hero.cta">Voir mes services</a>
+    </div>
   </div>
 </header>
 
@@ -383,41 +959,97 @@
   <div class="wrap">
     <div class="label" data-i18n="services.label">Ce que je fais</div>
     <div class="title" data-i18n="services.title">Mes Services</div>
-    <div class="services-price-switch">
-      <span class="currency-label" data-i18n="services.currencyLabel">Prix / devise</span>
-      <div class="currency-switch">
-        <button class="currency-btn active" data-currency="xof">XOF</button>
-        <button class="currency-btn" data-currency="eur">EUR</button>
-        <button class="currency-btn" data-currency="usd">USD</button>
-      </div>
-    </div>
+
     <div class="services-grid">
-      <div class="services-card"><div class="top"><div class="badge" data-i18n="services.card1.badge">Démarrage</div><div class="icon">◦</div></div><h3 data-i18n="services.card1.title">Page de capture</h3><div class="compat" data-i18n="services.card1.compat">Compatible mobile / PC</div><div class="price"><span class="xof">24 000 XOF</span><span class="eur">37 EUR</span><span class="usd">40 USD</span></div><ul><li data-i18n="services.card1.li1">Design moderne</li><li data-i18n="services.card1.li2">Formulaire de capture</li><li data-i18n="services.card1.li3">Interface claire</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20capture." data-i18n="services.order">Commander</a></div>
-      <div class="services-card services-featured"><div class="top"><div class="badge" data-i18n="services.card2.badge">Offre principale</div><div class="icon">◈</div></div><h3 data-i18n="services.card2.title">Page de vente</h3><div class="compat" data-i18n="services.card2.compat">Compatible mobile / PC</div><div class="price"><span class="xof">42 000 XOF</span><span class="eur">65 EUR</span><span class="usd">70 USD</span></div><ul><li data-i18n="services.card2.li1">Structure de conversion</li><li data-i18n="services.card2.li2">Design premium</li><li data-i18n="services.card2.li3">Bouton d'action visible</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20vente." data-i18n="services.order">Commander</a></div>
-      <div class="services-card"><div class="top"><div class="badge" data-i18n="services.card3.badge">Pro</div><div class="icon">◦</div></div><h3 data-i18n="services.card3.title">Site vitrine</h3><div class="compat" data-i18n="services.card3.compat">Compatible mobile / PC</div><div class="price"><span class="xof">72 000 XOF</span><span class="eur">110 EUR</span><span class="usd">120 USD</span></div><ul><li data-i18n="services.card3.li1">3 à 5 pages</li><li data-i18n="services.card3.li2">Image professionnelle</li><li data-i18n="services.card3.li3">Structure propre</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20un%20site%20vitrine." data-i18n="services.order">Commander</a></div>
-      <div class="services-card services-featured"><div class="top"><div class="badge" data-i18n="services.card4.badge">Pack complet</div><div class="icon">◆</div></div><h3 data-i18n="services.card4.title">BOOST ULTIME</h3><div class="compat" data-i18n="services.card4.compat">Compatible mobile / PC</div><div class="price"><span class="xof">120 000 XOF</span><span class="eur">185 EUR</span><span class="usd">200 USD</span></div><ul><li data-i18n="services.card4.li1">Page de capture</li><li data-i18n="services.card4.li2">Page de vente</li><li data-i18n="services.card4.li3">Site vitrine</li><li data-i18n="services.card4.li4">Optimisation de base</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20le%20pack%20BOOST%20ULTIME." data-i18n="services.order">Commander</a></div>
+      <div class="services-card">
+        <div class="top"><div class="badge">Démarrage</div><div class="icon">◦</div></div>
+        <h3>Page de capture</h3>
+        <div class="compat">Compatible mobile / PC</div>
+        <div class="price">
+          <span class="xof">24 000 XOF</span>
+          <span class="eur">37 EUR</span>
+          <span class="usd">40 USD</span>
+        </div>
+        <ul>
+          <li>Design moderne</li>
+          <li>Formulaire de capture</li>
+          <li>Interface claire</li>
+        </ul>
+        <a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20capture.">Commander</a>
+      </div>
+
+      <div class="services-card services-featured">
+        <div class="top"><div class="badge">Offre principale</div><div class="icon">◈</div></div>
+        <h3>Page de vente</h3>
+        <div class="compat">Compatible mobile / PC</div>
+        <div class="price">
+          <span class="xof">42 000 XOF</span>
+          <span class="eur">65 EUR</span>
+          <span class="usd">70 USD</span>
+        </div>
+        <ul>
+          <li>Structure de conversion</li>
+          <li>Design premium</li>
+          <li>Bouton d'action visible</li>
+        </ul>
+        <a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20vente.">Commander</a>
+      </div>
+
+      <div class="services-card">
+        <div class="top"><div class="badge">Pro</div><div class="icon">◦</div></div>
+        <h3>Site vitrine</h3>
+        <div class="compat">Compatible mobile / PC</div>
+        <div class="price">
+          <span class="xof">72 000 XOF</span>
+          <span class="eur">110 EUR</span>
+          <span class="usd">120 USD</span>
+        </div>
+        <ul>
+          <li>3 à 5 pages</li>
+          <li>Image professionnelle</li>
+          <li>Structure propre</li>
+        </ul>
+        <a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20un%20site%20vitrine.">Commander</a>
+      </div>
+
+      <div class="services-card services-featured">
+        <div class="top"><div class="badge">Pack complet</div><div class="icon">◆</div></div>
+        <h3>BOOST ULTIME</h3>
+        <div class="compat">Compatible mobile / PC</div>
+        <div class="price">
+          <span class="xof">120 000 XOF</span>
+          <span class="eur">185 EUR</span>
+          <span class="usd">200 USD</span>
+        </div>
+        <ul>
+          <li>Page de capture</li>
+          <li>Page de vente</li>
+          <li>Site vitrine</li>
+          <li>Optimisation de base</li>
+        </ul>
+        <a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20le%20pack%20BOOST%20ULTIME.">Commander</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <div class="label" data-i18n="why.label">Pourquoi moi ?</div>
-    <div class="title" data-i18n="why.title">Un site web n'est pas une dépense. C'est un investissement.</div>
+    <div class="label">Pourquoi moi ?</div>
+    <div class="title">Un site web n'est pas une dépense. C'est un investissement.</div>
     <div style="max-width:850px;margin:0 auto 40px;text-align:center;">
-      <p style="color:var(--muted);line-height:1.9;" data-i18n="why.p1">Aujourd'hui, beaucoup de personnes peuvent créer un site internet. Mon objectif n'est pas simplement de te livrer un site joli à regarder. Je crée des sites pensés pour inspirer confiance, mettre en valeur ton activité et donner une image professionnelle à ton entreprise.</p>
-      <p style="color:var(--muted);line-height:1.9;margin-top:20px;" data-i18n="why.p2">Chaque projet est réalisé avec sérieux, attention aux détails et une seule priorité : <strong style="color:var(--gold2);">faire en sorte que ton activité paraisse aussi professionnelle que la valeur que tu apportes réellement.</strong></p>
+      <p style="color:var(--muted);line-height:1.9;">Aujourd'hui, beaucoup de personnes peuvent créer un site internet. Mon objectif n'est pas simplement de te livrer un site joli à regarder. Je crée des sites pensés pour inspirer confiance, mettre en valeur ton activité et donner une image professionnelle à ton entreprise.</p>
+      <p style="color:var(--muted);line-height:1.9;margin-top:20px;">Chaque projet est réalisé avec sérieux, attention aux détails et une seule priorité : <strong style="color:var(--gold2);">faire en sorte que ton activité paraisse aussi professionnelle que la valeur que tu apportes réellement.</strong></p>
     </div>
     <div class="services-grid">
-      <div class="services-card"><div class="icon">⚡</div><h3 data-i18n="why.card1.title">Rapidité</h3><p class="compat" data-i18n="why.card1.desc">Sites rapides et fluides pour une meilleure expérience.</p></div>
-      <div class="services-card"><div class="icon">📱</div><h3 data-i18n="why.card2.title">Compatible partout</h3><p class="compat" data-i18n="why.card2.desc">Parfait sur téléphone, tablette et ordinateur.</p></div>
-      <div class="services-card"><div class="icon">🎯</div><h3 data-i18n="why.card3.title">Orienté résultats</h3><p class="compat" data-i18n="why.card3.desc">Chaque page est conçue pour convertir.</p></div>
-      <div class="services-card"><div class="icon">🤝</div><h3 data-i18n="why.card4.title">Accompagnement</h3><p class="compat" data-i18n="why.card4.desc">Je reste disponible même après la livraison.</p></div>
+      <div class="services-card"><div class="icon">⚡</div><h3>Rapidité</h3><p class="compat">Sites rapides et fluides pour une meilleure expérience.</p></div>
+      <div class="services-card"><div class="icon">📱</div><h3>Compatible partout</h3><p class="compat">Parfait sur téléphone, tablette et ordinateur.</p></div>
+      <div class="services-card"><div class="icon">🎯</div><h3>Orienté résultats</h3><p class="compat">Chaque page est conçue pour convertir.</p></div>
+      <div class="services-card"><div class="icon">🤝</div><h3>Accompagnement</h3><p class="compat">Je reste disponible même après la livraison.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ACADÉMIE WEB -->
 <section class="section" id="academie-web">
   <div class="wrap">
     <div class="label" data-i18n="academy.label">Formation Développement Web</div>
@@ -431,7 +1063,7 @@
           <div class="ebook-card-desc">Structure complète d'un site web professionnel.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -442,7 +1074,7 @@
           <div class="ebook-card-desc">Flexbox, Grid et animations modernes.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -453,7 +1085,7 @@
           <div class="ebook-card-desc">Étape par étape avec projets réels.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -464,7 +1096,7 @@
           <div class="ebook-card-desc">HTML, CSS & JS pour devenir développeur.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -475,7 +1107,7 @@
           <div class="ebook-card-desc">Serveurs, bases de données et API.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -486,7 +1118,7 @@
           <div class="ebook-card-desc">Conception, développement et mise en ligne.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">15 000 XOF</span><span class="ebook-price-old">30 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -497,7 +1129,7 @@
           <div class="ebook-card-desc">Blogs, sites et boutiques en ligne.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -508,7 +1140,7 @@
           <div class="ebook-card-desc">Trouver des clients et générer des revenus.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+          <div class="ebook-note">Appuie puis valide le code dans l'application téléphone.</div>
         </div>
       </div>
 
@@ -516,565 +1148,242 @@
   </div>
 </section>
 
-<!-- BIBLIOTHÈQUE -->
 <section class="section" id="bibliotheque">
   <div class="wrap">
-    <div class="label" data-i18n="library.label">Ressources & Savoirs</div>
-    <div class="title" data-i18n="library.title">La Bibliothèque du Succès</div>
+    <div class="label">Ressources & Savoirs</div>
+    <div class="title">La Bibliothèque du Succès</div>
     <div class="search-area">
-      <input type="search" id="siteSearch" placeholder="Rechercher un ebook, un service..." data-i18n-placeholder="search.placeholder">
-      <button type="button" onclick="filterAllCards()" data-i18n="search.button">Rechercher</button>
+      <input type="search" id="siteSearch" placeholder="Rechercher un ebook, un service...">
+      <button type="button" onclick="filterAllCards()">Rechercher</button>
     </div>
-    <div class="ebook-grid" id="libraryCards">
 
+    <div class="ebook-grid premium-ebooks" id="libraryCards">
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="mindset-de.jpg" alt="Mindset"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.1.title">Mindset de Réussite Africaine</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</div>
+          <div class="ebook-card-title">Mindset de Réussite Africaine</div>
+          <div class="ebook-card-desc">Penser grand, agir juste, réussir sans limites.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="maitriser-ses.jpg" alt="Emotions"><span class="ebook-badge">Promo</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.2.title">Maîtriser ses Émotions</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.2.desc">L'art de garder le contrôle.</div>
+          <div class="ebook-card-title">Maîtriser ses Émotions</div>
+          <div class="ebook-card-desc">L'art de garder le contrôle.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="vendre-en-ligne.jpg" alt="Vente"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</div>
+          <div class="ebook-card-title">Vendre en Ligne de A à Z</div>
+          <div class="ebook-card-desc">Le guide complet pour lancer ton business.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="sortir-de la-procras.jpg" alt="Procrastination"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="sortir-de-la-procras.jpg" alt="Procrastination"><span class="ebook-badge">Promo</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.4.title">Sortir de la Procrastination</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.4.desc">Passer à l'action et reprendre le contrôle.</div>
+          <div class="ebook-card-title">Sortir de la Procrastination</div>
+          <div class="ebook-card-desc">Passer à l'action et reprendre le contrôle.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="reprendre-le-controle.jpg" alt="Controle"><span class="ebook-badge">Promo</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.5.title">Reprendre le Contrôle de sa Vie</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.5.desc">Guide pour l'équilibre et la discipline.</div>
+          <div class="ebook-card-title">Reprendre le Contrôle de sa Vie</div>
+          <div class="ebook-card-desc">Guide pour l'équilibre et la discipline.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="creer-des-revenus.jpg" alt="Revenus"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</div>
+          <div class="ebook-card-title">Créer des Revenus avec son Téléphone</div>
+          <div class="ebook-card-desc">Générer des revenus avec ton téléphone.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="sante-nutrition.jpg" alt="Santé"><span class="ebook-badge">Promo</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.7.title">Santé, Nutrition et Beauté Naturelle</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.7.desc">Approche naturelle pour rayonner.</div>
+          <div class="ebook-card-title">Santé, Nutrition et Beauté Naturelle</div>
+          <div class="ebook-card-desc">Approche naturelle pour rayonner.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
           <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="les-traits-de.jpg" alt="Masculinité"><span class="ebook-badge">Promo</span></div>
         <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.8.title">Les 5 Traits de la Masculinité</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.8.desc">Comprendre les archétypes masculins.</div>
+          <div class="ebook-card-title">Les Traits de l'Homme</div>
+          <div class="ebook-card-desc">Développement personnel et identité.</div>
           <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Traits de l'Homme'">Acheter →</button>
+          <div class="ebook-note">Appuie puis valide le code.</div>
         </div>
       </div>
-
-      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="les-pauvres-obeissent.jpg" alt="Riches"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<section class="section" id="portfolio">
+<section class="payment" id="contact">
   <div class="wrap">
-    <div class="label" data-i18n="portfolio.label">Réalisations</div>
-    <div class="title" data-i18n="portfolio.title">Quelques Projets</div>
-    <div class="portfolio-grid">
-
-      <!-- 1. Boutique iPhone -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="iph-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0a0a0a"/>
-                <stop offset="100%" stop-color="#1a1a2e"/>
-              </linearGradient>
-              <linearGradient id="iph-btn" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#c0c0c0"/>
-                <stop offset="100%" stop-color="#e8e8e8"/>
-              </linearGradient>
-            </defs>
-            <!-- fond -->
-            <rect width="600" height="240" fill="url(#iph-bg)"/>
-            <!-- nav bar -->
-            <rect width="600" height="36" fill="rgba(255,255,255,0.04)"/>
-            <text x="18" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="2">iPHONE STORE</text>
-            <text x="480" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Accueil</text>
-            <text x="520" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Shop</text>
-            <text x="557" y="24" font-family="sans-serif" font-size="10" fill="#aaa">📦</text>
-            <!-- hero text -->
-            <text x="24" y="72" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="3">NOUVEAUTÉ 2025</text>
-            <text x="24" y="96" font-family="sans-serif" font-size="20" font-weight="900" fill="white">iPhone 16 Pro</text>
-            <text x="24" y="114" font-family="sans-serif" font-size="11" fill="#bbb">Titanium · 256GB · 5G</text>
-            <!-- price -->
-            <text x="24" y="140" font-family="sans-serif" font-size="16" font-weight="800" fill="#e8e8e8">650 000 XOF</text>
-            <text x="24" y="156" font-family="sans-serif" font-size="9" fill="#666" text-decoration="line-through">750 000 XOF</text>
-            <!-- btn -->
-            <rect x="24" y="166" width="110" height="28" rx="6" fill="url(#iph-btn)"/>
-            <text x="79" y="185" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Commander →</text>
-            <!-- phone mockup right -->
-            <rect x="340" y="20" width="90" height="180" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-            <rect x="348" y="30" width="74" height="152" rx="8" fill="#111"/>
-            <circle cx="385" cy="185" r="6" fill="rgba(255,255,255,0.15)"/>
-            <rect x="353" y="36" width="64" height="128" rx="4" fill="#1a1a2e"/>
-            <text x="385" y="100" font-family="sans-serif" font-size="22" text-anchor="middle" fill="white"></text>
-            <text x="385" y="118" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">iPhone 16 Pro</text>
-            <!-- second phone -->
-            <rect x="448" y="40" width="82" height="165" rx="13" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            <rect x="455" y="50" width="68" height="140" rx="7" fill="#0d0d1a"/>
-            <rect x="460" y="56" width="58" height="118" rx="3" fill="#16213e"/>
-            <text x="489" y="120" font-family="sans-serif" font-size="20" text-anchor="middle" fill="white">📷</text>
-            <!-- badge -->
-            <rect x="500" y="20" width="66" height="20" rx="4" fill="#e8c97a"/>
-            <text x="533" y="34" font-family="sans-serif" font-size="9" font-weight="800" fill="#000" text-anchor="middle">BEST PRICE</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(232,201,122,.15);color:#e8c97a;border:1px solid rgba(232,201,122,.3);">Boutique iPhone</span>
-          <h3>iPhone Store BF</h3>
-          <p>Boutique en ligne spécialisée iPhone avec catalogue produits, comparateur de modèles et paiement Orange Money.</p>
-          <div class="project-tech">
-            <span class="tech-pill">E-commerce</span>
-            <span class="tech-pill">Orange Money</span>
-            <span class="tech-pill">Responsive</span>
-          </div>
-        </div>
+    <div class="payment-box">
+      <div class="pay-top">
+        <img src="logo-site.jpg" class="pay-logo" alt="Balima Web Developer">
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;">Contact & Paiement</h2>
       </div>
-
-      <!-- 2. Page de vente ebook -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sale-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0f1a35"/>
-                <stop offset="100%" stop-color="#1a0a2e"/>
-              </linearGradient>
-              <linearGradient id="sale-cta" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#0057ff"/>
-                <stop offset="100%" stop-color="#4d8fff"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="240" fill="url(#sale-bg)"/>
-            <!-- glow -->
-            <ellipse cx="300" cy="120" rx="200" ry="80" fill="rgba(0,87,255,0.08)"/>
-            <!-- headline -->
-            <text x="300" y="52" font-family="sans-serif" font-size="8" fill="#4d8fff" letter-spacing="4" text-anchor="middle">FORMATION EN LIGNE</text>
-            <text x="300" y="76" font-family="sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Maîtrise le Web</text>
-            <text x="300" y="94" font-family="sans-serif" font-size="13" font-weight="700" fill="#F7DEAB" text-anchor="middle">de Zéro à Professionnel</text>
-            <!-- bullets -->
-            <text x="140" y="118" font-family="sans-serif" font-size="10" fill="#aaa">✓  HTML, CSS, JavaScript</text>
-            <text x="140" y="134" font-family="sans-serif" font-size="10" fill="#aaa">✓  Projets réels inclus</text>
-            <text x="140" y="150" font-family="sans-serif" font-size="10" fill="#aaa">✓  Accès à vie</text>
-            <!-- price block -->
-            <rect x="350" y="104" width="160" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(77,143,255,0.3)" stroke-width="1"/>
-            <text x="430" y="126" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle" text-decoration="line-through">25 000 XOF</text>
-            <text x="430" y="148" font-family="sans-serif" font-size="20" font-weight="800" fill="#F7DEAB" text-anchor="middle">10 000 XOF</text>
-            <text x="430" y="164" font-family="sans-serif" font-size="8" fill="#4d8fff" text-anchor="middle">-60% aujourd'hui</text>
-            <!-- CTA -->
-            <rect x="140" y="166" width="320" height="34" rx="8" fill="url(#sale-cta)"/>
-            <text x="300" y="189" font-family="sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">🚀 Je veux accéder maintenant</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(77,143,255,.15);color:#4d8fff;border:1px solid rgba(77,143,255,.3);">Page de Vente</span>
-          <h3>Landing Page Formation Web</h3>
-          <p>Page de vente haute conversion pour formation digitale avec compte à rebours, témoignages et CTA optimisé.</p>
-          <div class="project-tech">
-            <span class="tech-pill">Copywriting</span>
-            <span class="tech-pill">Conversion</span>
-            <span class="tech-pill">Mobile-first</span>
-          </div>
-        </div>
+      <div class="pay-row">WhatsApp : +226 07 19 02 17</div>
+      <div class="pay-row">Commande rapide, réponse directe, accompagnement professionnel.</div>
+      <div class="pay-actions">
+        <a class="btn btn-primary whats" target="_blank" href="https://wa.me/22607190217">WhatsApp</a>
+        <a class="btn btn-secondary btn-mail" href="mailto:balima@example.com">Email</a>
       </div>
-
-      <!-- 3. Site vitrine restaurant -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="rest-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#1a0f00"/>
-                <stop offset="100%" stop-color="#2d1a00"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="240" fill="url(#rest-bg)"/>
-            <!-- texture dots -->
-            <circle cx="80" cy="30" r="40" fill="rgba(212,160,30,0.08)"/>
-            <circle cx="520" cy="200" r="60" fill="rgba(212,160,30,0.06)"/>
-            <!-- nav -->
-            <rect width="600" height="38" fill="rgba(0,0,0,0.4)"/>
-            <text x="20" y="25" font-family="serif" font-size="13" font-weight="700" fill="#D4A01E" letter-spacing="3">SAVEURS D'AFRIQUE</text>
-            <text x="430" y="24" font-family="sans-serif" font-size="9" fill="#aaa">Menu</text>
-            <text x="470" y="24" font-family="sans-serif" font-size="9" fill="#aaa">À propos</text>
-            <text x="515" y="24" font-family="sans-serif" font-size="9" fill="#D4A01E">Réserver</text>
-            <!-- hero image zone -->
-            <rect x="320" y="38" width="280" height="202" fill="rgba(0,0,0,0.3)"/>
-            <text x="460" y="140" font-family="sans-serif" font-size="48" text-anchor="middle" fill="rgba(255,255,255,0.15)">🍽️</text>
-            <!-- content -->
-            <text x="20" y="70" font-family="sans-serif" font-size="8" fill="#D4A01E" letter-spacing="3">RESTAURANT GASTRONOMIQUE</text>
-            <text x="20" y="98" font-family="serif" font-size="24" font-weight="700" fill="white">Une cuisine</text>
-            <text x="20" y="124" font-family="serif" font-size="24" font-weight="700" fill="#D4A01E">d'exception</text>
-            <text x="20" y="148" font-family="sans-serif" font-size="10" fill="#bbb">Vendredi – Dimanche · 12h–22h</text>
-            <text x="20" y="162" font-family="sans-serif" font-size="10" fill="#bbb">Ouagadougou, Burkina Faso</text>
-            <!-- stars -->
-            <text x="20" y="182" font-family="sans-serif" font-size="12" fill="#D4A01E">★★★★★</text>
-            <text x="100" y="182" font-family="sans-serif" font-size="9" fill="#888">4.9 · 120 avis</text>
-            <!-- btn -->
-            <rect x="20" y="194" width="130" height="28" rx="6" fill="#D4A01E"/>
-            <text x="85" y="213" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Réserver une table</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(212,160,30,.15);color:#D4A01E;border:1px solid rgba(212,160,30,.3);">Site Vitrine</span>
-          <h3>Saveurs d'Afrique – Restaurant</h3>
-          <p>Site vitrine élégant pour restaurant gastronomique avec menu interactif, galerie et système de réservation.</p>
-          <div class="project-tech">
-            <span class="tech-pill">Site Vitrine</span>
-            <span class="tech-pill">Réservation</span>
-            <span class="tech-pill">Galerie</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Boutique en ligne mode -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="shop-bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f5f0eb"/>
-                <stop offset="100%" stop-color="#ede5da"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="240" fill="url(#shop-bg)"/>
-            <!-- nav -->
-            <rect width="600" height="36" fill="rgba(255,255,255,0.8)"/>
-            <text x="20" y="24" font-family="serif" font-size="13" font-weight="700" fill="#1a1a1a" letter-spacing="4">ÉLÉGANCE BF</text>
-            <text x="420" y="23" font-family="sans-serif" font-size="9" fill="#555">Femme</text>
-            <text x="455" y="23" font-family="sans-serif" font-size="9" fill="#555">Homme</text>
-            <text x="494" y="23" font-family="sans-serif" font-size="9" fill="#555">Soldes</text>
-            <text x="545" y="23" font-family="sans-serif" font-size="12" fill="#1a1a1a">🛒</text>
-            <!-- product cards -->
-            <!-- card 1 -->
-            <rect x="16" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
-            <rect x="16" y="46" width="120" height="110" rx="8" fill="#e8ddd0"/>
-            <text x="76" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👗</text>
-            <text x="76" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Robe Soirée</text>
-            <text x="76" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">35 000 XOF</text>
-            <rect x="28" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
-            <text x="76" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <!-- card 2 -->
-            <rect x="148" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
-            <rect x="148" y="46" width="120" height="110" rx="8" fill="#d4c5b0"/>
-            <text x="208" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👔</text>
-            <text x="208" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Costume Homme</text>
-            <text x="208" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">58 000 XOF</text>
-            <rect x="160" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
-            <text x="208" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <!-- card 3 -->
-            <rect x="280" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
-            <rect x="280" y="46" width="120" height="110" rx="8" fill="#c8b99a"/>
-            <text x="340" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👠</text>
-            <rect x="280" y="46" width="44" height="18" rx="3" fill="#e74c3c"/>
-            <text x="302" y="59" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">-30%</text>
-            <text x="340" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Escarpins</text>
-            <text x="340" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">22 000 XOF</text>
-            <rect x="292" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
-            <text x="340" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <!-- card 4 hint -->
-            <rect x="412" y="46" width="80" height="170" rx="8" fill="rgba(255,255,255,0.5)"/>
-            <text x="452" y="136" font-family="sans-serif" font-size="20" text-anchor="middle" fill="rgba(0,0,0,0.15)">›</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(26,26,26,.08);color:#1a1a1a;border:1px solid rgba(26,26,26,.2);">Boutique en Ligne</span>
-          <h3>Élégance BF – Mode & Prêt-à-porter</h3>
-          <p>Boutique e-commerce mode avec catalogue filtrable, panier intelligent et paiement mobile money intégré.</p>
-          <div class="project-tech">
-            <span class="tech-pill">Boutique</span>
-            <span class="tech-pill">Panier</span>
-            <span class="tech-pill">Mobile Money</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<section class="section" id="avis">
+<section class="cta-section-wrap">
   <div class="wrap">
-    <div class="label" data-i18n="reviews.label">Témoignages</div>
-    <div class="title" data-i18n="reviews.title">Ce que disent mes clients</div>
-    <div class="services-grid">
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Issa Traoré</h3><p class="compat">J'ai commandé un site vitrine, le résultat est très propre et professionnel.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐⭐ Aïcha Ouédraogo</h3><p class="compat">"Mindset de Réussite Africaine" m'a aidé à changer ma vision.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Moussa Kaboré</h3><p class="compat">Site rapide, fonctionne bien sur téléphone. Travail sérieux.</p></div>
-      <div class="services-card"><h3>⭐⭐⭐⭐☆ Fatoumata Coulibaly</h3><p class="compat">Contenu intéressant et facile à lire.</p></div>
+    <div class="cta-box">
+      <h2>Prêt à lancer ton projet ?</h2>
+      <a href="https://wa.me/22607190217" class="btn-wa" target="_blank">Me contacter sur WhatsApp</a>
+      <a href="mailto:balima@example.com" class="btn-mail">M'écrire par email</a>
     </div>
   </div>
 </section>
-
-<div style="text-align:center;margin-top:30px;">
-  <a href="https://wa.me/22607190217?text=Bonjour%2C%20je%20souhaite%20laisser%20un%20avis" class="btn btn-primary">💬 Laisser un avis WhatsApp</a>
-  <p style="color:var(--muted);margin-top:10px;margin-bottom:60px;">Les retours sont les bienvenus.</p>
-</div>
 
 <section class="section" id="faq">
   <div class="wrap">
-    <div class="label" data-i18n="faq.label">FAQ</div>
-    <div class="title" data-i18n="faq.title">Questions fréquentes</div>
+    <div class="label">FAQ</div>
+    <div class="title">Questions fréquentes</div>
     <div class="faq-container">
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">💰</div><span data-i18n="faq.q1">Est-ce que ça peut vraiment me faire gagner plus ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a1">Oui. Un site web est votre boutique en ligne, accessible 24h/24.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">⚡</div><span data-i18n="faq.q2">Dois-je être expert en informatique ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a2">Non, tout est simple et expliqué.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">📱</div><span data-i18n="faq.q3">Tout fonctionne sur téléphone ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a3">Oui, tout est optimisé mobile.</div></div>
-      <div class="faq-item"><button class="faq-question"><div class="left"><div class="faq-icon">🚀</div><span data-i18n="faq.q4">Délai de livraison ?</span></div><span>+</span></button><div class="faq-answer" data-i18n="faq.a4">Ebook immédiat, site web 24h à 5 jours.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section payment" id="paiement">
-  <div class="wrap">
-    <div class="label" data-i18n="payment.label">Paiement</div>
-    <div class="title" data-i18n="payment.title">Paiement Orange Money</div>
-    <div class="payment-box">
-      <div class="pay-top"><img src="logo-Orange.jpg" alt="Orange Money" class="pay-logo"><strong data-i18n="payment.secure">Paiement sécurisé par Orange Money</strong></div>
-      <div class="pay-row">Montant : <strong id="paymentAmount">5 000 XOF</strong></div>
-      <div class="pay-row">Numéro Orange Money : <strong>+226 07190217</strong></div>
-      <div class="pay-row">Après paiement, clique sur <strong>J'ai payé</strong> pour confirmer.</div>
-      <div class="pay-actions">
-        <a href="https://wa.me/22607190217?text=J%27ai%20pay%C3%A9%20un%20ebook" class="btn whats" data-i18n="payment.paid">J'ai payé</a>
-        <a href="https://wa.me/22607190217" class="btn btn-secondary" data-i18n="payment.question">Poser une question</a>
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-icon">?</span>Combien de temps pour livrer un site ?<span>+</span></button>
+        <div class="faq-answer">Le délai dépend du type de projet, mais une page simple peut être livrée rapidement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-icon">?</span>Travaillez-vous avec des clients au Burkina Faso ?<span>+</span></button>
+        <div class="faq-answer">Oui, je travaille avec des clients à Ouagadougou et partout au Burkina Faso.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="faq-icon">?</span>Les ebooks sont-ils accessibles sur téléphone ?<span>+</span></button>
+        <div class="faq-answer">Oui, la boutique et les ebooks sont conçus pour être lisibles sur mobile.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section-wrap" id="contact">
-  <div class="wrap">
-    <div class="label" data-i18n="contact.label">Contact</div>
-    <div class="cta-box">
-      <h2 data-i18n="contact.title">Prêt à lancer ton projet ?</h2>
-      <p data-i18n="contact.subtitle">Ce que tu vends a de la valeur. Ton site doit le montrer.</p>
-      <a href="https://wa.me/22607190217" class="btn-wa">💬 <span data-i18n="contact.whatsapp">WhatsApp</span></a>
-      <a href="mailto:moussabalima07@gmail.com" class="btn-mail">✉️ <span data-i18n="contact.email">Email</span></a>
-      <p style="color:var(--gold2);font-weight:700;">✓ Réponse rapide<br>✓ Livraison rapide<br>✓ Accompagnement</p>
-    </div>
-  </div>
-</section>
+<footer class="footer">
+  <div class="wrap">© 2026 Balima Web Developer. Tous droits réservés.</div>
+</footer>
 
-<footer class="footer"><div class="wrap" data-i18n="footer.text">© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · Tous droits réservés</div></footer>
 <button id="topBtn">↑</button>
 
 <script>
-const translations = {
-  fr: {
-    "brand":"BALIMA WEB<br>DEVELOPER","search.placeholder":"Rechercher...","search.button":"Rechercher",
-    "nav.services":"Mes Services","nav.library":"Bibliothèque","nav.contact":"Me contacter",
-    "hero.badge":"Disponible pour de nouveaux projets","hero.title":"TON SITE WEB.<br>TES CLIENTS.<br><span class='accent'>TES VENTES.</span>",
-    "hero.subtitle":"J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.","hero.cta":"Voir mes services",
-    "services.label":"Ce que je fais","services.title":"Mes Services","services.currencyLabel":"Prix / devise",
-    "services.card1.badge":"Démarrage","services.card1.title":"Page de capture","services.card1.compat":"Compatible mobile / PC","services.card1.li1":"Design moderne","services.card1.li2":"Formulaire de capture","services.card1.li3":"Interface claire",
-    "services.card2.badge":"Offre principale","services.card2.title":"Page de vente","services.card2.compat":"Compatible mobile / PC","services.card2.li1":"Structure de conversion","services.card2.li2":"Design premium","services.card2.li3":"Bouton d'action visible",
-    "services.card3.badge":"Pro","services.card3.title":"Site vitrine","services.card3.compat":"Compatible mobile / PC","services.card3.li1":"3 à 5 pages","services.card3.li2":"Image professionnelle","services.card3.li3":"Structure propre",
-    "services.card4.badge":"Pack complet","services.card4.title":"BOOST ULTIME","services.card4.compat":"Compatible mobile / PC","services.card4.li1":"Page de capture","services.card4.li2":"Page de vente","services.card4.li3":"Site vitrine","services.card4.li4":"Optimisation de base",
-    "services.order":"Commander",
-    "why.label":"Pourquoi moi ?","why.title":"Un site web n'est pas une dépense. C'est un investissement.",
-    "why.p1":"Aujourd'hui, beaucoup de personnes peuvent créer un site internet. Mon objectif n'est pas simplement de te livrer un site joli à regarder.","why.p2":"Chaque projet est réalisé avec sérieux, attention aux détails et une seule priorité.",
-    "why.card1.title":"Rapidité","why.card1.desc":"Sites rapides et fluides.","why.card2.title":"Compatible partout","why.card2.desc":"Parfait sur tous les appareils.","why.card3.title":"Orienté résultats","why.card3.desc":"Conçu pour convertir.","why.card4.title":"Accompagnement","why.card4.desc":"Disponible après livraison.",
-    "academy.label":"Formation Développement Web","academy.title":"Académie Web BALIMA",
-    "library.label":"Ressources & Savoirs","library.title":"La Bibliothèque du Succès",
-    "ebooks.note":"Appuie puis valide le code dans l'application téléphone.",
-    "ebooks.1.title":"Mindset de Réussite Africaine","ebooks.1.desc":"Penser grand, agir juste, réussir sans limites.",
-    "ebooks.2.title":"Maîtriser ses Émotions","ebooks.2.desc":"L'art de garder le contrôle.",
-    "ebooks.3.title":"Vendre en Ligne de A à Z","ebooks.3.desc":"Le guide complet pour lancer ton business.",
-    "ebooks.4.title":"Sortir de la Procrastination","ebooks.4.desc":"Passer à l'action et reprendre le contrôle.",
-    "ebooks.5.title":"Reprendre le Contrôle de sa Vie","ebooks.5.desc":"Guide pour l'équilibre et la discipline.",
-    "ebooks.6.title":"Créer des Revenus avec son Téléphone","ebooks.6.desc":"Générer des revenus avec ton téléphone.",
-    "ebooks.7.title":"Santé, Nutrition et Beauté Naturelle","ebooks.7.desc":"Approche naturelle pour rayonner.",
-    "ebooks.8.title":"Les 5 Traits de la Masculinité","ebooks.8.desc":"Comprendre les archétypes masculins.",
-    "ebooks.9.title":"Les Pauvres Obéissent, Les Riches Négocient","ebooks.9.desc":"État d'esprit et négociation financière.",
-    "portfolio.label":"Réalisations","portfolio.title":"Quelques Projets",
-    "reviews.label":"Témoignages","reviews.title":"Ce que disent mes clients",
-    "faq.label":"FAQ","faq.title":"Questions fréquentes","faq.q1":"Est-ce que ça peut vraiment me faire gagner plus ?","faq.a1":"Oui. Un site web est votre boutique en ligne, accessible 24h/24.","faq.q2":"Dois-je être expert en informatique ?","faq.a2":"Non, tout est simple et expliqué.","faq.q3":"Tout fonctionne sur téléphone ?","faq.a3":"Oui, tout est optimisé mobile.","faq.q4":"Délai de livraison ?","faq.a4":"Ebook immédiat, site web 24h à 5 jours.",
-    "payment.label":"Paiement","payment.title":"Paiement Orange Money","payment.secure":"Paiement sécurisé par Orange Money","payment.paid":"J'ai payé","payment.question":"Poser une question",
-    "contact.label":"Contact","contact.title":"Prêt à lancer ton projet ?","contact.subtitle":"Ce que tu vends a de la valeur. Ton site doit le montrer.","contact.whatsapp":"WhatsApp","contact.email":"Email",
-    "footer.text":"© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · Tous droits réservés"
-  },
-  en: {
-    "brand":"BALIMA WEB<br>DEVELOPER","search.placeholder":"Search...","search.button":"Search",
-    "nav.services":"My Services","nav.library":"Library","nav.contact":"Contact me",
-    "hero.badge":"Available for new projects","hero.title":"YOUR WEBSITE.<br>YOUR CLIENTS.<br><span class='accent'>YOUR SALES.</span>",
-    "hero.subtitle":"I help entrepreneurs sell faster with clean, fast websites built to convert.","hero.cta":"See my services",
-    "services.label":"What I do","services.title":"My Services","services.currencyLabel":"Price / currency",
-    "services.card1.badge":"Starter","services.card1.title":"Capture Page","services.card1.compat":"Mobile / PC friendly","services.card1.li1":"Modern design","services.card1.li2":"Lead capture form","services.card1.li3":"Clear interface",
-    "services.card2.badge":"Main offer","services.card2.title":"Sales Page","services.card2.compat":"Mobile / PC friendly","services.card2.li1":"Conversion structure","services.card2.li2":"Premium design","services.card2.li3":"Visible CTA button",
-    "services.card3.badge":"Pro","services.card3.title":"Showcase Website","services.card3.compat":"Mobile / PC friendly","services.card3.li1":"3 to 5 pages","services.card3.li2":"Professional image","services.card3.li3":"Clean structure",
-    "services.card4.badge":"Full pack","services.card4.title":"ULTIMATE BOOST","services.card4.compat":"Mobile / PC friendly","services.card4.li1":"Capture page","services.card4.li2":"Sales page","services.card4.li3":"Showcase site","services.card4.li4":"Basic optimization",
-    "services.order":"Order",
-    "why.label":"Why me?","why.title":"A website is not an expense. It's an investment.",
-    "why.p1":"Many people can build a website. My goal is not just to deliver a pretty site.","why.p2":"Every project is done with care and one priority: making your business look as professional as the value you bring.",
-    "why.card1.title":"Speed","why.card1.desc":"Fast and smooth sites.","why.card2.title":"Fully responsive","why.card2.desc":"Works on all devices.","why.card3.title":"Result-oriented","why.card3.desc":"Designed to convert.","why.card4.title":"Support","why.card4.desc":"Available after delivery.",
-    "academy.label":"Web Development Training","academy.title":"BALIMA Web Academy",
-    "library.label":"Resources & Knowledge","library.title":"Success Library",
-    "ebooks.note":"Tap then validate the code in the phone app.",
-    "ebooks.1.title":"African Success Mindset","ebooks.1.desc":"Think big, act right, succeed without limits.",
-    "ebooks.2.title":"Master Your Emotions","ebooks.2.desc":"The art of staying in control.",
-    "ebooks.3.title":"Sell Online from A to Z","ebooks.3.desc":"The complete guide to launching your business.",
-    "ebooks.4.title":"Stop Procrastinating","ebooks.4.desc":"Take action and regain control.",
-    "ebooks.5.title":"Take Back Control of Your Life","ebooks.5.desc":"Guide for balance and discipline.",
-    "ebooks.6.title":"Make Money with Your Phone","ebooks.6.desc":"Generate income with your phone.",
-    "ebooks.7.title":"Health, Nutrition & Natural Beauty","ebooks.7.desc":"A natural approach to radiance.",
-    "ebooks.8.title":"The 5 Traits of Masculinity","ebooks.8.desc":"Understanding male archetypes.",
-    "ebooks.9.title":"The Poor Obey, The Rich Negotiate","ebooks.9.desc":"Financial mindset and negotiation.",
-    "portfolio.label":"Portfolio","portfolio.title":"Some Projects",
-    "reviews.label":"Testimonials","reviews.title":"What my clients say",
-    "faq.label":"FAQ","faq.title":"Frequently Asked Questions","faq.q1":"Will it really help me earn more?","faq.a1":"Yes. A website is your online store, open 24/7.","faq.q2":"Do I need to be a tech expert?","faq.a2":"No, everything is simple and explained.","faq.q3":"Does it work on mobile?","faq.a3":"Yes, fully mobile-optimized.","faq.q4":"Delivery time?","faq.a4":"Ebook instantly, website 24h to 5 days.",
-    "payment.label":"Payment","payment.title":"Orange Money Payment","payment.secure":"Secure payment via Orange Money","payment.paid":"I've paid","payment.question":"Ask a question",
-    "contact.label":"Contact","contact.title":"Ready to launch your project?","contact.subtitle":"What you sell has value. Your website should show it.","contact.whatsapp":"WhatsApp","contact.email":"Email",
-    "footer.text":"© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · All rights reserved"
+  const menuBtn = document.getElementById('menuBtn');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const body = document.body;
+
+  function toggleMenu(){
+    body.classList.toggle('menu-open');
   }
-};
 
-let currentLang = 'fr';
-let currentCurrency = 'xof';
+  menuBtn.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
 
-function setLanguage(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if(translations[lang][key]) {
-      if(translations[lang][key].includes('<')) el.innerHTML = translations[lang][key];
-      else el.textContent = translations[lang][key];
-    }
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('active');
+    });
   });
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if(translations[lang][key]) el.placeholder = translations[lang][key];
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-}
 
-function setCurrency(currency) {
-  currentCurrency = currency;
-  document.querySelectorAll('.currency-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.currency === currency));
-  // Services cards
-  document.querySelectorAll('.services-card .price span').forEach(span => span.style.display = 'none');
-  document.querySelectorAll('.services-card .price .' + currency).forEach(span => span.style.display = 'inline-flex');
-  // Ebook cards
-  const sym = currency === 'xof' ? 'XOF' : currency === 'eur' ? 'EUR' : 'USD';
-  document.querySelectorAll('.ebook-card').forEach(card => {
-    const priceEl = card.querySelector('.price-display');
-    const val = card.dataset['price' + currency];
-    if(priceEl && val) {
-      priceEl.textContent = parseInt(val).toLocaleString('fr-FR') + ' ' + sym;
-    }
+  const topBtn = document.getElementById('topBtn');
+  window.addEventListener('scroll', () => {
+    topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
   });
-}
+  topBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
-function filterAllCards() {
-  const q = (document.getElementById('siteSearch')?.value || document.getElementById('siteSearchTop')?.value || '').toLowerCase().trim();
-  document.querySelectorAll('.ebook-card, .card').forEach(card => {
-    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
-  });
-}
-
-function handleBuy(btn) {
-  const code = btn.getAttribute('data-code');
-  const message = btn.getAttribute('data-message');
-  if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    window.location.href = 'tel:' + code.replace(/#/g, '%23');
-  } else {
-    window.open('https://wa.me/22607190217?text=' + encodeURIComponent(message || 'Bonjour, je souhaite acheter un ebook'), '_blank');
+  function filterAllCards(){
+    const q1 = document.getElementById('siteSearchTop')?.value?.toLowerCase().trim() || '';
+    const q2 = document.getElementById('siteSearch')?.value?.toLowerCase().trim() || '';
+    const q = (q1 || q2).trim();
+    const cards = document.querySelectorAll('.ebook-card, .services-card, .card');
+    cards.forEach(card => {
+      const txt = card.innerText.toLowerCase();
+      card.style.display = txt.includes(q) ? '' : 'none';
+    });
   }
-}
 
-document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
-document.querySelectorAll('.currency-btn').forEach(btn => btn.addEventListener('click', () => setCurrency(btn.dataset.currency)));
-document.querySelectorAll('.ebook-card-btn').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); handleBuy(btn); }));
-document.getElementById('siteSearch')?.addEventListener('input', filterAllCards);
-document.getElementById('siteSearchTop')?.addEventListener('input', filterAllCards);
+  document.getElementById('siteSearchTop')?.addEventListener('input', filterAllCards);
+  document.getElementById('siteSearch')?.addEventListener('input', filterAllCards);
 
-const menuBtn = document.getElementById('menuBtn');
-const overlay = document.getElementById('menuOverlay');
-function toggleMenu(open) { document.body.classList.toggle('menu-open', open); }
-menuBtn.addEventListener('click', () => toggleMenu(!document.body.classList.contains('menu-open')));
-overlay.addEventListener('click', () => toggleMenu(false));
-document.getElementById('mobileMenu').querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleMenu(false); });
-
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    document.querySelectorAll('.faq-item').forEach(el => { if(el !== item) el.classList.remove('active'); });
-    item.classList.toggle('active');
+  document.querySelectorAll('.currency-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cur = btn.getAttribute('data-currency');
+      document.querySelectorAll('.services-card').forEach(card => {
+        card.querySelectorAll('.price span').forEach(span => span.style.display = 'none');
+        const active = card.querySelector('.price .' + cur);
+        if(active) active.style.display = 'inline-flex';
+      });
+      document.querySelectorAll('.ebook-card').forEach(card => {
+        const span = card.querySelector('.price-display');
+        if(span){
+          const xof = card.getAttribute('data-price-xof');
+          const eur = card.getAttribute('data-price-eur');
+          const usd = card.getAttribute('data-price-usd');
+          span.textContent = cur === 'eur' ? `${eur} EUR` : cur === 'usd' ? `${usd} USD` : `${xof} XOF`;
+        }
+      });
+    });
   });
-});
 
-const topBtn = document.getElementById('topBtn');
-window.addEventListener('scroll', () => { topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
-topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
 
-setLanguage('fr');
-setCurrency('xof');
+  document.querySelectorAll('.ebook-card-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const code = btn.getAttribute('data-code');
+      const message = btn.getAttribute('data-message');
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(`${message}
+Code: ${code}`).catch(()=>{});
+      }
+      window.open(`https://wa.me/22607190217?text=${encodeURIComponent(message)}`, '_blank');
+    });
+  });
 </script>
+
 </body>
-</html>
+                                                    </html>
