@@ -16,7 +16,7 @@
     @keyframes moveGradient{0%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,30px) scale(1.1);}100%{transform:translate(40px,-30px) scale(1.05);}}
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;display:block;}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+    .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
     .nav{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);background:rgba(8,12,20,.78);border-bottom:1px solid var(--line);}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;}
     .brand{display:flex;align-items:center;gap:16px;font-weight:700;flex-shrink:0;}
@@ -75,15 +75,15 @@
     /* Badge repositionné en bas de la couverture */
     .ebook-badge{position:absolute;bottom:8px;left:8px;background:var(--gold);color:#000;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:4px;text-align:center;width:auto;display:inline-block;}
     .ebook-card-body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:7px;flex:1;}
-    .ebook-card-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;line-height:1.3;color:var(--text);}
-    .ebook-card-desc{font-size:11px;color:var(--muted);line-height:1.4;font-style:italic;}
+    .ebook-card-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;line-height:1.3;color:var(--text);}
+    .ebook-card-desc{font-size:13px;color:var(--muted);line-height:1.4;font-style:italic;}
     /* Prix sur une seule ligne — nowrap + baseline */
-    .ebook-card-pricing{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:6px;flex-wrap:nowrap;overflow:hidden;}
-    .ebook-price-new{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
-    .ebook-price-old{font-size:10px;color:#666;text-decoration:line-through;white-space:nowrap;flex-shrink:0;}
-    .ebook-card-btn{display:block;width:100%;text-align:center;background:transparent;border:1px solid rgba(216,178,106,.5);color:var(--gold2);font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:9px 0;border-radius:8px;cursor:pointer;transition:background .2s,color .2s;margin-top:4px;}
+    .ebook-card-pricing{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:6px;flex-wrap:nowrap;overflow:hidden;justify-content:center;}
+    .ebook-price-new{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
+    .ebook-price-old{font-size:13px;color:#888;text-decoration:line-through;white-space:nowrap;flex-shrink:0;}
+    .ebook-card-btn{display:block;width:100%;text-align:center;background:transparent;border:1px solid rgba(216,178,106,.5);color:var(--gold2);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:9px 0;border-radius:8px;cursor:pointer;transition:background .2s,color .2s;margin-top:4px;}
     .ebook-card-btn:hover{background:var(--gold);color:#000;border-color:var(--gold);}
-    .ebook-note{font-size:10px;color:var(--muted);margin-top:4px;}
+    .ebook-note{font-size:12px;color:var(--muted);margin-top:4px;}
     .ebook-badge.best-seller{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;letter-spacing:1px;}
 
 
@@ -162,8 +162,9 @@
       .hero{padding-top:56px;}
       .search-area{flex-direction:column;}
       .menu{display:none;}
-      .ebook-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
-      .ebook-card-cover{height:200px;}
+      .ebook-grid{grid-template-columns:1fr;gap:16px;justify-items:center;}
+      .ebook-card{max-width:320px;width:100%;}
+      .ebook-card-cover{height:260px;}
     }
   </style>
 </head>
