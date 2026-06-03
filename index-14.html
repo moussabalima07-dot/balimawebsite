@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Création de sites web professionnels, pages de vente, sites vitrines et solutions digitales au Burkina Faso.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Création de Sites Web Professionnels | Balima Web Developer Burkina Faso</title>
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Balima Web Developer">
+  <meta name="keywords" content="site web Burkina Faso, création site web, développeur web Ouagadougou, page de vente, ebook développement web, Balima">
+  <!-- Open Graph (WhatsApp, Facebook) -->
+  <meta property="og:title" content="Balima Web Developer | Sites Web Professionnels au Burkina Faso">
+  <meta property="og:description" content="Je crée des sites web professionnels, pages de vente et solutions digitales au Burkina Faso. Contactez-moi sur WhatsApp.">
+  <meta property="og:image" content="logo-site.jpg">
+  <meta property="og:url" content="https://moussabalima07.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_BF">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Balima Web Developer | Burkina Faso">
+  <meta name="twitter:description" content="Sites web professionnels, pages de vente et ebooks au Burkina Faso.">
+  <meta name="twitter:image" content="logo-site.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo-site.jpg">
+  <link rel="apple-touch-icon" href="logo-site.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080C14;--text:#F4F7FF;--muted:#8A94A8;--blue:#0057FF;--blue2:#4D8FFF;--gold:#D8B26A;--gold2:#F7DEAB;--line:rgba(255,255,255,.08);--card:#111e33;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 20% 20%, rgba(0,87,255,.25), transparent 40%),radial-gradient(circle at 80% 30%, rgba(216,178,106,.15), transparent 45%),radial-gradient(circle at 50% 80%, rgba(77,143,255,.18), transparent 40%);filter:blur(60px);animation:moveGradient 14s ease-in-out infinite alternate;}
+    body::after{content:"";position:fixed;inset:0;z-index:-3;background:linear-gradient(120deg,#080C14,#0b1220,#070a12);}
+    @keyframes moveGradient{0%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,30px) scale(1.1);}100%{transform:translate(40px,-30px) scale(1.05);}}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+    .nav{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);background:rgba(8,12,20,.78);border-bottom:1px solid var(--line);}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;}
+    .brand{display:flex;align-items:center;gap:16px;font-weight:700;flex-shrink:0;}
+    .brand img{width:52px;height:52px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#111e33;}
+    .brand span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;line-height:1;}
+    .nav-right{display:flex;align-items:center;gap:12px;flex:1;justify-content:flex-end;}
+    .nav-search{display:flex;align-items:center;gap:10px;max-width:420px;width:100%;}
+    .nav-search input{flex:1;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);outline:none;font-size:.95rem;}
+    .nav-search input::placeholder{color:var(--muted);}
+    .nav-search button{padding:10px 16px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;font-weight:700;cursor:pointer;}
+    .lang-switcher{display:flex;gap:6px;align-items:center;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);flex-shrink:0;}
+    .lang-btn{border:none;background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer;transition:.2s ease;min-width:48px;}
+    .lang-btn.active{background:rgba(77,143,255,.18);color:var(--gold2);}
+    .menu{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+    .menu a{color:var(--muted);font-size:.92rem;}
+    .menu a:hover{color:var(--text);}
+    .menu .cta{background:linear-gradient(135deg,rgba(0,87,255,.95),rgba(77,143,255,.92));color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;}
+    .hamburger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;z-index:1101;}
+    .hamburger span{width:20px;height:2px;background:var(--text);border-radius:2px;transition:.25s ease;}
+    .menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.25s ease;z-index:1098;}
+    .mobile-menu{position:fixed;top:96px;right:24px;width:min(320px,calc(100% - 48px));padding:18px;border-radius:20px;background:rgba(13,20,34,.96);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px);transform:translateY(-12px) scale(.98);opacity:0;pointer-events:none;transition:.25s ease;z-index:1100;display:flex;flex-direction:column;gap:10px;}
+    .mobile-menu a{padding:14px 16px;border-radius:14px;color:var(--text);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);font-weight:700;}
+    .menu-open .mobile-menu{opacity:1;pointer-events:auto;transform:translateY(0) scale(1);}
+    .menu-open .menu-overlay{opacity:1;pointer-events:auto;}
+    .menu-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .menu-open .hamburger span:nth-child(2){opacity:0;}
+    .menu-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .hero{padding:78px 0 42px;text-align:center;}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,87,255,.12);border:1px solid rgba(77,143,255,.25);color:var(--blue2);padding:8px 14px;border-radius:999px;font-size:.84rem;margin-bottom:22px;}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--blue2);animation:pulse 2s infinite;}
+    @keyframes pulse{50%{transform:scale(.75);opacity:.55;}}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6.8rem);line-height:.92;letter-spacing:1px;margin-bottom:18px;}
+    .accent{-webkit-text-stroke:2px var(--blue2);color:transparent;}
+    .hero p{max-width:680px;color:var(--muted);line-height:1.8;font-size:1.02rem;margin:0 auto;}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:28px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.25s ease;cursor:pointer;}
+    .btn-primary{background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;box-shadow:0 14px 32px rgba(0,87,255,.22);}
+    .btn-secondary{background:rgba(255,255,255,.03);border-color:var(--line);color:var(--text);}
+    .section{padding:28px 0;}
+    .label{font-size:.76rem;letter-spacing:3px;text-transform:uppercase;color:var(--blue2);margin-bottom:14px;font-weight:700;}
+    .title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.5vw,3.6rem);line-height:1;margin-bottom:26px;letter-spacing:1px;}
+    .search-area{display:flex;gap:12px;max-width:720px;width:100%;margin:0 0 28px;}
+    .search-area input{flex:1;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);outline:none;font-size:1rem;}
+    .search-area button{padding:14px 20px;border:none;border-radius:14px;background:linear-gradient(135deg,rgba(0,87,255,.98),rgba(77,143,255,.95));color:#fff;font-weight:700;cursor:pointer;}
+
+    /* ═══════════════════════════════════
+       EBOOK CARDS — PREMIUM GRID
+    ═══════════════════════════════════ */
+    .ebook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:16px;align-items:stretch;}
+    .ebook-card{background:rgba(17,30,51,0.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;height:100%;}
+    .ebook-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.5),0 0 0 1px rgba(216,178,106,.15);}
+    /* Cover : badge en bas pour ne pas cacher la couverture */
+    .ebook-card-cover{width:100%;height:220px;position:relative;overflow:hidden;background:#0d1520;flex-shrink:0;display:flex;align-items:flex-end;}
+    .ebook-card-cover img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;transition:transform .35s ease;filter:brightness(.95);position:absolute;top:0;left:0;}
+    .ebook-card:hover .ebook-card-cover img{transform:scale(1.04);filter:brightness(1);}
+    /* Badge repositionné en bas de la couverture */
+    .ebook-badge{position:absolute;bottom:8px;left:8px;background:var(--gold);color:#000;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:4px;text-align:center;width:auto;display:inline-block;}
+    .ebook-card-body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:7px;flex:1;}
+    .ebook-card-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;line-height:1.3;color:var(--text);}
+    .ebook-card-desc{font-size:13px;color:var(--muted);line-height:1.4;font-style:italic;}
+    /* Prix sur une seule ligne — nowrap + baseline */
+    .ebook-card-pricing{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:6px;flex-wrap:nowrap;overflow:hidden;justify-content:center;}
+    .ebook-price-new{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--gold2);white-space:nowrap;flex-shrink:0;}
+    .ebook-price-old{font-size:13px;color:#888;text-decoration:line-through;white-space:nowrap;flex-shrink:0;}
+    .ebook-card-btn{display:block;width:100%;text-align:center;background:transparent;border:1px solid rgba(216,178,106,.5);color:var(--gold2);font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:9px 0;border-radius:8px;cursor:pointer;transition:background .2s,color .2s;margin-top:4px;}
+    .ebook-card-btn:hover{background:var(--gold);color:#000;border-color:var(--gold);}
+    .ebook-note{font-size:12px;color:var(--muted);margin-top:4px;}
+    .ebook-badge.best-seller{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;letter-spacing:1px;}
+
+
+    /* ═══════════════════════════════════
+       PORTFOLIO — MAQUETTES VISUELLES
+    ═══════════════════════════════════ */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+    .project-card{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:rgba(17,30,51,.85);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;cursor:pointer;}
+    .project-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 28px 60px rgba(0,0,0,.5);}
+    .project-mockup{width:100%;height:240px;position:relative;overflow:hidden;flex-shrink:0;}
+    .project-info{padding:16px 18px 20px;}
+    .project-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+    .project-info h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text);}
+    .project-info p{font-size:12px;color:var(--muted);line-height:1.5;}
+    .project-tech{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+    .tech-pill{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--muted);}
+    @media(max-width:900px){.portfolio-grid{grid-template-columns:1fr;}}
+
+    /* ─── Reste du CSS inchangé ─── */
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+    .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+    .ebook-img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#111e33;}
+    .card-body{padding:20px;text-align:center;}
+    .card h3{font-size:1.08rem;margin-bottom:10px;}
+    .card p{font-size:.86rem;color:var(--muted);line-height:1.7;margin-bottom:14px;}
+    .services-price-switch{margin-bottom:20px;}
+    .currency-label{color:var(--muted);font-size:.9rem;font-weight:700;margin-bottom:10px;display:block;}
+    .currency-switch{display:flex;gap:10px;flex-wrap:wrap;}
+    .currency-btn{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--muted);padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:700;}
+    .currency-btn.active,.currency-btn:hover{background:rgba(216,178,106,.14);color:var(--gold2);border-color:rgba(216,178,106,.35);}
+    .services-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;}
+    .services-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:28px;transition:.25s ease;}
+    .services-card:hover{transform:translateY(-6px);border-color:rgba(77,143,255,.28);}
+    .services-featured{border-color:rgba(216,178,106,.42);background:linear-gradient(180deg,rgba(216,178,106,.08),rgba(255,255,255,.03));}
+    .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+    .icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:1.1rem;}
+    .services-card h3{font-size:1.2rem;margin-bottom:10px;}
+    .compat{color:var(--muted);font-size:.88rem;margin-bottom:16px;}
+    .price{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+    .price span{display:none;width:fit-content;padding:8px 12px;border-radius:12px;font-weight:800;}
+    .price .xof{background:rgba(0,87,255,.12);color:var(--blue2);display:inline-flex;}
+    .price .eur{background:rgba(255,255,255,.05);color:var(--text);}
+    .price .usd{background:rgba(216,178,106,.14);color:var(--gold2);}
+    .services-card ul{list-style:none;display:grid;gap:10px;margin-bottom:22px;}
+    .services-card li{padding-left:20px;color:#D9E1F2;font-size:.88rem;position:relative;}
+    .services-card li::before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:800;}
+    .premium-btn{display:flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:14px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;color:#111827;font-weight:900;cursor:pointer;}
+    .payment{background:linear-gradient(180deg,rgba(255,121,0,.05),rgba(0,87,255,.05));border-top:1px solid rgba(255,121,0,.10);border-bottom:1px solid rgba(0,87,255,.10);padding:28px 0;}
+    .payment-box{max-width:820px;margin:0 auto;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:28px;text-align:center;}
+    .pay-top{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+    .pay-logo{width:46px;height:46px;object-fit:contain;border-radius:12px;background:#fff;padding:4px;}
+    .pay-row{margin:12px 0;color:var(--muted);line-height:1.8;}
+    .pay-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+    .whats{background:linear-gradient(135deg,rgba(37,211,102,.95),rgba(28,168,79,.92));color:#fff;}
+    .cta-section-wrap{padding:82px 0;}
+    .cta-box{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:52px 32px;max-width:540px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px;}
+    .cta-box h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);}
+    .btn-wa,.btn-mail{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:340px;padding:16px 32px;border-radius:12px;font-weight:700;transition:all .2s ease;}
+    .btn-wa{background:#2563eb;color:#fff;}
+    .btn-wa:hover{background:#1d4ed8;transform:translateY(-2px);}
+    .btn-mail{background:transparent;border:1px solid var(--line);color:var(--text);}
+    .footer{padding:28px 0 42px;color:var(--muted);text-align:center;border-top:1px solid var(--line);}
+    /* ═══ FAQ PREMIUM ═══ */
+    .faq-section{padding:60px 0;background:linear-gradient(180deg,transparent,rgba(77,143,255,.03),transparent);}
+    .faq-intro{text-align:center;max-width:600px;margin:0 auto 48px;}
+    .faq-intro p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:10px;}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:900px;margin:0 auto;}
+    .faq-card{background:linear-gradient(135deg,rgba(17,30,51,.95),rgba(8,12,20,.9));border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:24px;cursor:pointer;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;position:relative;overflow:hidden;}
+    .faq-card:hover{border-color:rgba(77,143,255,.35);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+    .faq-card.open{border-color:rgba(77,143,255,.4);background:linear-gradient(135deg,rgba(17,30,51,.98),rgba(0,87,255,.06));}
+    .faq-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));opacity:0;transition:opacity .25s ease;}
+    .faq-card.open::before{opacity:1;}
+    .faq-card-top{display:flex;align-items:flex-start;gap:14px;}
+    .faq-emoji{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:rgba(0,87,255,.12);border:1px solid rgba(77,143,255,.2);}
+    .faq-card.open .faq-emoji{background:rgba(0,87,255,.2);}
+    .faq-q{font-family:'Syne',sans-serif;font-size:.98rem;font-weight:800;color:var(--text);line-height:1.4;flex:1;}
+    .faq-arrow{font-size:1.1rem;color:var(--muted);transition:transform .3s ease,color .3s ease;flex-shrink:0;margin-top:2px;}
+    .faq-card.open .faq-arrow{transform:rotate(45deg);color:var(--blue2);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,padding .3s ease;opacity:0;padding-top:0;color:var(--muted);font-size:.9rem;line-height:1.75;padding-left:56px;}
+    .faq-card.open .faq-a{max-height:300px;opacity:1;padding-top:14px;}
+    .faq-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-bottom:8px;}
+    .faq-cta{text-align:center;margin-top:40px;}
+    .faq-cta p{color:var(--muted);font-size:.88rem;margin-top:10px;}
+    #topBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border:none;border-radius:50%;cursor:pointer;font-size:20px;display:none;z-index:999;background:#0057FF;color:white;box-shadow:0 10px 30px rgba(0,87,255,.3);}
+    @media(max-width:900px){
+      .grid-3,.services-grid{grid-template-columns:1fr;}
+      .nav-search{display:none;}
+      .hamburger{display:flex;}
+      .hero{padding-top:56px;}
+      .search-area{flex-direction:column;}
+      .menu{display:none;}
+      .ebook-grid{grid-template-columns:1fr;gap:16px;justify-items:center;}
+      .ebook-card{max-width:320px;width:100%;}
+      .ebook-card-cover{height:260px;}
+    }
+
+    /* WhatsApp floating button */
+    #waBtn{position:fixed;bottom:82px;right:20px;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#25d366,#1ebe57);box-shadow:0 6px 24px rgba(37,211,102,.45);display:flex;align-items:center;justify-content:center;z-index:999;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;}
+    #waBtn:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,.6);}
+    #waBtn svg{width:28px;height:28px;fill:white;}
+    #waBtn .wa-tooltip{position:absolute;right:62px;background:rgba(13,20,34,.95);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s ease;border:1px solid rgba(255,255,255,.1);}
+    #waBtn:hover .wa-tooltip{opacity:1;}
+
+    /* ═══ À PROPOS ═══ */
+    .about-section{padding:60px 0;}
+    .about-box{display:flex;gap:40px;align-items:center;background:linear-gradient(135deg,rgba(17,30,51,.9),rgba(8,12,20,.95));border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:40px;max-width:860px;margin:0 auto;}
+    .about-photo{width:130px;height:130px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);flex-shrink:0;background:#111e33;}
+    .about-photo-placeholder{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,rgba(0,87,255,.3),rgba(77,143,255,.2));border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0;}
+    .about-content h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:10px;letter-spacing:1px;}
+    .about-content p{color:var(--muted);line-height:1.8;font-size:.95rem;margin-bottom:14px;}
+    .about-stats{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;}
+    .about-stat{text-align:center;}
+    .about-stat strong{display:block;font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--gold2);}
+    .about-stat span{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+    @media(max-width:700px){.about-box{flex-direction:column;text-align:center;padding:28px 20px;}.about-stats{justify-content:center;}}
+
+    /* ═══ APERÇU EBOOK MODAL ═══ */
+    .preview-modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+    .preview-modal.open{opacity:1;pointer-events:auto;}
+    .preview-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);}
+    .preview-box{position:relative;background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:22px;max-width:480px;width:100%;padding:28px;z-index:1;max-height:90vh;overflow-y:auto;}
+    .preview-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .preview-cover{width:100%;max-height:260px;object-fit:contain;border-radius:12px;margin-bottom:18px;background:#0d1520;}
+    .preview-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:8px;}
+    .preview-desc{color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:16px;}
+    .preview-pages{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;margin-bottom:18px;}
+    .preview-pages h4{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--blue2);margin-bottom:10px;font-weight:700;}
+    .preview-pages ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+    .preview-pages li{font-size:.88rem;color:var(--muted);padding-left:18px;position:relative;}
+    .preview-pages li::before{content:"📄";position:absolute;left:0;font-size:.75rem;}
+    .preview-buy{display:block;width:100%;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;font-weight:900;font-size:.95rem;cursor:pointer;border:none;}
+
+    /* ═══ CONFIRMATION ACHAT ═══ */
+    .confirm-toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:linear-gradient(135deg,rgba(37,211,102,.95),rgba(28,168,79,.92));color:#fff;padding:14px 24px;border-radius:16px;font-weight:700;font-size:.95rem;z-index:3000;opacity:0;pointer-events:none;transition:all .35s ease;white-space:nowrap;box-shadow:0 10px 30px rgba(37,211,102,.3);}
+    .confirm-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <img src="logo-site.jpg" alt="Balima Web Developer">
+      <span data-i18n="brand">BALIMA WEB<br>DEVELOPER</span>
+    </div>
+    <div class="nav-right">
+      <div class="nav-search">
+        <input type="text" id="siteSearchTop" placeholder="Rechercher..." data-i18n-placeholder="search.placeholder">
+        <button type="button" onclick="filterAllCards()" data-i18n="search.button">Rechercher</button>
+      </div>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="hamburger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="menu">
+        <a href="#services" data-i18n="nav.services">Mes Services</a>
+        <a href="#academie-web">Académie Web</a>
+        <a href="#bibliotheque" data-i18n="nav.library">Bibliothèque</a>
+        <a href="#contact" class="cta" data-i18n="nav.contact">Me contacter</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#services">Mes Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#academie-web">Académie Web</a>
+  <a href="#bibliotheque">Bibliothèque</a>
+  <a href="#contact">Me contacter</a>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span><span data-i18n="hero.badge">Disponible pour de nouveaux projets</span></div>
+    <h1 class="reveal" data-i18n="hero.title">TON SITE WEB.<br>TES CLIENTS.<br><span class="accent">TES VENTES.</span></h1>
+    <p class="reveal" data-i18n="hero.subtitle">J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.</p>
+    <div class="actions"><a href="#services" class="btn btn-primary" data-i18n="hero.cta">Voir mes services</a></div>
+  </div>
+</header>
+
+<section class="about-section" id="a-propos">
+  <div class="wrap">
+    <div class="label">À Propos</div>
+    <div class="about-box">
+      <div class="about-photo-placeholder">👨🏾‍💻</div>
+      <div class="about-content">
+        <h2>Moussa Balima</h2>
+        <p>Développeur web passionné basé au <strong style="color:var(--gold2)">Burkina Faso</strong>, je crée des sites professionnels qui inspirent confiance et génèrent des résultats concrets pour les entrepreneurs africains.</p>
+        <p>Mon objectif : que ton activité paraisse aussi <strong style="color:var(--gold2)">professionnelle que la valeur que tu apportes réellement.</strong></p>
+        <div class="about-stats">
+          <div class="about-stat"><strong>30+</strong><span>Sites livrés</span></div>
+          <div class="about-stat"><strong>50+</strong><span>Clients satisfaits</span></div>
+          <div class="about-stat"><strong>4.9⭐</strong><span>Note moyenne</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="label" data-i18n="services.label">Ce que je fais</div>
+    <div class="title" data-i18n="services.title">Mes Services</div>
+    <div class="services-price-switch">
+      <span class="currency-label" data-i18n="services.currencyLabel">Prix / devise</span>
+      <div class="currency-switch">
+        <button class="currency-btn active" data-currency="xof">XOF</button>
+        <button class="currency-btn" data-currency="eur">EUR</button>
+        <button class="currency-btn" data-currency="usd">USD</button>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="services-card"><div class="top"><div class="badge" data-i18n="services.card1.badge">Démarrage</div><div class="icon">◦</div></div><h3 data-i18n="services.card1.title">Page de capture</h3><div class="compat" data-i18n="services.card1.compat">Compatible mobile / PC</div><div class="price"><span class="xof">24 000 XOF</span><span class="eur">37 EUR</span><span class="usd">40 USD</span></div><ul><li data-i18n="services.card1.li1">Design moderne</li><li data-i18n="services.card1.li2">Formulaire de capture</li><li data-i18n="services.card1.li3">Interface claire</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20capture." data-i18n="services.order">Commander</a></div>
+      <div class="services-card services-featured"><div class="top"><div class="badge" data-i18n="services.card2.badge">Offre principale</div><div class="icon">◈</div></div><h3 data-i18n="services.card2.title">Page de vente</h3><div class="compat" data-i18n="services.card2.compat">Compatible mobile / PC</div><div class="price"><span class="xof">42 000 XOF</span><span class="eur">65 EUR</span><span class="usd">70 USD</span></div><ul><li data-i18n="services.card2.li1">Structure de conversion</li><li data-i18n="services.card2.li2">Design premium</li><li data-i18n="services.card2.li3">Bouton d'action visible</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20une%20page%20de%20vente." data-i18n="services.order">Commander</a></div>
+      <div class="services-card"><div class="top"><div class="badge" data-i18n="services.card3.badge">Pro</div><div class="icon">◦</div></div><h3 data-i18n="services.card3.title">Site vitrine</h3><div class="compat" data-i18n="services.card3.compat">Compatible mobile / PC</div><div class="price"><span class="xof">72 000 XOF</span><span class="eur">110 EUR</span><span class="usd">120 USD</span></div><ul><li data-i18n="services.card3.li1">3 à 5 pages</li><li data-i18n="services.card3.li2">Image professionnelle</li><li data-i18n="services.card3.li3">Structure propre</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20un%20site%20vitrine." data-i18n="services.order">Commander</a></div>
+      <div class="services-card services-featured"><div class="top"><div class="badge" data-i18n="services.card4.badge">Pack complet</div><div class="icon">◆</div></div><h3 data-i18n="services.card4.title">BOOST ULTIME</h3><div class="compat" data-i18n="services.card4.compat">Compatible mobile / PC</div><div class="price"><span class="xof">120 000 XOF</span><span class="eur">185 EUR</span><span class="usd">200 USD</span></div><ul><li data-i18n="services.card4.li1">Page de capture</li><li data-i18n="services.card4.li2">Page de vente</li><li data-i18n="services.card4.li3">Site vitrine</li><li data-i18n="services.card4.li4">Optimisation de base</li></ul><a class="premium-btn" target="_blank" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20veux%20commander%20le%20pack%20BOOST%20ULTIME." data-i18n="services.order">Commander</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="label" data-i18n="why.label">Pourquoi moi ?</div>
+    <div class="title" data-i18n="why.title">Un site web n'est pas une dépense. C'est un investissement.</div>
+    <div style="max-width:850px;margin:0 auto 40px;text-align:center;">
+      <p style="color:var(--muted);line-height:1.9;" data-i18n="why.p1">Aujourd'hui, beaucoup de personnes peuvent créer un site internet. Mon objectif n'est pas simplement de te livrer un site joli à regarder. Je crée des sites pensés pour inspirer confiance, mettre en valeur ton activité et donner une image professionnelle à ton entreprise.</p>
+      <p style="color:var(--muted);line-height:1.9;margin-top:20px;" data-i18n="why.p2">Chaque projet est réalisé avec sérieux, attention aux détails et une seule priorité : <strong style="color:var(--gold2);">faire en sorte que ton activité paraisse aussi professionnelle que la valeur que tu apportes réellement.</strong></p>
+    </div>
+    <div class="services-grid">
+      <div class="services-card"><div class="icon">⚡</div><h3 data-i18n="why.card1.title">Rapidité</h3><p class="compat" data-i18n="why.card1.desc">Sites rapides et fluides pour une meilleure expérience.</p></div>
+      <div class="services-card"><div class="icon">📱</div><h3 data-i18n="why.card2.title">Compatible partout</h3><p class="compat" data-i18n="why.card2.desc">Parfait sur téléphone, tablette et ordinateur.</p></div>
+      <div class="services-card"><div class="icon">🎯</div><h3 data-i18n="why.card3.title">Orienté résultats</h3><p class="compat" data-i18n="why.card3.desc">Chaque page est conçue pour convertir.</p></div>
+      <div class="services-card"><div class="icon">🤝</div><h3 data-i18n="why.card4.title">Accompagnement</h3><p class="compat" data-i18n="why.card4.desc">Je reste disponible même après la livraison.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADÉMIE WEB -->
+<section class="section" id="academie-web">
+  <div class="wrap">
+    <div class="label" data-i18n="academy.label">Formation Développement Web</div>
+    <div class="title" data-i18n="academy.title">Académie Web BALIMA</div>
+    <div class="ebook-grid" id="academyCards">
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="html-image.jpg" alt="HTML"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">HTML DE ZÉRO À EXPERT</div>
+          <div class="ebook-card-desc">Structure complète d'un site web professionnel.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="CSS-image.jpg" alt="CSS"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">MAÎTRISER CSS MODERNE</div>
+          <div class="ebook-card-desc">Flexbox, Grid et animations modernes.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="Java_script.jpg" alt="JavaScript"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">JAVASCRIPT SANS CONFUSION</div>
+          <div class="ebook-card-desc">Étape par étape avec projets réels.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="ebook-card-cover"><img src="Front-end.jpg" alt="Frontend"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">FRONTEND COMPLET</div>
+          <div class="ebook-card-desc">HTML, CSS & JS pour devenir développeur.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="ebook-card-cover"><img src="Back-end.jpg" alt="Backend"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">BACKEND POUR DÉBUTANTS</div>
+          <div class="ebook-card-desc">Serveurs, bases de données et API.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="15000" data-price-eur="23" data-price-usd="25">
+        <div class="ebook-card-cover"><img src="creer-site.jpg" alt="Site Web"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">CRÉER UN SITE WEB DE A À Z</div>
+          <div class="ebook-card-desc">Conception, développement et mise en ligne.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">15 000 XOF</span><span class="ebook-price-old">30 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
+        <div class="ebook-card-cover"><img src="Word-press.jpg" alt="WordPress"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">WORDPRESS & WOOCOMMERCE</div>
+          <div class="ebook-card-desc">Blogs, sites et boutiques en ligne.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="Vivre-du-dev.jpg" alt="Freelance"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title">DEVENIR FREELANCE WEB</div>
+          <div class="ebook-card-desc">Trouver des clients et générer des revenus.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTHÈQUE -->
+<section class="section" id="bibliotheque">
+  <div class="wrap">
+    <div class="label" data-i18n="library.label">Ressources & Savoirs</div>
+    <div class="title" data-i18n="library.title">La Bibliothèque du Succès</div>
+    <div class="search-area">
+      <input type="search" id="siteSearch" placeholder="Rechercher un ebook, un service..." data-i18n-placeholder="search.placeholder">
+      <button type="button" onclick="filterAllCards()" data-i18n="search.button">Rechercher</button>
+    </div>
+    <div class="ebook-grid" id="libraryCards">
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="mindset-de.jpg" alt="Mindset"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.1.title">Mindset de Réussite Africaine</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="maitriser-ses.jpg" alt="Emotions"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.2.title">Maîtriser ses Émotions</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.2.desc">L'art de garder le contrôle.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="vendre-en-ligne.jpg" alt="Vente"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="sortir-de la-procras.jpg" alt="Procrastination"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.4.title">Sortir de la Procrastination</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.4.desc">Passer à l'action et reprendre le contrôle.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="reprendre-le-controle.jpg" alt="Controle"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.5.title">Reprendre le Contrôle de sa Vie</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.5.desc">Guide pour l'équilibre et la discipline.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="creer-des-revenus.jpg" alt="Revenus"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="sante-nutrition.jpg" alt="Santé"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.7.title">Santé, Nutrition et Beauté Naturelle</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.7.desc">Approche naturelle pour rayonner.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="les-traits-de.jpg" alt="Masculinité"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.8.title">Les 5 Traits de la Masculinité</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.8.desc">Comprendre les archétypes masculins.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+      <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
+        <div class="ebook-card-cover"><img src="les-pauvres-obeissent.jpg" alt="Riches"><span class="ebook-badge best-seller">Best Seller</span></div>
+        <div class="ebook-card-body">
+          <div class="ebook-card-title" data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</div>
+          <div class="ebook-card-desc" data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</div>
+          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
+          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter →</button>
+          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="wrap">
+    <div class="label" data-i18n="portfolio.label">Réalisations</div>
+    <div class="title" data-i18n="portfolio.title">Quelques Projets</div>
+    <div class="portfolio-grid">
+
+      <!-- 1. Boutique iPhone -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="iph-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a0a0a"/>
+                <stop offset="100%" stop-color="#1a1a2e"/>
+              </linearGradient>
+              <linearGradient id="iph-btn" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#c0c0c0"/>
+                <stop offset="100%" stop-color="#e8e8e8"/>
+              </linearGradient>
+            </defs>
+            <!-- fond -->
+            <rect width="600" height="240" fill="url(#iph-bg)"/>
+            <!-- nav bar -->
+            <rect width="600" height="36" fill="rgba(255,255,255,0.04)"/>
+            <text x="18" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="2">iPHONE STORE</text>
+            <text x="480" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Accueil</text>
+            <text x="520" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Shop</text>
+            <text x="557" y="24" font-family="sans-serif" font-size="10" fill="#aaa">📦</text>
+            <!-- hero text -->
+            <text x="24" y="72" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="3">NOUVEAUTÉ 2025</text>
+            <text x="24" y="96" font-family="sans-serif" font-size="20" font-weight="900" fill="white">iPhone 16 Pro</text>
+            <text x="24" y="114" font-family="sans-serif" font-size="11" fill="#bbb">Titanium · 256GB · 5G</text>
+            <!-- price -->
+            <text x="24" y="140" font-family="sans-serif" font-size="16" font-weight="800" fill="#e8e8e8">650 000 XOF</text>
+            <text x="24" y="156" font-family="sans-serif" font-size="9" fill="#666" text-decoration="line-through">750 000 XOF</text>
+            <!-- btn -->
+            <rect x="24" y="166" width="110" height="28" rx="6" fill="url(#iph-btn)"/>
+            <text x="79" y="185" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Commander →</text>
+            <!-- phone mockup right -->
+            <rect x="340" y="20" width="90" height="180" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <rect x="348" y="30" width="74" height="152" rx="8" fill="#111"/>
+            <circle cx="385" cy="185" r="6" fill="rgba(255,255,255,0.15)"/>
+            <rect x="353" y="36" width="64" height="128" rx="4" fill="#1a1a2e"/>
+            <text x="385" y="100" font-family="sans-serif" font-size="22" text-anchor="middle" fill="white"></text>
+            <text x="385" y="118" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">iPhone 16 Pro</text>
+            <!-- second phone -->
+            <rect x="448" y="40" width="82" height="165" rx="13" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <rect x="455" y="50" width="68" height="140" rx="7" fill="#0d0d1a"/>
+            <rect x="460" y="56" width="58" height="118" rx="3" fill="#16213e"/>
+            <text x="489" y="120" font-family="sans-serif" font-size="20" text-anchor="middle" fill="white">📷</text>
+            <!-- badge -->
+            <rect x="500" y="20" width="66" height="20" rx="4" fill="#e8c97a"/>
+            <text x="533" y="34" font-family="sans-serif" font-size="9" font-weight="800" fill="#000" text-anchor="middle">BEST PRICE</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(232,201,122,.15);color:#e8c97a;border:1px solid rgba(232,201,122,.3);">Boutique iPhone</span>
+          <h3>iPhone Store BF</h3>
+          <p>Boutique en ligne spécialisée iPhone avec catalogue produits, comparateur de modèles et paiement Orange Money.</p>
+          <div class="project-tech">
+            <span class="tech-pill">E-commerce</span>
+            <span class="tech-pill">Orange Money</span>
+            <span class="tech-pill">Responsive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Page de vente ebook -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sale-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0f1a35"/>
+                <stop offset="100%" stop-color="#1a0a2e"/>
+              </linearGradient>
+              <linearGradient id="sale-cta" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0057ff"/>
+                <stop offset="100%" stop-color="#4d8fff"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#sale-bg)"/>
+            <!-- glow -->
+            <ellipse cx="300" cy="120" rx="200" ry="80" fill="rgba(0,87,255,0.08)"/>
+            <!-- headline -->
+            <text x="300" y="52" font-family="sans-serif" font-size="8" fill="#4d8fff" letter-spacing="4" text-anchor="middle">FORMATION EN LIGNE</text>
+            <text x="300" y="76" font-family="sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Maîtrise le Web</text>
+            <text x="300" y="94" font-family="sans-serif" font-size="13" font-weight="700" fill="#F7DEAB" text-anchor="middle">de Zéro à Professionnel</text>
+            <!-- bullets -->
+            <text x="140" y="118" font-family="sans-serif" font-size="10" fill="#aaa">✓  HTML, CSS, JavaScript</text>
+            <text x="140" y="134" font-family="sans-serif" font-size="10" fill="#aaa">✓  Projets réels inclus</text>
+            <text x="140" y="150" font-family="sans-serif" font-size="10" fill="#aaa">✓  Accès à vie</text>
+            <!-- price block -->
+            <rect x="350" y="104" width="160" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(77,143,255,0.3)" stroke-width="1"/>
+            <text x="430" y="126" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle" text-decoration="line-through">25 000 XOF</text>
+            <text x="430" y="148" font-family="sans-serif" font-size="20" font-weight="800" fill="#F7DEAB" text-anchor="middle">10 000 XOF</text>
+            <text x="430" y="164" font-family="sans-serif" font-size="8" fill="#4d8fff" text-anchor="middle">-60% aujourd'hui</text>
+            <!-- CTA -->
+            <rect x="140" y="166" width="320" height="34" rx="8" fill="url(#sale-cta)"/>
+            <text x="300" y="189" font-family="sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">🚀 Je veux accéder maintenant</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(77,143,255,.15);color:#4d8fff;border:1px solid rgba(77,143,255,.3);">Page de Vente</span>
+          <h3>Landing Page Formation Web</h3>
+          <p>Page de vente haute conversion pour formation digitale avec compte à rebours, témoignages et CTA optimisé.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Copywriting</span>
+            <span class="tech-pill">Conversion</span>
+            <span class="tech-pill">Mobile-first</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Site vitrine restaurant -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rest-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a0f00"/>
+                <stop offset="100%" stop-color="#2d1a00"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#rest-bg)"/>
+            <!-- texture dots -->
+            <circle cx="80" cy="30" r="40" fill="rgba(212,160,30,0.08)"/>
+            <circle cx="520" cy="200" r="60" fill="rgba(212,160,30,0.06)"/>
+            <!-- nav -->
+            <rect width="600" height="38" fill="rgba(0,0,0,0.4)"/>
+            <text x="20" y="25" font-family="serif" font-size="13" font-weight="700" fill="#D4A01E" letter-spacing="3">SAVEURS D'AFRIQUE</text>
+            <text x="430" y="24" font-family="sans-serif" font-size="9" fill="#aaa">Menu</text>
+            <text x="470" y="24" font-family="sans-serif" font-size="9" fill="#aaa">À propos</text>
+            <text x="515" y="24" font-family="sans-serif" font-size="9" fill="#D4A01E">Réserver</text>
+            <!-- hero image zone -->
+            <rect x="320" y="38" width="280" height="202" fill="rgba(0,0,0,0.3)"/>
+            <text x="460" y="140" font-family="sans-serif" font-size="48" text-anchor="middle" fill="rgba(255,255,255,0.15)">🍽️</text>
+            <!-- content -->
+            <text x="20" y="70" font-family="sans-serif" font-size="8" fill="#D4A01E" letter-spacing="3">RESTAURANT GASTRONOMIQUE</text>
+            <text x="20" y="98" font-family="serif" font-size="24" font-weight="700" fill="white">Une cuisine</text>
+            <text x="20" y="124" font-family="serif" font-size="24" font-weight="700" fill="#D4A01E">d'exception</text>
+            <text x="20" y="148" font-family="sans-serif" font-size="10" fill="#bbb">Vendredi – Dimanche · 12h–22h</text>
+            <text x="20" y="162" font-family="sans-serif" font-size="10" fill="#bbb">Ouagadougou, Burkina Faso</text>
+            <!-- stars -->
+            <text x="20" y="182" font-family="sans-serif" font-size="12" fill="#D4A01E">★★★★★</text>
+            <text x="100" y="182" font-family="sans-serif" font-size="9" fill="#888">4.9 · 120 avis</text>
+            <!-- btn -->
+            <rect x="20" y="194" width="130" height="28" rx="6" fill="#D4A01E"/>
+            <text x="85" y="213" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Réserver une table</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(212,160,30,.15);color:#D4A01E;border:1px solid rgba(212,160,30,.3);">Site Vitrine</span>
+          <h3>Saveurs d'Afrique – Restaurant</h3>
+          <p>Site vitrine élégant pour restaurant gastronomique avec menu interactif, galerie et système de réservation.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Site Vitrine</span>
+            <span class="tech-pill">Réservation</span>
+            <span class="tech-pill">Galerie</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Boutique en ligne mode -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="shop-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f5f0eb"/>
+                <stop offset="100%" stop-color="#ede5da"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#shop-bg)"/>
+            <!-- nav -->
+            <rect width="600" height="36" fill="rgba(255,255,255,0.8)"/>
+            <text x="20" y="24" font-family="serif" font-size="13" font-weight="700" fill="#1a1a1a" letter-spacing="4">ÉLÉGANCE BF</text>
+            <text x="420" y="23" font-family="sans-serif" font-size="9" fill="#555">Femme</text>
+            <text x="455" y="23" font-family="sans-serif" font-size="9" fill="#555">Homme</text>
+            <text x="494" y="23" font-family="sans-serif" font-size="9" fill="#555">Soldes</text>
+            <text x="545" y="23" font-family="sans-serif" font-size="12" fill="#1a1a1a">🛒</text>
+            <!-- product cards -->
+            <!-- card 1 -->
+            <rect x="16" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="16" y="46" width="120" height="110" rx="8" fill="#e8ddd0"/>
+            <text x="76" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👗</text>
+            <text x="76" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Robe Soirée</text>
+            <text x="76" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">35 000 XOF</text>
+            <rect x="28" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="76" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 2 -->
+            <rect x="148" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="148" y="46" width="120" height="110" rx="8" fill="#d4c5b0"/>
+            <text x="208" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👔</text>
+            <text x="208" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Costume Homme</text>
+            <text x="208" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">58 000 XOF</text>
+            <rect x="160" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="208" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 3 -->
+            <rect x="280" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="280" y="46" width="120" height="110" rx="8" fill="#c8b99a"/>
+            <text x="340" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👠</text>
+            <rect x="280" y="46" width="44" height="18" rx="3" fill="#e74c3c"/>
+            <text x="302" y="59" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">-30%</text>
+            <text x="340" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Escarpins</text>
+            <text x="340" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">22 000 XOF</text>
+            <rect x="292" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="340" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 4 hint -->
+            <rect x="412" y="46" width="80" height="170" rx="8" fill="rgba(255,255,255,0.5)"/>
+            <text x="452" y="136" font-family="sans-serif" font-size="20" text-anchor="middle" fill="rgba(0,0,0,0.15)">›</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(26,26,26,.08);color:#1a1a1a;border:1px solid rgba(26,26,26,.2);">Boutique en Ligne</span>
+          <h3>Élégance BF – Mode & Prêt-à-porter</h3>
+          <p>Boutique e-commerce mode avec catalogue filtrable, panier intelligent et paiement mobile money intégré.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Boutique</span>
+            <span class="tech-pill">Panier</span>
+            <span class="tech-pill">Mobile Money</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CSS AVIS -->
+<style>
+  .reviews-section{padding:60px 0;background:linear-gradient(180deg,transparent,rgba(0,87,255,.04),transparent);}
+  .reviews-intro{text-align:center;max-width:600px;margin:0 auto 48px;}
+  .reviews-intro p{color:var(--muted);font-size:1rem;line-height:1.8;margin-top:10px;}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+  .review-card{background:linear-gradient(135deg,rgba(17,30,51,.95),rgba(8,12,20,.9));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px;position:relative;transition:transform .25s ease,border-color .25s ease;}
+  .review-card:hover{transform:translateY(-4px);border-color:rgba(216,178,106,.3);}
+  .review-card::before{content:'“';position:absolute;top:12px;right:20px;font-size:5rem;line-height:1;color:rgba(77,143,255,.1);font-family:Georgia,serif;pointer-events:none;}
+  .review-top{display:flex;align-items:center;gap:14px;}
+  .review-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;border:2px solid rgba(255,255,255,.1);}
+  .review-meta{display:flex;flex-direction:column;gap:2px;}
+  .review-name{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;color:var(--text);}
+  .review-product{font-size:.75rem;color:var(--blue2);font-weight:600;letter-spacing:.5px;}
+  .review-stars{color:#F7DEAB;font-size:.95rem;letter-spacing:2px;}
+  .review-text{color:#c8d0e0;font-size:.92rem;line-height:1.75;font-style:italic;}
+  .review-result{display:inline-flex;align-items:center;gap:6px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);color:#25d366;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:999px;margin-top:4px;}
+  .review-verified{display:flex;align-items:center;gap:5px;font-size:.72rem;color:var(--muted);margin-top:6px;}
+  .review-verified span{color:#4D8FFF;}
+  .reviews-cta{text-align:center;margin-top:44px;}
+  .reviews-cta p{color:var(--muted);font-size:.88rem;margin-top:10px;}
+  .review-featured{border-color:rgba(216,178,106,.35);background:linear-gradient(135deg,rgba(17,30,51,.98),rgba(216,178,106,.05));}
+</style>
+
+<section class="reviews-section" id="avis">
+  <div class="wrap">
+    <div class="reviews-intro">
+      <div class="label">Témoignages</div>
+      <div class="title">Ils ont sauté le pas.<br>Voici ce qu'ils disent.</div>
+      <p>Des entrepreneurs réels, des résultats concrets. Pas de belles paroles — juste ce qu'ils ont vécu.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <!-- 1 -->
+      <div class="review-card review-featured">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(0,87,255,.3),rgba(77,143,255,.2));">👨🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Issa Traoré</div>
+            <div class="review-product">Site vitrine — Ouagadougou</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Avant, quand je donnais mon numéro à un client potentiel, il cherchait mon nom sur Google — et il trouvait rien. Ça cassait tout. Maintenant il tombe sur mon site, il voit le design, il lit, et il me rappelle déjà convaincu. J'ai signé 3 contrats en 2 semaines après la mise en ligne. 3 contrats que j'aurais perdus avant même d'avoir parlé. »</div>
+        <div class="review-result">📈 +3 nouveaux clients en 2 semaines</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Site livré en 3 jours</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(216,178,106,.25),rgba(247,222,171,.1));">👩🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Aïcha Ouédraogo</div>
+            <div class="review-product">Ebook — Mindset de Réussite Africaine</div>
+            <div class="review-stars">★★★★<span style="color:rgba(247,222,171,.25);">★</span></div>
+          </div>
+        </div>
+        <div class="review-text">« Ce livre m'a bousculée. J'avais l'habitude de procrastiner, de me dire que le succès c'est pour les autres. Après la lecture, j'ai lancé mon activité de couture en ligne. Je ne plaisante pas. »</div>
+        <div class="review-result">🚀 Activité lancée après lecture</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Ebook reçu immédiatement</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(77,143,255,.25),rgba(0,87,255,.1));">👨🏿</div>
+          <div class="review-meta">
+            <div class="review-name">Moussa Kaboré</div>
+            <div class="review-product">Page de vente — Bobo-Dioulasso</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Ma page de vente tourne parfaitement sur téléphone, c'est ultra rapide. Balima a tout expliqué, tout livré dans les temps. C'est du travail sérieux, je recommande sans hésiter. »</div>
+        <div class="review-result">💰 Premières ventes le jour du lancement</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Livré en 24h</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(192,57,43,.25),rgba(231,76,60,.1));">👩🏽</div>
+          <div class="review-meta">
+            <div class="review-name">Fatoumata Coulibaly</div>
+            <div class="review-product">Ebook — Vendre en Ligne de A à Z</div>
+            <div class="review-stars">★★★★<span style="color:rgba(247,222,171,.25);">★</span></div>
+          </div>
+        </div>
+        <div class="review-text">« J'avais essayé de vendre sur Facebook sans résultats. Cet ebook m'a donné une vraie méthode. Maintenant je sais exactement quoi faire et dans quel ordre. Mes ventes ont décollé. »</div>
+        <div class="review-result">📦 Méthode appliquée, ventes doublées</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Recommande</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(37,211,102,.2),rgba(28,168,79,.1));">👨🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Ibrahim Sawadogo</div>
+            <div class="review-product">Ebook — JavaScript Sans Confusion</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« J'avais essayé des dizaines de tutoriels YouTube sans rien comprendre. Ce livre explique les choses simplement, avec des vrais exemples. En 2 semaines j'ai fait mon premier projet. »</div>
+        <div class="review-result">💻 Premier projet JS terminé en 2 semaines</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Académie Web</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="review-card review-featured">
+        <div class="review-top">
+          <div class="review-avatar" style="background:linear-gradient(135deg,rgba(216,178,106,.3),rgba(247,222,171,.15));">👩🏾</div>
+          <div class="review-meta">
+            <div class="review-name">Mariam Diallo</div>
+            <div class="review-product">Pack BOOST ULTIME</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-text">« Une cliente m'a regardée dans les yeux et m'a dit : "Mais tu travailles avec combien de personnes dans ton équipe ?" Je suis seule. Juste moi, mon téléphone, et un site que Balima m'a livré en 5 jours. Ce jour-là j'ai compris que l'image que tu projettes change tout. Les gens ne voient plus une petite vendeuse — ils voient une entreprise. Et ils paient en conséquence. »</div>
+        <div class="review-result">🏆 Image pro, clients impressionnés</div>
+        <div class="review-verified"><span>✓</span> Achat vérifié · Pack complet</div>
+      </div>
+
+    </div>
+
+    <div class="reviews-cta">
+      <a href="https://wa.me/22607190217?text=Bonjour%2C%20je%20souhaite%20laisser%20un%20avis" class="btn btn-primary">💬 Laisser mon avis sur WhatsApp</a>
+      <p>Ton avis aide d'autres entrepreneurs à se décider. Merci 🙏🏾</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="faq-intro">
+      <div class="label">FAQ</div>
+      <div class="title">Tu te poses des questions ?<br>Voilà les réponses.</div>
+      <p>Tout ce que tu voulais savoir avant de te lancer — répondu honnêtement.</p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">💰</div>
+          <div class="faq-q">Est-ce qu'un site web peut vraiment me faire gagner plus d'argent ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Dans beaucoup de cas, oui. Un site bien fait donne une image sérieuse à ton activité, et ça rassure les gens qui ne te connaissent pas encore. Ce n'est pas une garantie de succès, mais c'est un outil qui travaille pour toi même quand tu n'es pas disponible. Plusieurs clients m'ont dit avoir reçu leurs premiers contacts sérieux peu après la mise en ligne. Ça dépend aussi de ce que tu vends et de comment tu communiques autour de ton site.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🤔</div>
+          <div class="faq-q">Je ne suis pas du tout technique. Est-ce que je peux quand même commander ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Bien sûr. Tu n'as pas besoin de connaître quoi que ce soit en informatique. Tu me décris ton activité, ce que tu vends, le style que tu aimes — et je m'occupe du reste. Mon travail c'est justement de rendre ça simple pour toi. Tu reçois un site fini, prêt à être utilisé, sans avoir à toucher une ligne de code.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">⏱️</div>
+          <div class="faq-q">Combien de temps avant de recevoir mon site ou mon ebook ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Pour les ebooks, c'est rapide — tu confirmes le paiement sur WhatsApp et tu reçois ton fichier dans les minutes qui suivent. Pour les sites, ça dépend de la complexité : une page simple est généralement livrée en 24h, un site vitrine complet entre 3 et 5 jours. Je te tiens au courant à chaque étape pour que tu sois toujours informé.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">📱</div>
+          <div class="faq-q">Mon site sera-t-il visible et beau sur téléphone ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Oui, c'est quelque chose à quoi je fais vraiment attention. La grande majorité des gens ici naviguent sur mobile, donc chaque site que je crée est pensé pour bien s'afficher sur téléphone d'abord. Il s'adapte aussi aux tablettes et ordinateurs. Je teste toujours le rendu avant de livrer.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🔒</div>
+          <div class="faq-q">Est-ce que mon paiement Orange Money est sécurisé ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Oui. Tu envoies directement sur mon numéro Orange Money personnel — +226 07 19 02 17 — sans passer par un intermédiaire. C'est le même type de transfert que tu fais entre amis. Si jamais tu as un doute ou un problème après le paiement, je suis joignable sur WhatsApp et on règle ça ensemble.</div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-card-top">
+          <div class="faq-emoji">🤝</div>
+          <div class="faq-q">Est-ce que tu es disponible après la livraison si j'ai un problème ?</div>
+          <div class="faq-arrow">+</div>
+        </div>
+        <div class="faq-a">Oui, je reste joignable. Si tu as une question, une petite modification à faire ou quelque chose qui ne fonctionne pas comme prévu, tu m'écris sur WhatsApp. Je ne promets pas une disponibilité illimitée, mais je fais en sorte que tu ne te retrouves jamais bloqué sans réponse. La relation ne s'arrête pas à la livraison.</div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta">
+      <a href="https://wa.me/22607190217?text=Bonjour%2C%20j'ai%20une%20question%20avant%20de%20commander." class="btn btn-primary">💬 Une autre question ? Écris-moi</a>
+      <p>Réponse garantie en moins de 24h 🕐</p>
+    </div>
+  </div>
+</section>
+
+<section class="section payment" id="paiement">
+  <div class="wrap">
+    <div class="label" data-i18n="payment.label">Paiement</div>
+    <div class="title" data-i18n="payment.title">Paiement Orange Money</div>
+    <div class="payment-box">
+      <div class="pay-top"><img src="logo-Orange.jpg" alt="Orange Money" class="pay-logo"><strong data-i18n="payment.secure">Paiement sécurisé par Orange Money</strong></div>
+      <div class="pay-row">Montant : <strong id="paymentAmount">5 000 XOF</strong></div>
+      <div class="pay-row">Numéro Orange Money : <strong>+226 07190217</strong></div>
+      <div class="pay-row">Après paiement, clique sur <strong>J'ai payé</strong> pour confirmer.</div>
+      <div class="pay-actions">
+        <a href="https://wa.me/22607190217?text=J%27ai%20pay%C3%A9%20un%20ebook" class="btn whats" data-i18n="payment.paid">J'ai payé</a>
+        <a href="https://wa.me/22607190217" class="btn btn-secondary" data-i18n="payment.question">Poser une question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section-wrap" id="contact">
+  <div class="wrap">
+    <div class="label" data-i18n="contact.label">Contact</div>
+    <div class="cta-box">
+      <h2 data-i18n="contact.title">Prêt à lancer ton projet ?</h2>
+      <p data-i18n="contact.subtitle">Ce que tu vends a de la valeur. Ton site doit le montrer.</p>
+      <a href="https://wa.me/22607190217" class="btn-wa">💬 <span data-i18n="contact.whatsapp">WhatsApp</span></a>
+      <a href="mailto:moussabalima07@gmail.com" class="btn-mail">✉️ <span data-i18n="contact.email">Email</span></a>
+      <p style="color:var(--gold2);font-weight:700;">✓ Réponse rapide<br>✓ Livraison rapide<br>✓ Accompagnement</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap" data-i18n="footer.text">© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · Tous droits réservés</div></footer>
+
+<!-- Modal aperçu ebook -->
+<div class="preview-modal" id="previewModal">
+  <div class="preview-backdrop" id="previewBackdrop"></div>
+  <div class="preview-box">
+    <button class="preview-close" id="previewClose">✕</button>
+    <img class="preview-cover" id="previewCover" src="" alt="">
+    <div class="preview-title" id="previewTitle"></div>
+    <div class="preview-desc" id="previewDesc"></div>
+    <div class="preview-pages">
+      <h4>📖 Aperçu du contenu</h4>
+      <ul id="previewChapters"></ul>
+    </div>
+    <button class="preview-buy" id="previewBuy">Acheter maintenant →</button>
+  </div>
+</div>
+
+<!-- Toast confirmation achat -->
+<div class="confirm-toast" id="confirmToast">✅ Merci ! Ton ebook arrive sur WhatsApp sous peu.</div>
+<button id="topBtn">↑</button>
+<a id="waBtn" href="https://wa.me/22607190217?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services." target="_blank" aria-label="WhatsApp">
+  <span class="wa-tooltip">Discutons sur WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const translations = {
+  fr: {
+    "brand":"BALIMA WEB<br>DEVELOPER","search.placeholder":"Rechercher...","search.button":"Rechercher",
+    "nav.services":"Mes Services","nav.library":"Bibliothèque","nav.contact":"Me contacter",
+    "hero.badge":"Disponible pour de nouveaux projets","hero.title":"TON SITE WEB.<br>TES CLIENTS.<br><span class='accent'>TES VENTES.</span>",
+    "hero.subtitle":"J'aide les entrepreneurs à vendre plus vite avec des sites propres, rapides et pensés pour convertir.","hero.cta":"Voir mes services",
+    "services.label":"Ce que je fais","services.title":"Mes Services","services.currencyLabel":"Prix / devise",
+    "services.card1.badge":"Démarrage","services.card1.title":"Page de capture","services.card1.compat":"Compatible mobile / PC","services.card1.li1":"Design moderne","services.card1.li2":"Formulaire de capture","services.card1.li3":"Interface claire",
+    "services.card2.badge":"Offre principale","services.card2.title":"Page de vente","services.card2.compat":"Compatible mobile / PC","services.card2.li1":"Structure de conversion","services.card2.li2":"Design premium","services.card2.li3":"Bouton d'action visible",
+    "services.card3.badge":"Pro","services.card3.title":"Site vitrine","services.card3.compat":"Compatible mobile / PC","services.card3.li1":"3 à 5 pages","services.card3.li2":"Image professionnelle","services.card3.li3":"Structure propre",
+    "services.card4.badge":"Pack complet","services.card4.title":"BOOST ULTIME","services.card4.compat":"Compatible mobile / PC","services.card4.li1":"Page de capture","services.card4.li2":"Page de vente","services.card4.li3":"Site vitrine","services.card4.li4":"Optimisation de base",
+    "services.order":"Commander",
+    "why.label":"Pourquoi moi ?","why.title":"Un site web n'est pas une dépense. C'est un investissement.",
+    "why.p1":"Aujourd'hui, beaucoup de personnes peuvent créer un site internet. Mon objectif n'est pas simplement de te livrer un site joli à regarder.","why.p2":"Chaque projet est réalisé avec sérieux, attention aux détails et une seule priorité.",
+    "why.card1.title":"Rapidité","why.card1.desc":"Sites rapides et fluides.","why.card2.title":"Compatible partout","why.card2.desc":"Parfait sur tous les appareils.","why.card3.title":"Orienté résultats","why.card3.desc":"Conçu pour convertir.","why.card4.title":"Accompagnement","why.card4.desc":"Disponible après livraison.",
+    "academy.label":"Formation Développement Web","academy.title":"Académie Web BALIMA",
+    "library.label":"Ressources & Savoirs","library.title":"La Bibliothèque du Succès",
+    "ebooks.note":"Appuie puis valide le code dans l'application téléphone.",
+    "ebooks.1.title":"Mindset de Réussite Africaine","ebooks.1.desc":"Penser grand, agir juste, réussir sans limites.",
+    "ebooks.2.title":"Maîtriser ses Émotions","ebooks.2.desc":"L'art de garder le contrôle.",
+    "ebooks.3.title":"Vendre en Ligne de A à Z","ebooks.3.desc":"Le guide complet pour lancer ton business.",
+    "ebooks.4.title":"Sortir de la Procrastination","ebooks.4.desc":"Passer à l'action et reprendre le contrôle.",
+    "ebooks.5.title":"Reprendre le Contrôle de sa Vie","ebooks.5.desc":"Guide pour l'équilibre et la discipline.",
+    "ebooks.6.title":"Créer des Revenus avec son Téléphone","ebooks.6.desc":"Générer des revenus avec ton téléphone.",
+    "ebooks.7.title":"Santé, Nutrition et Beauté Naturelle","ebooks.7.desc":"Approche naturelle pour rayonner.",
+    "ebooks.8.title":"Les 5 Traits de la Masculinité","ebooks.8.desc":"Comprendre les archétypes masculins.",
+    "ebooks.9.title":"Les Pauvres Obéissent, Les Riches Négocient","ebooks.9.desc":"État d'esprit et négociation financière.",
+    "portfolio.label":"Réalisations","portfolio.title":"Quelques Projets",
+    "reviews.label":"Témoignages","reviews.title":"Ce que disent mes clients",
+    "faq.label":"FAQ","faq.title":"Questions fréquentes","faq.q1":"Est-ce que ça peut vraiment me faire gagner plus ?","faq.a1":"Oui. Un site web est votre boutique en ligne, accessible 24h/24.","faq.q2":"Dois-je être expert en informatique ?","faq.a2":"Non, tout est simple et expliqué.","faq.q3":"Tout fonctionne sur téléphone ?","faq.a3":"Oui, tout est optimisé mobile.","faq.q4":"Délai de livraison ?","faq.a4":"Ebook immédiat, site web 24h à 5 jours.",
+    "payment.label":"Paiement","payment.title":"Paiement Orange Money","payment.secure":"Paiement sécurisé par Orange Money","payment.paid":"J'ai payé","payment.question":"Poser une question",
+    "contact.label":"Contact","contact.title":"Prêt à lancer ton projet ?","contact.subtitle":"Ce que tu vends a de la valeur. Ton site doit le montrer.","contact.whatsapp":"WhatsApp","contact.email":"Email",
+    "footer.text":"© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · Tous droits réservés"
+  },
+  en: {
+    "brand":"BALIMA WEB<br>DEVELOPER","search.placeholder":"Search...","search.button":"Search",
+    "nav.services":"My Services","nav.library":"Library","nav.contact":"Contact me",
+    "hero.badge":"Available for new projects","hero.title":"YOUR WEBSITE.<br>YOUR CLIENTS.<br><span class='accent'>YOUR SALES.</span>",
+    "hero.subtitle":"I help entrepreneurs sell faster with clean, fast websites built to convert.","hero.cta":"See my services",
+    "services.label":"What I do","services.title":"My Services","services.currencyLabel":"Price / currency",
+    "services.card1.badge":"Starter","services.card1.title":"Capture Page","services.card1.compat":"Mobile / PC friendly","services.card1.li1":"Modern design","services.card1.li2":"Lead capture form","services.card1.li3":"Clear interface",
+    "services.card2.badge":"Main offer","services.card2.title":"Sales Page","services.card2.compat":"Mobile / PC friendly","services.card2.li1":"Conversion structure","services.card2.li2":"Premium design","services.card2.li3":"Visible CTA button",
+    "services.card3.badge":"Pro","services.card3.title":"Showcase Website","services.card3.compat":"Mobile / PC friendly","services.card3.li1":"3 to 5 pages","services.card3.li2":"Professional image","services.card3.li3":"Clean structure",
+    "services.card4.badge":"Full pack","services.card4.title":"ULTIMATE BOOST","services.card4.compat":"Mobile / PC friendly","services.card4.li1":"Capture page","services.card4.li2":"Sales page","services.card4.li3":"Showcase site","services.card4.li4":"Basic optimization",
+    "services.order":"Order",
+    "why.label":"Why me?","why.title":"A website is not an expense. It's an investment.",
+    "why.p1":"Many people can build a website. My goal is not just to deliver a pretty site.","why.p2":"Every project is done with care and one priority: making your business look as professional as the value you bring.",
+    "why.card1.title":"Speed","why.card1.desc":"Fast and smooth sites.","why.card2.title":"Fully responsive","why.card2.desc":"Works on all devices.","why.card3.title":"Result-oriented","why.card3.desc":"Designed to convert.","why.card4.title":"Support","why.card4.desc":"Available after delivery.",
+    "academy.label":"Web Development Training","academy.title":"BALIMA Web Academy",
+    "library.label":"Resources & Knowledge","library.title":"Success Library",
+    "ebooks.note":"Tap then validate the code in the phone app.",
+    "ebooks.1.title":"African Success Mindset","ebooks.1.desc":"Think big, act right, succeed without limits.",
+    "ebooks.2.title":"Master Your Emotions","ebooks.2.desc":"The art of staying in control.",
+    "ebooks.3.title":"Sell Online from A to Z","ebooks.3.desc":"The complete guide to launching your business.",
+    "ebooks.4.title":"Stop Procrastinating","ebooks.4.desc":"Take action and regain control.",
+    "ebooks.5.title":"Take Back Control of Your Life","ebooks.5.desc":"Guide for balance and discipline.",
+    "ebooks.6.title":"Make Money with Your Phone","ebooks.6.desc":"Generate income with your phone.",
+    "ebooks.7.title":"Health, Nutrition & Natural Beauty","ebooks.7.desc":"A natural approach to radiance.",
+    "ebooks.8.title":"The 5 Traits of Masculinity","ebooks.8.desc":"Understanding male archetypes.",
+    "ebooks.9.title":"The Poor Obey, The Rich Negotiate","ebooks.9.desc":"Financial mindset and negotiation.",
+    "portfolio.label":"Portfolio","portfolio.title":"Some Projects",
+    "reviews.label":"Testimonials","reviews.title":"What my clients say",
+    "faq.label":"FAQ","faq.title":"Frequently Asked Questions","faq.q1":"Will it really help me earn more?","faq.a1":"Yes. A website is your online store, open 24/7.","faq.q2":"Do I need to be a tech expert?","faq.a2":"No, everything is simple and explained.","faq.q3":"Does it work on mobile?","faq.a3":"Yes, fully mobile-optimized.","faq.q4":"Delivery time?","faq.a4":"Ebook instantly, website 24h to 5 days.",
+    "payment.label":"Payment","payment.title":"Orange Money Payment","payment.secure":"Secure payment via Orange Money","payment.paid":"I've paid","payment.question":"Ask a question",
+    "contact.label":"Contact","contact.title":"Ready to launch your project?","contact.subtitle":"What you sell has value. Your website should show it.","contact.whatsapp":"WhatsApp","contact.email":"Email",
+    "footer.text":"© 2026 Balima Web Developer · Burkina Faso 🇧🇫 · All rights reserved"
+  }
+};
+
+let currentLang = 'fr';
+let currentCurrency = 'xof';
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang][key]) {
+      if(translations[lang][key].includes('<')) el.innerHTML = translations[lang][key];
+      else el.textContent = translations[lang][key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(translations[lang][key]) el.placeholder = translations[lang][key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+}
+
+function setCurrency(currency) {
+  currentCurrency = currency;
+  document.querySelectorAll('.currency-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.currency === currency));
+  // Services cards
+  document.querySelectorAll('.services-card .price span').forEach(span => span.style.display = 'none');
+  document.querySelectorAll('.services-card .price .' + currency).forEach(span => span.style.display = 'inline-flex');
+  // Ebook cards
+  const sym = currency === 'xof' ? 'XOF' : currency === 'eur' ? 'EUR' : 'USD';
+  document.querySelectorAll('.ebook-card').forEach(card => {
+    const priceEl = card.querySelector('.price-display');
+    const val = card.dataset['price' + currency];
+    if(priceEl && val) {
+      priceEl.textContent = parseInt(val).toLocaleString('fr-FR') + ' ' + sym;
+    }
+  });
+}
+
+function filterAllCards() {
+  const q = (document.getElementById('siteSearch')?.value || document.getElementById('siteSearchTop')?.value || '').toLowerCase().trim();
+  document.querySelectorAll('.ebook-card, .card').forEach(card => {
+    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+function handleBuy(btn) {
+  const code = btn.getAttribute('data-code');
+  const message = btn.getAttribute('data-message') || 'Bonjour, je souhaite acheter un ebook.';
+  const toast = document.getElementById('confirmToast');
+
+  if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent) && code) {
+    // Sur mobile : ouvre l'app téléphone avec le code USSD prêt
+    const ussd = code.replace(/#$/, '%23'); // encode le # final seulement
+    window.location.href = 'tel:' + ussd;
+    // Après 4s, ouvre WhatsApp pour confirmation
+    setTimeout(() => {
+      window.open('https://wa.me/22607190217?text=' + encodeURIComponent(message + ' — paiement effectué.'), '_blank');
+    }, 4000);
+    if(toast){ toast.innerHTML = '📞 Code USSD ouvert — composez et validez, puis confirmez sur WhatsApp.'; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),6000); }
+  } else {
+    // Sur PC : ouvre WhatsApp directement
+    window.open('https://wa.me/22607190217?text=' + encodeURIComponent(message), '_blank');
+    if(toast){ toast.innerHTML = '✅ Redirection vers WhatsApp...'; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),3000); }
+  }
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+document.querySelectorAll('.currency-btn').forEach(btn => btn.addEventListener('click', () => setCurrency(btn.dataset.currency)));
+document.querySelectorAll('.ebook-card-btn').forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); handleBuy(btn); }));
+document.getElementById('siteSearch')?.addEventListener('input', filterAllCards);
+document.getElementById('siteSearchTop')?.addEventListener('input', filterAllCards);
+
+const menuBtn = document.getElementById('menuBtn');
+const overlay = document.getElementById('menuOverlay');
+function toggleMenu(open) { document.body.classList.toggle('menu-open', open); }
+menuBtn.addEventListener('click', () => toggleMenu(!document.body.classList.contains('menu-open')));
+overlay.addEventListener('click', () => toggleMenu(false));
+document.getElementById('mobileMenu').querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleMenu(false); });
+
+// Ouvrir la première FAQ par défaut
+document.querySelector('.faq-card')?.classList.add('open');
+
+document.querySelectorAll('.faq-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+    if(!isOpen) card.classList.add('open');
+  });
+});
+
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', () => { topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
+topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+setLanguage('fr');
+setCurrency('xof');
+
+
+// Aperçu ebook
+const previewData = {
+  'html-image.jpg':    { chapters: ['Introduction au HTML','Les balises essentielles','Formulaires & liens','Structure d'une page pro','Projet final complet'] },
+  'CSS-image.jpg':     { chapters: ['Sélecteurs & propriétés','Flexbox de A à Z','CSS Grid expliqué','Animations & transitions','Design responsive'] },
+  'Java_script.jpg':   { chapters: ['Variables & fonctions','Le DOM expliqué','Événements & interactions','Fetch & APIs','Projet : app complète'] },
+  'Front-end.jpg':     { chapters: ['HTML + CSS + JS ensemble','Responsive design','Composants réutilisables','Déploiement en ligne','Portfolio professionnel'] },
+  'Back-end.jpg':      { chapters: ['Serveurs & requêtes HTTP','Node.js pour débutants','Bases de données SQL','Créer une API REST','Sécurité & authentification'] },
+  'creer-site.jpg':    { chapters: ['Planification du projet','Design & maquette','Développement complet','Mise en ligne & domaine','Maintenance & SEO'] },
+  'Word-press.jpg':    { chapters: ['Installation WordPress','Thèmes & plugins','WooCommerce boutique','SEO avec Yoast','Sauvegardes & sécurité'] },
+  'Vivre-du-dev.jpg':  { chapters: ['Trouver ses premiers clients','Fixer ses tarifs','Créer son portfolio','Gérer ses projets','Vivre du freelance'] },
+  'mindset-de.jpg':    { chapters: ['Penser comme un leader','Éliminer les croyances limitantes','Discipline & constance','Vision à long terme','Réussir sans frontières'] },
+  'maitriser-ses.jpg': { chapters: ['Comprendre ses émotions','Gérer la colère & le stress','Intelligence émotionnelle','Prise de décision calme','Relations saines'] },
+  'vendre-en-ligne.jpg':{ chapters: ['Choisir son produit','Créer sa boutique','Attirer des clients','Convertir & fidéliser','Automatiser ses ventes'] },
+  'sortir-de la-procras.jpg': { chapters: ['Comprendre la procrastination','Les déclencheurs','Méthodes anti-procras','Routine productive','Maintenir l'élan'] },
+  'reprendre-le-controle.jpg':{ chapters: ['Diagnostic personnel','Gestion du temps','Discipline quotidienne','Équilibre vie pro/perso','Plan d'action 30 jours'] },
+  'creer-des-revenus.jpg':    { chapters: ['Opportunités sur mobile','Vendre ses compétences','Créer du contenu payant','Affiliation & partenariats','Passer à l'échelle'] },
+  'sante-nutrition.jpg':      { chapters: ['Alimentation saine','Plantes médicinales locales','Soins naturels beauté','Hydratation & énergie','Routine bien-être'] },
+  'les-traits-de.jpg':        { chapters: ['Les 5 archétypes masculins','Confiance & leadership','Discipline & responsabilité','Relations & communication','Grandir comme homme'] },
+  'les-pauvres-obeissent.jpg':{ chapters: ['Mentalité riche vs pauvre','L'art de négocier','Gérer l'argent intelligemment','Investir ses premiers gains','Construire sa liberté financière'] },
+};
+
+document.querySelectorAll('.ebook-card-cover img').forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const card = img.closest('.ebook-card');
+    const src = img.getAttribute('src');
+    const title = card.querySelector('.ebook-card-title')?.textContent || '';
+    const desc = card.querySelector('.ebook-card-desc')?.textContent || '';
+    const btn = card.querySelector('.ebook-card-btn');
+    const data = previewData[src] || { chapters: ['Chapitre 1','Chapitre 2','Chapitre 3'] };
+    document.getElementById('previewCover').src = src;
+    document.getElementById('previewTitle').textContent = title;
+    document.getElementById('previewDesc').textContent = desc;
+    document.getElementById('previewChapters').innerHTML = data.chapters.map(c => '<li>' + c + '</li>').join('');
+    document.getElementById('previewBuy').onclick = () => { handleBuy(btn); closePreview(); };
+    document.getElementById('previewModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closePreview() {
+  document.getElementById('previewModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('previewClose').addEventListener('click', closePreview);
+document.getElementById('previewBackdrop').addEventListener('click', closePreview);
+
+// Confirmation toast après achat
+const originalHandleBuy = handleBuy;
+function showConfirmToast() {
+  const toast = document.getElementById('confirmToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+}
+document.querySelectorAll('.ebook-card-btn').forEach(btn => {
+  btn.addEventListener('click', () => setTimeout(showConfirmToast, 800));
+});
+
+</script>
+</body>
+</html>
