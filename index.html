@@ -65,22 +65,41 @@
     /* ═══════════════════════════════════
        EBOOK CARDS — PREMIUM GRID
     ═══════════════════════════════════ */
-    .ebook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px;}
+    .ebook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:16px;}
     .ebook-card{background:rgba(17,30,51,0.9);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;}
     .ebook-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.5),0 0 0 1px rgba(216,178,106,.15);}
-    .ebook-card-cover{width:100%;height:150px;position:relative;overflow:hidden;background:#111e33;flex-shrink:0;}
-    .ebook-card-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;filter:brightness(.88);}
-    .ebook-card:hover .ebook-card-cover img{transform:scale(1.06);filter:brightness(1);}
+    /* Cover plus haute = couverture bien visible */
+    .ebook-card-cover{width:100%;height:200px;position:relative;overflow:hidden;background:#111e33;flex-shrink:0;}
+    .ebook-card-cover img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .35s ease;filter:brightness(.92);}
+    .ebook-card:hover .ebook-card-cover img{transform:scale(1.04);filter:brightness(1);}
     .ebook-badge{position:absolute;top:8px;right:8px;background:var(--gold);color:#000;font-family:'Syne',sans-serif;font-size:8px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:3px 7px;border-radius:3px;}
-    .ebook-card-body{padding:13px 13px 15px;display:flex;flex-direction:column;gap:8px;flex:1;}
-    .ebook-card-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;line-height:1.35;color:var(--text);}
+    .ebook-card-body{padding:12px 12px 14px;display:flex;flex-direction:column;gap:7px;flex:1;}
+    .ebook-card-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;line-height:1.3;color:var(--text);}
     .ebook-card-desc{font-size:11px;color:var(--muted);line-height:1.4;font-style:italic;}
-    .ebook-card-pricing{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:4px;}
-    .ebook-price-new{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--gold2);}
-    .ebook-price-old{font-size:11px;color:#444;text-decoration:line-through;}
+    /* Prix sur une seule ligne — nowrap + baseline */
+    .ebook-card-pricing{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:6px;white-space:nowrap;}
+    .ebook-price-new{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--gold2);white-space:nowrap;}
+    .ebook-price-old{font-size:11px;color:#555;text-decoration:line-through;white-space:nowrap;flex-shrink:0;}
     .ebook-card-btn{display:block;width:100%;text-align:center;background:transparent;border:1px solid rgba(216,178,106,.5);color:var(--gold2);font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:9px 0;border-radius:8px;cursor:pointer;transition:background .2s,color .2s;margin-top:4px;}
     .ebook-card-btn:hover{background:var(--gold);color:#000;border-color:var(--gold);}
     .ebook-note{font-size:10px;color:var(--muted);margin-top:4px;}
+    .ebook-badge.best-seller{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;letter-spacing:1px;}
+
+
+    /* ═══════════════════════════════════
+       PORTFOLIO — MAQUETTES VISUELLES
+    ═══════════════════════════════════ */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+    .project-card{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.07);background:rgba(17,30,51,.85);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;cursor:pointer;}
+    .project-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 28px 60px rgba(0,0,0,.5);}
+    .project-mockup{width:100%;height:240px;position:relative;overflow:hidden;flex-shrink:0;}
+    .project-info{padding:16px 18px 20px;}
+    .project-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+    .project-info h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text);}
+    .project-info p{font-size:12px;color:var(--muted);line-height:1.5;}
+    .project-tech{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;}
+    .tech-pill{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--muted);}
+    @media(max-width:900px){.portfolio-grid{grid-template-columns:1fr;}}
 
     /* ─── Reste du CSS inchangé ─── */
     .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
@@ -142,10 +161,8 @@
       .hero{padding-top:56px;}
       .search-area{flex-direction:column;}
       .menu{display:none;}
-      .ebook-grid{grid-template-columns:repeat(2,1fr);}
-    }
-    @media(max-width:400px){
-      .ebook-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+      .ebook-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+      .ebook-card-cover{height:180px;}
     }
   </style>
 </head>
@@ -240,7 +257,7 @@
     <div class="ebook-grid" id="academyCards">
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="html-image.jpg" alt="HTML"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="html-image.jpg" alt="HTML"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title">HTML DE ZÉRO À EXPERT</div>
           <div class="ebook-card-desc">Structure complète d'un site web professionnel.</div>
@@ -262,7 +279,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="Java_script.jpg" alt="JavaScript"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="Java_script.jpg" alt="JavaScript"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title">JAVASCRIPT SANS CONFUSION</div>
           <div class="ebook-card-desc">Étape par étape avec projets réels.</div>
@@ -273,7 +290,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
-        <div class="ebook-card-cover"><img src="Front-end.jpg" alt="Frontend"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="Front-end.jpg" alt="Frontend"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title">FRONTEND COMPLET</div>
           <div class="ebook-card-desc">HTML, CSS & JS pour devenir développeur.</div>
@@ -295,7 +312,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="15000" data-price-eur="23" data-price-usd="25">
-        <div class="ebook-card-cover"><img src="creer-site.jpg" alt="Site Web"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="creer-site.jpg" alt="Site Web"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title">CRÉER UN SITE WEB DE A À Z</div>
           <div class="ebook-card-desc">Conception, développement et mise en ligne.</div>
@@ -343,7 +360,7 @@
     <div class="ebook-grid" id="libraryCards">
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="mindset-de.jpg" alt="Mindset"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="mindset-de.jpg" alt="Mindset"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title" data-i18n="ebooks.1.title">Mindset de Réussite Africaine</div>
           <div class="ebook-card-desc" data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</div>
@@ -365,7 +382,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="vendre-en-ligne.jpg" alt="Vente"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="vendre-en-ligne.jpg" alt="Vente"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title" data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</div>
           <div class="ebook-card-desc" data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</div>
@@ -398,7 +415,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="creer-des-revenus.jpg" alt="Revenus"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="creer-des-revenus.jpg" alt="Revenus"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title" data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</div>
           <div class="ebook-card-desc" data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</div>
@@ -431,7 +448,7 @@
       </div>
 
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
-        <div class="ebook-card-cover"><img src="les-pauvres-obeissent.jpg" alt="Riches"><span class="ebook-badge">Promo</span></div>
+        <div class="ebook-card-cover"><img src="les-pauvres-obeissent.jpg" alt="Riches"><span class="ebook-badge best-seller">Best Seller</span></div>
         <div class="ebook-card-body">
           <div class="ebook-card-title" data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</div>
           <div class="ebook-card-desc" data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</div>
@@ -449,10 +466,227 @@
   <div class="wrap">
     <div class="label" data-i18n="portfolio.label">Réalisations</div>
     <div class="title" data-i18n="portfolio.title">Quelques Projets</div>
-    <div class="grid-3">
-      <article class="card"><img src="https://placehold.co/600x800?text=Restaurant" class="ebook-img"><div class="card-body"><h3>Site Restaurant</h3><p>Site moderne pour restaurant.</p></div></article>
-      <article class="card"><img src="https://placehold.co/600x800?text=Vente" class="ebook-img"><div class="card-body"><h3>Page de Vente</h3><p>Landing page optimisée.</p></div></article>
-      <article class="card"><img src="https://placehold.co/600x800?text=Vitrine" class="ebook-img"><div class="card-body"><h3>Site Vitrine</h3><p>Présentation professionnelle.</p></div></article>
+    <div class="portfolio-grid">
+
+      <!-- 1. Boutique iPhone -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="iph-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a0a0a"/>
+                <stop offset="100%" stop-color="#1a1a2e"/>
+              </linearGradient>
+              <linearGradient id="iph-btn" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#c0c0c0"/>
+                <stop offset="100%" stop-color="#e8e8e8"/>
+              </linearGradient>
+            </defs>
+            <!-- fond -->
+            <rect width="600" height="240" fill="url(#iph-bg)"/>
+            <!-- nav bar -->
+            <rect width="600" height="36" fill="rgba(255,255,255,0.04)"/>
+            <text x="18" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="2">iPHONE STORE</text>
+            <text x="480" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Accueil</text>
+            <text x="520" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Shop</text>
+            <text x="557" y="24" font-family="sans-serif" font-size="10" fill="#aaa">📦</text>
+            <!-- hero text -->
+            <text x="24" y="72" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="3">NOUVEAUTÉ 2025</text>
+            <text x="24" y="96" font-family="sans-serif" font-size="20" font-weight="900" fill="white">iPhone 16 Pro</text>
+            <text x="24" y="114" font-family="sans-serif" font-size="11" fill="#bbb">Titanium · 256GB · 5G</text>
+            <!-- price -->
+            <text x="24" y="140" font-family="sans-serif" font-size="16" font-weight="800" fill="#e8e8e8">650 000 XOF</text>
+            <text x="24" y="156" font-family="sans-serif" font-size="9" fill="#666" text-decoration="line-through">750 000 XOF</text>
+            <!-- btn -->
+            <rect x="24" y="166" width="110" height="28" rx="6" fill="url(#iph-btn)"/>
+            <text x="79" y="185" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Commander →</text>
+            <!-- phone mockup right -->
+            <rect x="340" y="20" width="90" height="180" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <rect x="348" y="30" width="74" height="152" rx="8" fill="#111"/>
+            <circle cx="385" cy="185" r="6" fill="rgba(255,255,255,0.15)"/>
+            <rect x="353" y="36" width="64" height="128" rx="4" fill="#1a1a2e"/>
+            <text x="385" y="100" font-family="sans-serif" font-size="22" text-anchor="middle" fill="white"></text>
+            <text x="385" y="118" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">iPhone 16 Pro</text>
+            <!-- second phone -->
+            <rect x="448" y="40" width="82" height="165" rx="13" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <rect x="455" y="50" width="68" height="140" rx="7" fill="#0d0d1a"/>
+            <rect x="460" y="56" width="58" height="118" rx="3" fill="#16213e"/>
+            <text x="489" y="120" font-family="sans-serif" font-size="20" text-anchor="middle" fill="white">📷</text>
+            <!-- badge -->
+            <rect x="500" y="20" width="66" height="20" rx="4" fill="#e8c97a"/>
+            <text x="533" y="34" font-family="sans-serif" font-size="9" font-weight="800" fill="#000" text-anchor="middle">BEST PRICE</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(232,201,122,.15);color:#e8c97a;border:1px solid rgba(232,201,122,.3);">Boutique iPhone</span>
+          <h3>iPhone Store BF</h3>
+          <p>Boutique en ligne spécialisée iPhone avec catalogue produits, comparateur de modèles et paiement Orange Money.</p>
+          <div class="project-tech">
+            <span class="tech-pill">E-commerce</span>
+            <span class="tech-pill">Orange Money</span>
+            <span class="tech-pill">Responsive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Page de vente ebook -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sale-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0f1a35"/>
+                <stop offset="100%" stop-color="#1a0a2e"/>
+              </linearGradient>
+              <linearGradient id="sale-cta" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0057ff"/>
+                <stop offset="100%" stop-color="#4d8fff"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#sale-bg)"/>
+            <!-- glow -->
+            <ellipse cx="300" cy="120" rx="200" ry="80" fill="rgba(0,87,255,0.08)"/>
+            <!-- headline -->
+            <text x="300" y="52" font-family="sans-serif" font-size="8" fill="#4d8fff" letter-spacing="4" text-anchor="middle">FORMATION EN LIGNE</text>
+            <text x="300" y="76" font-family="sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Maîtrise le Web</text>
+            <text x="300" y="94" font-family="sans-serif" font-size="13" font-weight="700" fill="#F7DEAB" text-anchor="middle">de Zéro à Professionnel</text>
+            <!-- bullets -->
+            <text x="140" y="118" font-family="sans-serif" font-size="10" fill="#aaa">✓  HTML, CSS, JavaScript</text>
+            <text x="140" y="134" font-family="sans-serif" font-size="10" fill="#aaa">✓  Projets réels inclus</text>
+            <text x="140" y="150" font-family="sans-serif" font-size="10" fill="#aaa">✓  Accès à vie</text>
+            <!-- price block -->
+            <rect x="350" y="104" width="160" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(77,143,255,0.3)" stroke-width="1"/>
+            <text x="430" y="126" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle" text-decoration="line-through">25 000 XOF</text>
+            <text x="430" y="148" font-family="sans-serif" font-size="20" font-weight="800" fill="#F7DEAB" text-anchor="middle">10 000 XOF</text>
+            <text x="430" y="164" font-family="sans-serif" font-size="8" fill="#4d8fff" text-anchor="middle">-60% aujourd'hui</text>
+            <!-- CTA -->
+            <rect x="140" y="166" width="320" height="34" rx="8" fill="url(#sale-cta)"/>
+            <text x="300" y="189" font-family="sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">🚀 Je veux accéder maintenant</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(77,143,255,.15);color:#4d8fff;border:1px solid rgba(77,143,255,.3);">Page de Vente</span>
+          <h3>Landing Page Formation Web</h3>
+          <p>Page de vente haute conversion pour formation digitale avec compte à rebours, témoignages et CTA optimisé.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Copywriting</span>
+            <span class="tech-pill">Conversion</span>
+            <span class="tech-pill">Mobile-first</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Site vitrine restaurant -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rest-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a0f00"/>
+                <stop offset="100%" stop-color="#2d1a00"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#rest-bg)"/>
+            <!-- texture dots -->
+            <circle cx="80" cy="30" r="40" fill="rgba(212,160,30,0.08)"/>
+            <circle cx="520" cy="200" r="60" fill="rgba(212,160,30,0.06)"/>
+            <!-- nav -->
+            <rect width="600" height="38" fill="rgba(0,0,0,0.4)"/>
+            <text x="20" y="25" font-family="serif" font-size="13" font-weight="700" fill="#D4A01E" letter-spacing="3">SAVEURS D'AFRIQUE</text>
+            <text x="430" y="24" font-family="sans-serif" font-size="9" fill="#aaa">Menu</text>
+            <text x="470" y="24" font-family="sans-serif" font-size="9" fill="#aaa">À propos</text>
+            <text x="515" y="24" font-family="sans-serif" font-size="9" fill="#D4A01E">Réserver</text>
+            <!-- hero image zone -->
+            <rect x="320" y="38" width="280" height="202" fill="rgba(0,0,0,0.3)"/>
+            <text x="460" y="140" font-family="sans-serif" font-size="48" text-anchor="middle" fill="rgba(255,255,255,0.15)">🍽️</text>
+            <!-- content -->
+            <text x="20" y="70" font-family="sans-serif" font-size="8" fill="#D4A01E" letter-spacing="3">RESTAURANT GASTRONOMIQUE</text>
+            <text x="20" y="98" font-family="serif" font-size="24" font-weight="700" fill="white">Une cuisine</text>
+            <text x="20" y="124" font-family="serif" font-size="24" font-weight="700" fill="#D4A01E">d'exception</text>
+            <text x="20" y="148" font-family="sans-serif" font-size="10" fill="#bbb">Vendredi – Dimanche · 12h–22h</text>
+            <text x="20" y="162" font-family="sans-serif" font-size="10" fill="#bbb">Ouagadougou, Burkina Faso</text>
+            <!-- stars -->
+            <text x="20" y="182" font-family="sans-serif" font-size="12" fill="#D4A01E">★★★★★</text>
+            <text x="100" y="182" font-family="sans-serif" font-size="9" fill="#888">4.9 · 120 avis</text>
+            <!-- btn -->
+            <rect x="20" y="194" width="130" height="28" rx="6" fill="#D4A01E"/>
+            <text x="85" y="213" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Réserver une table</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(212,160,30,.15);color:#D4A01E;border:1px solid rgba(212,160,30,.3);">Site Vitrine</span>
+          <h3>Saveurs d'Afrique – Restaurant</h3>
+          <p>Site vitrine élégant pour restaurant gastronomique avec menu interactif, galerie et système de réservation.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Site Vitrine</span>
+            <span class="tech-pill">Réservation</span>
+            <span class="tech-pill">Galerie</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Boutique en ligne mode -->
+      <div class="project-card">
+        <div class="project-mockup">
+          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="shop-bg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f5f0eb"/>
+                <stop offset="100%" stop-color="#ede5da"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="240" fill="url(#shop-bg)"/>
+            <!-- nav -->
+            <rect width="600" height="36" fill="rgba(255,255,255,0.8)"/>
+            <text x="20" y="24" font-family="serif" font-size="13" font-weight="700" fill="#1a1a1a" letter-spacing="4">ÉLÉGANCE BF</text>
+            <text x="420" y="23" font-family="sans-serif" font-size="9" fill="#555">Femme</text>
+            <text x="455" y="23" font-family="sans-serif" font-size="9" fill="#555">Homme</text>
+            <text x="494" y="23" font-family="sans-serif" font-size="9" fill="#555">Soldes</text>
+            <text x="545" y="23" font-family="sans-serif" font-size="12" fill="#1a1a1a">🛒</text>
+            <!-- product cards -->
+            <!-- card 1 -->
+            <rect x="16" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="16" y="46" width="120" height="110" rx="8" fill="#e8ddd0"/>
+            <text x="76" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👗</text>
+            <text x="76" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Robe Soirée</text>
+            <text x="76" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">35 000 XOF</text>
+            <rect x="28" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="76" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 2 -->
+            <rect x="148" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="148" y="46" width="120" height="110" rx="8" fill="#d4c5b0"/>
+            <text x="208" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👔</text>
+            <text x="208" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Costume Homme</text>
+            <text x="208" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">58 000 XOF</text>
+            <rect x="160" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="208" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 3 -->
+            <rect x="280" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/>
+            <rect x="280" y="46" width="120" height="110" rx="8" fill="#c8b99a"/>
+            <text x="340" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👠</text>
+            <rect x="280" y="46" width="44" height="18" rx="3" fill="#e74c3c"/>
+            <text x="302" y="59" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">-30%</text>
+            <text x="340" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Escarpins</text>
+            <text x="340" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">22 000 XOF</text>
+            <rect x="292" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/>
+            <text x="340" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
+            <!-- card 4 hint -->
+            <rect x="412" y="46" width="80" height="170" rx="8" fill="rgba(255,255,255,0.5)"/>
+            <text x="452" y="136" font-family="sans-serif" font-size="20" text-anchor="middle" fill="rgba(0,0,0,0.15)">›</text>
+          </svg>
+        </div>
+        <div class="project-info">
+          <span class="project-tag" style="background:rgba(26,26,26,.08);color:#1a1a1a;border:1px solid rgba(26,26,26,.2);">Boutique en Ligne</span>
+          <h3>Élégance BF – Mode & Prêt-à-porter</h3>
+          <p>Boutique e-commerce mode avec catalogue filtrable, panier intelligent et paiement mobile money intégré.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Boutique</span>
+            <span class="tech-pill">Panier</span>
+            <span class="tech-pill">Mobile Money</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
