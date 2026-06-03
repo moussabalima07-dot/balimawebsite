@@ -8,13 +8,11 @@
   <meta name="robots" content="index, follow">
   <meta name="author" content="Balima Web Developer">
   <meta name="keywords" content="site web Burkina Faso, création site web, développeur web Ouagadougou, page de vente, ebook développement web, Balima">
-  <!-- Open Graph -->
   <meta property="og:title" content="Balima Web Developer | Sites Web Professionnels au Burkina Faso">
   <meta property="og:description" content="Je crée des sites web professionnels, pages de vente et solutions digitales au Burkina Faso. Contactez-moi sur WhatsApp.">
   <meta property="og:image" content="logo-site.jpg">
   <meta property="og:url" content="https://moussabalima07.github.io">
   <meta property="og:type" content="website">
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Balima Web Developer | Burkina Faso">
   <meta name="twitter:description" content="Sites web professionnels, pages de vente et ebooks au Burkina Faso.">
@@ -106,10 +104,6 @@
     @media(max-width:900px){.portfolio-grid{grid-template-columns:1fr;}}
     .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
     .card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
-    .ebook-img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#111e33;}
-    .card-body{padding:20px;text-align:center;}
-    .card h3{font-size:1.08rem;margin-bottom:10px;}
-    .card p{font-size:.86rem;color:var(--muted);line-height:1.7;margin-bottom:14px;}
     .services-price-switch{margin-bottom:20px;}
     .currency-label{color:var(--muted);font-size:.9rem;font-weight:700;margin-bottom:10px;display:block;}
     .currency-switch{display:flex;gap:10px;flex-wrap:wrap;}
@@ -342,86 +336,37 @@
     <div class="label" data-i18n="academy.label">Formation Développement Web</div>
     <div class="title" data-i18n="academy.title">Académie Web BALIMA</div>
     <div class="ebook-grid" id="academyCards">
-      <!-- Chaque carte a maintenant des data-i18n pour les titres et descriptions -->
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="html-image.jpg" alt="Couverture HTML de zéro à expert"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook1.title">HTML DE ZÉRO À EXPERT</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook1.desc">Structure complète d'un site web professionnel.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook1.title">HTML DE ZÉRO À EXPERT</div><div class="ebook-card-desc" data-i18n="academy.ebook1.desc">Structure complète d'un site web professionnel.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'HTML DE ZÉRO À EXPERT'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="CSS-image.jpg" alt="Couverture CSS moderne"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook2.title">MAÎTRISER CSS MODERNE</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook2.desc">Flexbox, Grid et animations modernes.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook2.title">MAÎTRISER CSS MODERNE</div><div class="ebook-card-desc" data-i18n="academy.ebook2.desc">Flexbox, Grid et animations modernes.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'MAÎTRISER CSS MODERNE'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="Java_script.jpg" alt="Couverture JavaScript sans confusion"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook3.title">JAVASCRIPT SANS CONFUSION</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook3.desc">Étape par étape avec projets réels.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook3.title">JAVASCRIPT SANS CONFUSION</div><div class="ebook-card-desc" data-i18n="academy.ebook3.desc">Étape par étape avec projets réels.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'JAVASCRIPT SANS CONFUSION'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
         <div class="ebook-card-cover"><img src="Front-end.jpg" alt="Couverture Frontend complet"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook4.title">FRONTEND COMPLET</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook4.desc">HTML, CSS & JS pour devenir développeur.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook4.title">FRONTEND COMPLET</div><div class="ebook-card-desc" data-i18n="academy.ebook4.desc">HTML, CSS & JS pour devenir développeur.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'FRONTEND COMPLET'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
         <div class="ebook-card-cover"><img src="Back-end.jpg" alt="Couverture Backend débutants"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook5.title">BACKEND POUR DÉBUTANTS</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook5.desc">Serveurs, bases de données et API.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook5.title">BACKEND POUR DÉBUTANTS</div><div class="ebook-card-desc" data-i18n="academy.ebook5.desc">Serveurs, bases de données et API.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'BACKEND POUR DÉBUTANTS'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="15000" data-price-eur="23" data-price-usd="25">
         <div class="ebook-card-cover"><img src="creer-site.jpg" alt="Couverture Créer un site web de A à Z"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook6.title">CRÉER UN SITE WEB DE A À Z</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook6.desc">Conception, développement et mise en ligne.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">15 000 XOF</span><span class="ebook-price-old">30 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook6.title">CRÉER UN SITE WEB DE A À Z</div><div class="ebook-card-desc" data-i18n="academy.ebook6.desc">Conception, développement et mise en ligne.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">15 000 XOF</span><span class="ebook-price-old">30 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*15000#" data-message="Bonjour, je souhaite acheter le livre 'CRÉER UN SITE WEB DE A À Z'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="10000" data-price-eur="15" data-price-usd="16">
         <div class="ebook-card-cover"><img src="Word-press.jpg" alt="Couverture WordPress et WooCommerce"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook7.title">WORDPRESS & WOOCOMMERCE</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook7.desc">Blogs, sites et boutiques en ligne.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook7.title">WORDPRESS & WOOCOMMERCE</div><div class="ebook-card-desc" data-i18n="academy.ebook7.desc">Blogs, sites et boutiques en ligne.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">10 000 XOF</span><span class="ebook-price-old">25 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*10000#" data-message="Bonjour, je souhaite acheter le livre 'WORDPRESS & WOOCOMMERCE'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="Vivre-du-dev.jpg" alt="Couverture Devenir freelance web"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="academy.ebook8.title">DEVENIR FREELANCE WEB</div>
-          <div class="ebook-card-desc" data-i18n="academy.ebook8.desc">Trouver des clients et générer des revenus.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="academy.ebook8.title">DEVENIR FREELANCE WEB</div><div class="ebook-card-desc" data-i18n="academy.ebook8.desc">Trouver des clients et générer des revenus.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'DEVENIR FREELANCE WEB'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code dans l'application téléphone.</div></div>
       </div>
     </div>
   </div>
@@ -439,93 +384,39 @@
     <div class="ebook-grid" id="libraryCards">
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="mindset-de.jpg" alt="Couverture Mindset de réussite africaine"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.1.title">Mindset de Réussite Africaine</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.1.title">Mindset de Réussite Africaine</div><div class="ebook-card-desc" data-i18n="ebooks.1.desc">Penser grand, agir juste, réussir sans limites.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Mindset de Réussite Africaine'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="maitriser-ses.jpg" alt="Couverture Maîtriser ses émotions"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.2.title">Maîtriser ses Émotions</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.2.desc">L'art de garder le contrôle.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.2.title">Maîtriser ses Émotions</div><div class="ebook-card-desc" data-i18n="ebooks.2.desc">L'art de garder le contrôle.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Maîtriser ses Émotions'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="vendre-en-ligne.jpg" alt="Couverture Vendre en ligne de A à Z"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.3.title">Vendre en Ligne de A à Z</div><div class="ebook-card-desc" data-i18n="ebooks.3.desc">Le guide complet pour lancer ton business.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Vendre en Ligne de A à Z'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="sortir-de la-procras.jpg" alt="Couverture Sortir de la procrastination"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.4.title">Sortir de la Procrastination</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.4.desc">Passer à l'action et reprendre le contrôle.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.4.title">Sortir de la Procrastination</div><div class="ebook-card-desc" data-i18n="ebooks.4.desc">Passer à l'action et reprendre le contrôle.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Sortir de la Procrastination'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="reprendre-le-controle.jpg" alt="Couverture Reprendre le contrôle de sa vie"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.5.title">Reprendre le Contrôle de sa Vie</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.5.desc">Guide pour l'équilibre et la discipline.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.5.title">Reprendre le Contrôle de sa Vie</div><div class="ebook-card-desc" data-i18n="ebooks.5.desc">Guide pour l'équilibre et la discipline.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Reprendre le Contrôle de sa Vie'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="creer-des-revenus.jpg" alt="Couverture Créer des revenus avec son téléphone"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.6.title">Créer des Revenus avec son Téléphone</div><div class="ebook-card-desc" data-i18n="ebooks.6.desc">Générer des revenus avec ton téléphone.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Créer des Revenus avec son Téléphone'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="sante-nutrition.jpg" alt="Couverture Santé, nutrition et beauté naturelle"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.7.title">Santé, Nutrition et Beauté Naturelle</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.7.desc">Approche naturelle pour rayonner.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.7.title">Santé, Nutrition et Beauté Naturelle</div><div class="ebook-card-desc" data-i18n="ebooks.7.desc">Approche naturelle pour rayonner.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Santé, Nutrition et Beauté Naturelle'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="les-traits-de.jpg" alt="Couverture Les 5 traits de la masculinité"><span class="ebook-badge">Promo</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.8.title">Les 5 Traits de la Masculinité</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.8.desc">Comprendre les archétypes masculins.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.8.title">Les 5 Traits de la Masculinité</div><div class="ebook-card-desc" data-i18n="ebooks.8.desc">Comprendre les archétypes masculins.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les 5 Traits de la Masculinité'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
       <div class="ebook-card" data-price-xof="5000" data-price-eur="8" data-price-usd="9">
         <div class="ebook-card-cover"><img src="les-pauvres-obeissent.jpg" alt="Couverture Les pauvres obéissent, les riches négocient"><span class="ebook-badge best-seller">Best Seller</span></div>
-        <div class="ebook-card-body">
-          <div class="ebook-card-title" data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</div>
-          <div class="ebook-card-desc" data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</div>
-          <div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div>
-          <button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter →</button>
-          <div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div>
-        </div>
+        <div class="ebook-card-body"><div class="ebook-card-title" data-i18n="ebooks.9.title">Les Pauvres Obéissent, Les Riches Négocient</div><div class="ebook-card-desc" data-i18n="ebooks.9.desc">État d'esprit et négociation financière.</div><div class="ebook-card-pricing"><span class="ebook-price-new price-display">5 000 XOF</span><span class="ebook-price-old">15 000</span></div><button class="ebook-card-btn" data-code="*144*2*1*07190217*5000#" data-message="Bonjour, je souhaite acheter le livre 'Les Pauvres Obéissent, Les Riches Négocient'">Acheter →</button><div class="ebook-note" data-i18n="ebooks.note">Appuie puis valide le code.</div></div>
       </div>
     </div>
   </div>
@@ -536,100 +427,19 @@
     <div class="label" data-i18n="portfolio.label">Réalisations</div>
     <div class="title" data-i18n="portfolio.title">Quelques Projets</div>
     <div class="portfolio-grid">
-      <!-- Projet 1 : Boutique iPhone -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="iph-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient><linearGradient id="iph-btn" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c0c0c0"/><stop offset="100%" stop-color="#e8e8e8"/></linearGradient></defs>
-            <rect width="600" height="240" fill="url(#iph-bg)"/><rect width="600" height="36" fill="rgba(255,255,255,0.04)"/><text x="18" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="2">iPHONE STORE</text><text x="480" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Accueil</text><text x="520" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Shop</text><text x="557" y="24" font-family="sans-serif" font-size="10" fill="#aaa">📦</text>
-            <text x="24" y="72" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="3">NOUVEAUTÉ 2025</text><text x="24" y="96" font-family="sans-serif" font-size="20" font-weight="900" fill="white">iPhone 16 Pro</text><text x="24" y="114" font-family="sans-serif" font-size="11" fill="#bbb">Titanium · 256GB · 5G</text>
-            <text x="24" y="140" font-family="sans-serif" font-size="16" font-weight="800" fill="#e8e8e8">650 000 XOF</text><text x="24" y="156" font-family="sans-serif" font-size="9" fill="#666" text-decoration="line-through">750 000 XOF</text>
-            <rect x="24" y="166" width="110" height="28" rx="6" fill="url(#iph-btn)"/><text x="79" y="185" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Commander →</text>
-            <rect x="340" y="20" width="90" height="180" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><rect x="348" y="30" width="74" height="152" rx="8" fill="#111"/><circle cx="385" cy="185" r="6" fill="rgba(255,255,255,0.15)"/><rect x="353" y="36" width="64" height="128" rx="4" fill="#1a1a2e"/><text x="385" y="100" font-family="sans-serif" font-size="22" text-anchor="middle" fill="white"></text><text x="385" y="118" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">iPhone 16 Pro</text>
-            <rect x="448" y="40" width="82" height="165" rx="13" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><rect x="455" y="50" width="68" height="140" rx="7" fill="#0d0d1a"/><rect x="460" y="56" width="58" height="118" rx="3" fill="#16213e"/><text x="489" y="120" font-family="sans-serif" font-size="20" text-anchor="middle" fill="white">📷</text>
-            <rect x="500" y="20" width="66" height="20" rx="4" fill="#e8c97a"/><text x="533" y="34" font-family="sans-serif" font-size="9" font-weight="800" fill="#000" text-anchor="middle">BEST PRICE</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(232,201,122,.15);color:#e8c97a;border:1px solid rgba(232,201,122,.3);">Boutique iPhone</span>
-          <h3>iPhone Store BF</h3>
-          <p>Boutique en ligne spécialisée iPhone avec catalogue produits, comparateur de modèles et paiement Orange Money.</p>
-          <div class="project-tech"><span class="tech-pill">E-commerce</span><span class="tech-pill">Orange Money</span><span class="tech-pill">Responsive</span></div>
-        </div>
-      </div>
+      <!-- Projet 1 : Boutique iPhone (SVG existant, inchangé) -->
+      <div class="project-card"><div class="project-mockup"><svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="iph-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#1a1a2e"/></linearGradient><linearGradient id="iph-btn" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c0c0c0"/><stop offset="100%" stop-color="#e8e8e8"/></linearGradient></defs><rect width="600" height="240" fill="url(#iph-bg)"/><rect width="600" height="36" fill="rgba(255,255,255,0.04)"/><text x="18" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="2">iPHONE STORE</text><text x="480" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Accueil</text><text x="520" y="24" font-family="sans-serif" font-size="10" fill="#aaa">Shop</text><text x="557" y="24" font-family="sans-serif" font-size="10" fill="#aaa">📦</text><text x="24" y="72" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="3">NOUVEAUTÉ 2025</text><text x="24" y="96" font-family="sans-serif" font-size="20" font-weight="900" fill="white">iPhone 16 Pro</text><text x="24" y="114" font-family="sans-serif" font-size="11" fill="#bbb">Titanium · 256GB · 5G</text><text x="24" y="140" font-family="sans-serif" font-size="16" font-weight="800" fill="#e8e8e8">650 000 XOF</text><text x="24" y="156" font-family="sans-serif" font-size="9" fill="#666" text-decoration="line-through">750 000 XOF</text><rect x="24" y="166" width="110" height="28" rx="6" fill="url(#iph-btn)"/><text x="79" y="185" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Commander →</text><rect x="340" y="20" width="90" height="180" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/><rect x="348" y="30" width="74" height="152" rx="8" fill="#111"/><circle cx="385" cy="185" r="6" fill="rgba(255,255,255,0.15)"/><rect x="353" y="36" width="64" height="128" rx="4" fill="#1a1a2e"/><text x="385" y="100" font-family="sans-serif" font-size="22" text-anchor="middle" fill="white"></text><text x="385" y="118" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">iPhone 16 Pro</text><rect x="448" y="40" width="82" height="165" rx="13" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><rect x="455" y="50" width="68" height="140" rx="7" fill="#0d0d1a"/><rect x="460" y="56" width="58" height="118" rx="3" fill="#16213e"/><text x="489" y="120" font-family="sans-serif" font-size="20" text-anchor="middle" fill="white">📷</text><rect x="500" y="20" width="66" height="20" rx="4" fill="#e8c97a"/><text x="533" y="34" font-family="sans-serif" font-size="9" font-weight="800" fill="#000" text-anchor="middle">BEST PRICE</text></svg></div><div class="project-info"><span class="project-tag" style="background:rgba(232,201,122,.15);color:#e8c97a;border:1px solid rgba(232,201,122,.3);">Boutique iPhone</span><h3>iPhone Store BF</h3><p>Boutique en ligne spécialisée iPhone avec catalogue produits, comparateur de modèles et paiement Orange Money.</p><div class="project-tech"><span class="tech-pill">E-commerce</span><span class="tech-pill">Orange Money</span><span class="tech-pill">Responsive</span></div></div></div>
       <!-- Projet 2 : Page de vente ebook -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="sale-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0f1a35"/><stop offset="100%" stop-color="#1a0a2e"/></linearGradient><linearGradient id="sale-cta" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0057ff"/><stop offset="100%" stop-color="#4d8fff"/></linearGradient></defs>
-            <rect width="600" height="240" fill="url(#sale-bg)"/><ellipse cx="300" cy="120" rx="200" ry="80" fill="rgba(0,87,255,0.08)"/>
-            <text x="300" y="52" font-family="sans-serif" font-size="8" fill="#4d8fff" letter-spacing="4" text-anchor="middle">FORMATION EN LIGNE</text>
-            <text x="300" y="76" font-family="sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Maîtrise le Web</text>
-            <text x="300" y="94" font-family="sans-serif" font-size="13" font-weight="700" fill="#F7DEAB" text-anchor="middle">de Zéro à Professionnel</text>
-            <text x="140" y="118" font-family="sans-serif" font-size="10" fill="#aaa">✓  HTML, CSS, JavaScript</text><text x="140" y="134" font-family="sans-serif" font-size="10" fill="#aaa">✓  Projets réels inclus</text><text x="140" y="150" font-family="sans-serif" font-size="10" fill="#aaa">✓  Accès à vie</text>
-            <rect x="350" y="104" width="160" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(77,143,255,0.3)" stroke-width="1"/>
-            <text x="430" y="126" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle" text-decoration="line-through">25 000 XOF</text>
-            <text x="430" y="148" font-family="sans-serif" font-size="20" font-weight="800" fill="#F7DEAB" text-anchor="middle">10 000 XOF</text>
-            <text x="430" y="164" font-family="sans-serif" font-size="8" fill="#4d8fff" text-anchor="middle">-60% aujourd'hui</text>
-            <rect x="140" y="166" width="320" height="34" rx="8" fill="url(#sale-cta)"/><text x="300" y="189" font-family="sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">🚀 Je veux accéder maintenant</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(77,143,255,.15);color:#4d8fff;border:1px solid rgba(77,143,255,.3);">Page de Vente</span>
-          <h3>Landing Page Formation Web</h3>
-          <p>Page de vente haute conversion pour formation digitale avec compte à rebours, témoignages et CTA optimisé.</p>
-          <div class="project-tech"><span class="tech-pill">Copywriting</span><span class="tech-pill">Conversion</span><span class="tech-pill">Mobile-first</span></div>
-        </div>
-      </div>
+      <div class="project-card"><div class="project-mockup"><svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sale-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0f1a35"/><stop offset="100%" stop-color="#1a0a2e"/></linearGradient><linearGradient id="sale-cta" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0057ff"/><stop offset="100%" stop-color="#4d8fff"/></linearGradient></defs><rect width="600" height="240" fill="url(#sale-bg)"/><ellipse cx="300" cy="120" rx="200" ry="80" fill="rgba(0,87,255,0.08)"/><text x="300" y="52" font-family="sans-serif" font-size="8" fill="#4d8fff" letter-spacing="4" text-anchor="middle">FORMATION EN LIGNE</text><text x="300" y="76" font-family="sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Maîtrise le Web</text><text x="300" y="94" font-family="sans-serif" font-size="13" font-weight="700" fill="#F7DEAB" text-anchor="middle">de Zéro à Professionnel</text><text x="140" y="118" font-family="sans-serif" font-size="10" fill="#aaa">✓  HTML, CSS, JavaScript</text><text x="140" y="134" font-family="sans-serif" font-size="10" fill="#aaa">✓  Projets réels inclus</text><text x="140" y="150" font-family="sans-serif" font-size="10" fill="#aaa">✓  Accès à vie</text><rect x="350" y="104" width="160" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(77,143,255,0.3)" stroke-width="1"/><text x="430" y="126" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle" text-decoration="line-through">25 000 XOF</text><text x="430" y="148" font-family="sans-serif" font-size="20" font-weight="800" fill="#F7DEAB" text-anchor="middle">10 000 XOF</text><text x="430" y="164" font-family="sans-serif" font-size="8" fill="#4d8fff" text-anchor="middle">-60% aujourd'hui</text><rect x="140" y="166" width="320" height="34" rx="8" fill="url(#sale-cta)"/><text x="300" y="189" font-family="sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">🚀 Je veux accéder maintenant</text></svg></div><div class="project-info"><span class="project-tag" style="background:rgba(77,143,255,.15);color:#4d8fff;border:1px solid rgba(77,143,255,.3);">Page de Vente</span><h3>Landing Page Formation Web</h3><p>Page de vente haute conversion pour formation digitale avec compte à rebours, témoignages et CTA optimisé.</p><div class="project-tech"><span class="tech-pill">Copywriting</span><span class="tech-pill">Conversion</span><span class="tech-pill">Mobile-first</span></div></div></div>
       <!-- Projet 3 : Site vitrine restaurant -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="rest-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0f00"/><stop offset="100%" stop-color="#2d1a00"/></linearGradient></defs>
-            <rect width="600" height="240" fill="url(#rest-bg)"/><circle cx="80" cy="30" r="40" fill="rgba(212,160,30,0.08)"/><circle cx="520" cy="200" r="60" fill="rgba(212,160,30,0.06)"/>
-            <rect width="600" height="38" fill="rgba(0,0,0,0.4)"/><text x="20" y="25" font-family="serif" font-size="13" font-weight="700" fill="#D4A01E" letter-spacing="3">SAVEURS D'AFRIQUE</text>
-            <text x="430" y="24" font-family="sans-serif" font-size="9" fill="#aaa">Menu</text><text x="470" y="24" font-family="sans-serif" font-size="9" fill="#aaa">À propos</text><text x="515" y="24" font-family="sans-serif" font-size="9" fill="#D4A01E">Réserver</text>
-            <rect x="320" y="38" width="280" height="202" fill="rgba(0,0,0,0.3)"/><text x="460" y="140" font-family="sans-serif" font-size="48" text-anchor="middle" fill="rgba(255,255,255,0.15)">🍽️</text>
-            <text x="20" y="70" font-family="sans-serif" font-size="8" fill="#D4A01E" letter-spacing="3">RESTAURANT GASTRONOMIQUE</text>
-            <text x="20" y="98" font-family="serif" font-size="24" font-weight="700" fill="white">Une cuisine</text><text x="20" y="124" font-family="serif" font-size="24" font-weight="700" fill="#D4A01E">d'exception</text>
-            <text x="20" y="148" font-family="sans-serif" font-size="10" fill="#bbb">Vendredi – Dimanche · 12h–22h</text><text x="20" y="162" font-family="sans-serif" font-size="10" fill="#bbb">Ouagadougou, Burkina Faso</text>
-            <text x="20" y="182" font-family="sans-serif" font-size="12" fill="#D4A01E">★★★★★</text><text x="100" y="182" font-family="sans-serif" font-size="9" fill="#888">4.9 · 120 avis</text>
-            <rect x="20" y="194" width="130" height="28" rx="6" fill="#D4A01E"/><text x="85" y="213" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Réserver une table</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(212,160,30,.15);color:#D4A01E;border:1px solid rgba(212,160,30,.3);">Site Vitrine</span>
-          <h3>Saveurs d'Afrique – Restaurant</h3>
-          <p>Site vitrine élégant pour restaurant gastronomique avec menu interactif, galerie et système de réservation.</p>
-          <div class="project-tech"><span class="tech-pill">Site Vitrine</span><span class="tech-pill">Réservation</span><span class="tech-pill">Galerie</span></div>
-        </div>
-      </div>
+      <div class="project-card"><div class="project-mockup"><svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rest-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0f00"/><stop offset="100%" stop-color="#2d1a00"/></linearGradient></defs><rect width="600" height="240" fill="url(#rest-bg)"/><circle cx="80" cy="30" r="40" fill="rgba(212,160,30,0.08)"/><circle cx="520" cy="200" r="60" fill="rgba(212,160,30,0.06)"/><rect width="600" height="38" fill="rgba(0,0,0,0.4)"/><text x="20" y="25" font-family="serif" font-size="13" font-weight="700" fill="#D4A01E" letter-spacing="3">SAVEURS D'AFRIQUE</text><text x="430" y="24" font-family="sans-serif" font-size="9" fill="#aaa">Menu</text><text x="470" y="24" font-family="sans-serif" font-size="9" fill="#aaa">À propos</text><text x="515" y="24" font-family="sans-serif" font-size="9" fill="#D4A01E">Réserver</text><rect x="320" y="38" width="280" height="202" fill="rgba(0,0,0,0.3)"/><text x="460" y="140" font-family="sans-serif" font-size="48" text-anchor="middle" fill="rgba(255,255,255,0.15)">🍽️</text><text x="20" y="70" font-family="sans-serif" font-size="8" fill="#D4A01E" letter-spacing="3">RESTAURANT GASTRONOMIQUE</text><text x="20" y="98" font-family="serif" font-size="24" font-weight="700" fill="white">Une cuisine</text><text x="20" y="124" font-family="serif" font-size="24" font-weight="700" fill="#D4A01E">d'exception</text><text x="20" y="148" font-family="sans-serif" font-size="10" fill="#bbb">Vendredi – Dimanche · 12h–22h</text><text x="20" y="162" font-family="sans-serif" font-size="10" fill="#bbb">Ouagadougou, Burkina Faso</text><text x="20" y="182" font-family="sans-serif" font-size="12" fill="#D4A01E">★★★★★</text><text x="100" y="182" font-family="sans-serif" font-size="9" fill="#888">4.9 · 120 avis</text><rect x="20" y="194" width="130" height="28" rx="6" fill="#D4A01E"/><text x="85" y="213" font-family="sans-serif" font-size="10" font-weight="700" fill="#111" text-anchor="middle">Réserver une table</text></svg></div><div class="project-info"><span class="project-tag" style="background:rgba(212,160,30,.15);color:#D4A01E;border:1px solid rgba(212,160,30,.3);">Site Vitrine</span><h3>Saveurs d'Afrique – Restaurant</h3><p>Site vitrine élégant pour restaurant gastronomique avec menu interactif, galerie et système de réservation.</p><div class="project-tech"><span class="tech-pill">Site Vitrine</span><span class="tech-pill">Réservation</span><span class="tech-pill">Galerie</span></div></div></div>
       <!-- Projet 4 : Boutique en ligne mode -->
-      <div class="project-card">
-        <div class="project-mockup">
-          <svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="shop-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5f0eb"/><stop offset="100%" stop-color="#ede5da"/></linearGradient></defs>
-            <rect width="600" height="240" fill="url(#shop-bg)"/><rect width="600" height="36" fill="rgba(255,255,255,0.8)"/>
-            <text x="20" y="24" font-family="serif" font-size="13" font-weight="700" fill="#1a1a1a" letter-spacing="4">ÉLÉGANCE BF</text>
-            <text x="420" y="23" font-family="sans-serif" font-size="9" fill="#555">Femme</text><text x="455" y="23" font-family="sans-serif" font-size="9" fill="#555">Homme</text><text x="494" y="23" font-family="sans-serif" font-size="9" fill="#555">Soldes</text><text x="545" y="23" font-family="sans-serif" font-size="12" fill="#1a1a1a">🛒</text>
-            <rect x="16" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="16" y="46" width="120" height="110" rx="8" fill="#e8ddd0"/><text x="76" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👗</text><text x="76" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Robe Soirée</text><text x="76" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">35 000 XOF</text><rect x="28" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="76" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <rect x="148" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="148" y="46" width="120" height="110" rx="8" fill="#d4c5b0"/><text x="208" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👔</text><text x="208" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Costume Homme</text><text x="208" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">58 000 XOF</text><rect x="160" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="208" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <rect x="280" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="280" y="46" width="120" height="110" rx="8" fill="#c8b99a"/><text x="340" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👠</text><rect x="280" y="46" width="44" height="18" rx="3" fill="#e74c3c"/><text x="302" y="59" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">-30%</text><text x="340" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Escarpins</text><text x="340" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">22 000 XOF</text><rect x="292" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="340" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text>
-            <rect x="412" y="46" width="80" height="170" rx="8" fill="rgba(255,255,255,0.5)"/><text x="452" y="136" font-family="sans-serif" font-size="20" text-anchor="middle" fill="rgba(0,0,0,0.15)">›</text>
-          </svg>
-        </div>
-        <div class="project-info">
-          <span class="project-tag" style="background:rgba(26,26,26,.08);color:#1a1a1a;border:1px solid rgba(26,26,26,.2);">Boutique en Ligne</span>
-          <h3>Élégance BF – Mode & Prêt-à-porter</h3>
-          <p>Boutique e-commerce mode avec catalogue filtrable, panier intelligent et paiement mobile money intégré.</p>
-          <div class="project-tech"><span class="tech-pill">Boutique</span><span class="tech-pill">Panier</span><span class="tech-pill">Mobile Money</span></div>
-        </div>
-      </div>
+      <div class="project-card"><div class="project-mockup"><svg width="100%" height="100%" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="shop-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5f0eb"/><stop offset="100%" stop-color="#ede5da"/></linearGradient></defs><rect width="600" height="240" fill="url(#shop-bg)"/><rect width="600" height="36" fill="rgba(255,255,255,0.8)"/><text x="20" y="24" font-family="serif" font-size="13" font-weight="700" fill="#1a1a1a" letter-spacing="4">ÉLÉGANCE BF</text><text x="420" y="23" font-family="sans-serif" font-size="9" fill="#555">Femme</text><text x="455" y="23" font-family="sans-serif" font-size="9" fill="#555">Homme</text><text x="494" y="23" font-family="sans-serif" font-size="9" fill="#555">Soldes</text><text x="545" y="23" font-family="sans-serif" font-size="12" fill="#1a1a1a">🛒</text><rect x="16" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="16" y="46" width="120" height="110" rx="8" fill="#e8ddd0"/><text x="76" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👗</text><text x="76" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Robe Soirée</text><text x="76" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">35 000 XOF</text><rect x="28" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="76" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text><rect x="148" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="148" y="46" width="120" height="110" rx="8" fill="#d4c5b0"/><text x="208" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👔</text><text x="208" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Costume Homme</text><text x="208" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">58 000 XOF</text><rect x="160" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="208" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text><rect x="280" y="46" width="120" height="170" rx="8" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.08))"/><rect x="280" y="46" width="120" height="110" rx="8" fill="#c8b99a"/><text x="340" y="108" font-family="sans-serif" font-size="30" text-anchor="middle" fill="rgba(0,0,0,0.2)">👠</text><rect x="280" y="46" width="44" height="18" rx="3" fill="#e74c3c"/><text x="302" y="59" font-family="sans-serif" font-size="8" font-weight="700" fill="white" text-anchor="middle">-30%</text><text x="340" y="172" font-family="sans-serif" font-size="9" font-weight="700" fill="#1a1a1a" text-anchor="middle">Escarpins</text><text x="340" y="185" font-family="sans-serif" font-size="9" fill="#888" text-anchor="middle">22 000 XOF</text><rect x="292" y="194" width="96" height="16" rx="4" fill="#1a1a1a"/><text x="340" y="206" font-family="sans-serif" font-size="8" fill="white" text-anchor="middle">Ajouter au panier</text><rect x="412" y="46" width="80" height="170" rx="8" fill="rgba(255,255,255,0.5)"/><text x="452" y="136" font-family="sans-serif" font-size="20" text-anchor="middle" fill="rgba(0,0,0,0.15)">›</text></svg></div><div class="project-info"><span class="project-tag" style="background:rgba(26,26,26,.08);color:#1a1a1a;border:1px solid rgba(26,26,26,.2);">Boutique en Ligne</span><h3>Élégance BF – Mode & Prêt-à-porter</h3><p>Boutique e-commerce mode avec catalogue filtrable, panier intelligent et paiement mobile money intégré.</p><div class="project-tech"><span class="tech-pill">Boutique</span><span class="tech-pill">Panier</span><span class="tech-pill">Mobile Money</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- SECTION AVIS (inchangée mais conservée) -->
+<!-- SECTION AVIS -->
 <section class="reviews-section" id="avis">
   <div class="wrap">
     <div class="reviews-intro"><div class="label">Témoignages</div><div class="title">Ils ont sauté le pas.<br>Voici ce qu'ils disent.</div><p>Des entrepreneurs réels, des résultats concrets. Pas de belles paroles — juste ce qu'ils ont vécu.</p></div>
@@ -728,7 +538,7 @@
 </a>
 
 <script>
-// Traductions (français et anglais)
+// ==================== TRADUCTIONS ====================
 const translations = {
   fr: {
     "brand":"BALIMA WEB<br>DEVELOPER","search.placeholder":"Rechercher...","search.button":"Rechercher",
@@ -852,7 +662,7 @@ function filterAllCards() {
   });
 }
 
-// ---------- SYSTÈME DE COMMANDE AMÉLIORÉ ----------
+// ========== SYSTÈME DE COMMANDE AMÉLIORÉ (DÉLÉGATION) ==========
 function generateOrderNumber() {
   return 'CMD-' + Date.now().toString(36).slice(-6).toUpperCase();
 }
@@ -865,11 +675,12 @@ function saveOrder(order) {
 
 function enhancedBuy(btn) {
   const card = btn.closest('.ebook-card');
+  if (!card) return;
+  
   const productName = card.querySelector('.ebook-card-title')?.innerText || 'Ebook';
   const priceElement = card.querySelector('.price-display');
   let price = priceElement?.innerText || '5000 XOF';
   const code = btn.getAttribute('data-code');
-  const messageOriginal = btn.getAttribute('data-message') || `Bonjour, je souhaite acheter ${productName}`;
   const orderNumber = generateOrderNumber();
 
   const userConfirmed = confirm(`📦 Commande ${orderNumber}\nProduit : ${productName}\nMontant : ${price}\n\n1️⃣ Appuyez sur OK pour payer via Orange Money.\n2️⃣ Après le paiement, vous recevrez un message WhatsApp pour récupérer votre produit.`);
@@ -897,22 +708,22 @@ function enhancedBuy(btn) {
   setTimeout(() => toast.classList.remove('show'), 5000);
 }
 
-// Remplacer les anciens gestionnaires "Acheter"
-document.querySelectorAll('.ebook-card-btn').forEach(btn => {
-  const newBtn = btn.cloneNode(true);
-  btn.parentNode.replaceChild(newBtn, btn);
-  newBtn.addEventListener('click', (e) => {
+// Délégation d'événement unique pour tous les boutons d'achat (existants et futurs)
+document.body.addEventListener('click', function(e) {
+  const btn = e.target.closest('.ebook-card-btn');
+  if (btn) {
     e.preventDefault();
-    enhancedBuy(newBtn);
-  });
+    enhancedBuy(btn);
+  }
 });
 
-// Autres initialisations
+// ========== INITIALISATIONS ==========
 document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
 document.querySelectorAll('.currency-btn').forEach(btn => btn.addEventListener('click', () => setCurrency(btn.dataset.currency)));
 document.getElementById('siteSearch')?.addEventListener('input', filterAllCards);
 document.getElementById('siteSearchTop')?.addEventListener('input', filterAllCards);
 
+// Menu burger
 const menuBtn = document.getElementById('menuBtn');
 const overlay = document.getElementById('menuOverlay');
 function toggleMenu(open) { document.body.classList.toggle('menu-open', open); }
@@ -931,6 +742,7 @@ document.querySelectorAll('.faq-card').forEach(card => {
   });
 });
 
+// Bouton retour en haut
 const topBtn = document.getElementById('topBtn');
 window.addEventListener('scroll', () => { topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
 topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
@@ -986,5 +798,4 @@ function closePreview() {
 document.getElementById('previewClose').addEventListener('click', closePreview);
 document.getElementById('previewBackdrop').addEventListener('click', closePreview);
 </script>
-</body>
 </html>
